@@ -65,10 +65,10 @@ function DJPage() {
                 <span className="t-body">9:16 and 16:9 social presets</span>
               </div>
               <div style={{display: 'flex', alignItems: 'center', gap: 10}}>
-                {/*<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--amber)" strokeWidth="3">*/}
-                {/*  <polyline points="20 6 9 17 4 12" />*/}
-                {/*</svg>*/}
-                {/*<span className="t-body">No upload. Runs on your machine.</span>*/}
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--amber)" strokeWidth="3">
+                  <polyline points="20 6 9 17 4 12" />
+                </svg>
+                <span className="t-body">No upload. Runs on your machine.</span>
               </div>
             </div>
           </div>
@@ -89,45 +89,45 @@ function DJPage() {
 
       {/* Stats Section */}
       <Reveal as="section" className="container section">
-        {/*<h2 className="t-h2" style={{marginBottom: 32, maxWidth: 720}}>*/}
-        {/*  30 clips. Under a minute. Every time.*/}
-        {/*</h2>*/}
+        <h2 className="t-h2" style={{marginBottom: 32, maxWidth: 720}}>
+          30 clips. Under a minute. Every time.
+        </h2>
         <div className="scoreboard-row">
           <div className="scoreboard">
             <div className="corner" />
             <div className="num"><span className="unit">Social clips</span></div>
-            {/*<div className="lbl">Average export</div>*/}
+            <div className="lbl">Average export</div>
           </div>
           <div className="scoreboard">
             <div className="corner" />
             <div className="num"><span className="unit">Mini-sets</span></div>
-            {/*<div className="lbl">Per session</div>*/}
+            <div className="lbl">Per session</div>
           </div>
           <div className="scoreboard">
             <div className="corner" />
             <div className="num"><span className="unit">3 cams</span></div>
-            {/*<div className="lbl">Total effort</div>*/}
+            <div className="lbl">Total effort</div>
           </div>
         </div>
       </Reveal>
 
-      {/*/!* Tutorial Video Section *!/*/}
-      {/*<section className="container section">*/}
-      {/*  <div style={{textAlign: 'center', marginBottom: 48}}>*/}
-      {/*    <h2 className="t-h2">See it in action</h2>*/}
-      {/*    <p className="t-body-lg" style={{maxWidth: 640, margin: '20px auto 0'}}>*/}
-      {/*      Watch how Q·Cut DJ transforms hours of footage into perfect clips*/}
-      {/*    </p>*/}
-      {/*  </div>*/}
-      {/*  <div style={{maxWidth: 960, margin: '0 auto'}}>*/}
-      {/*    <YouTubeEmbed */}
-      {/*      url="https://youtu.be/Bzbe1ti2tC8" */}
-      {/*      showControls={true} */}
-      {/*      autoPlay={false}*/}
-      {/*      title="Q·Cut DJ Tutorial"*/}
-      {/*    />*/}
-      {/*  </div>*/}
-      {/*</section>*/}
+      {/* Tutorial Video Section */}
+      <section className="container section">
+        <div style={{textAlign: 'center', marginBottom: 48}}>
+          <h2 className="t-h2">See it in action</h2>
+          <p className="t-body-lg" style={{maxWidth: 640, margin: '20px auto 0'}}>
+            Watch how Q·Cut DJ transforms hours of footage into perfect clips
+          </p>
+        </div>
+        <div style={{maxWidth: 960, margin: '0 auto'}}>
+          <YouTubeEmbed
+            url="https://youtu.be/Bzbe1ti2tC8"
+            showControls={true}
+            autoPlay={false}
+            title="Q·Cut DJ Tutorial"
+          />
+        </div>
+      </section>
 
       {/* Features Section */}
       <section className="container section dj-last-section">
