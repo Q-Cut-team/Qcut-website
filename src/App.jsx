@@ -53,8 +53,8 @@ function Nav() {
     { path: '/', label: 'Home' },
     { path: '/dj', label: 'DJ' },
     { path: '/editor', label: 'Editor' },
-    // { path: '/pricing', label: 'Pricing' },
-    // { path: '/help', label: 'Help' },
+    { path: '/pricing', label: 'Pricing' },
+    { path: '/help', label: 'Help' },
   ];
 
   useEffect(() => {
@@ -110,28 +110,28 @@ function Footer() {
               <li><Link to="/impressum">Impressum</Link></li>
             </ul>
           </div>
-          {/*<div className="footer-col">*/}
-          {/*  <h4>Product</h4>*/}
-          {/*  <ul>*/}
-          {/*    <li><Link to="/dj">DJ Version</Link></li>*/}
-          {/*    <li><Link to="/editor">Editor Version</Link></li>*/}
-          {/*    /!*<li><Link to="/pricing">Pricing</Link></li>*!/*/}
-          {/*  </ul>*/}
-          {/*</div>*/}
-          {/*<div className="footer-col">*/}
-          {/*  <h4>Support</h4>*/}
-          {/*  <ul>*/}
-          {/*    <li><Link to="/help">Help Center</Link></li>*/}
-          {/*    <li><a href="mailto:support@qcut.app">Contact</a></li>*/}
-          {/*  </ul>*/}
-          {/*</div>*/}
-          {/*<div className="footer-col">*/}
-          {/*  <h4>Legal</h4>*/}
-          {/*  <ul>*/}
-          {/*    <li><Link to="/privacy-notice">Privacy</Link></li>*/}
-          {/*    <li><Link to="/impressum">Impressum</Link></li>*/}
-          {/*  </ul>*/}
-          {/*</div>*/}
+          <div className="footer-col">
+            <h4>Product</h4>
+            <ul>
+              <li><Link to="/dj">DJ Version</Link></li>
+              <li><Link to="/editor">Editor Version</Link></li>
+              <li><Link to="/pricing">Pricing</Link></li>
+            </ul>
+          </div>
+          <div className="footer-col">
+            <h4>Support</h4>
+            <ul>
+              <li><Link to="/help">Help Center</Link></li>
+              <li><a href="mailto:support@qcut.app">Contact</a></li>
+            </ul>
+          </div>
+          <div className="footer-col">
+            <h4>Legal</h4>
+            <ul>
+              <li><Link to="/privacy-notice">Privacy</Link></li>
+              <li><Link to="/impressum">Impressum</Link></li>
+            </ul>
+          </div>
         </div>
       </div>
     </footer>
@@ -149,7 +149,7 @@ function App() {
         <Route path="/" element={<HomePage />} />
         <Route path="/dj" element={<DJPage />} />
         <Route path="/editor" element={<EditorPage />} />
-        {/*<Route path="/pricing" element={<PricingPage />} />*/}
+        <Route path="/pricing" element={<PricingPage />} />
         <Route path="/help" element={<HelpPage />} />
         <Route path="/success" element={<SuccessPage />} />
         <Route path="/impressum" element={<ImpressumPage />} />
