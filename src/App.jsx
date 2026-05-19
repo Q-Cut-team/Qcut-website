@@ -105,12 +105,6 @@ function Footer() {
         <div className="footer-links">
 
           <div className="footer-col">
-            <h4>Legal</h4>
-            <ul>
-              <li><Link to="/impressum">Impressum</Link></li>
-            </ul>
-          </div>
-          <div className="footer-col">
             <h4>Product</h4>
             <ul>
               <li><Link to="/dj">DJ Version</Link></li>
