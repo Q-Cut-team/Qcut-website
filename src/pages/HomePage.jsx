@@ -16,7 +16,6 @@ function HomePage() {
         <p className="t-body-lg" style={{maxWidth: 580, margin:"24px auto 0"}}>
           Drop your set. Personilize. Press go. Done. All your footage become ready-to-post clips.
         </p>
-        {/*
         <div style={{display:"flex", gap: 12, justifyContent:"center", marginTop: 32, flexWrap:"wrap"}}>
 
           <Link to="/dj" className="btn btn-amber btn-amber-lg">
@@ -27,7 +26,6 @@ function HomePage() {
           </Link>
 
         </div>
-        */}
 
         </section>
         <div style={{
@@ -46,9 +44,9 @@ function HomePage() {
       <Reveal as="section" className="container" style={{paddingTop: 16, paddingBottom: 40}}>
         <div style={{textAlign: 'center', marginBottom: 32}}>
           <h2 className="t-h2">See how it performs</h2>
-          {/*<p className="t-body-lg" style={{maxWidth: 640, margin: '20px auto 0'}}>*/}
-          {/*  Watch how Q·Cut DJ transforms hours of footage into perfect clips*/}
-          {/*</p>*/}
+          <p className="t-body-lg" style={{maxWidth: 640, margin: '20px auto 0'}}>
+            Watch how Q·Cut DJ transforms hours of footage into perfect clips
+          </p>
         </div>
         <div style={{maxWidth: 960, margin: '0 auto'}}>
           <YouTubeEmbed
@@ -101,26 +99,26 @@ function HomePage() {
         </div>
       </section>
 
-      {/*/!* Stats Section *!/*/}
-      {/*<section className="container section">*/}
-      {/*  <div className="scoreboard-row">*/}
-      {/*    <div className="scoreboard">*/}
-      {/*      <div className="corner" />*/}
-      {/*      <div className="num">60<span className="unit">sec</span></div>*/}
-      {/*      <div className="lbl">Average export time</div>*/}
-      {/*    </div>*/}
-      {/*    <div className="scoreboard">*/}
-      {/*      <div className="corner" />*/}
-      {/*      <div className="num">30<span className="unit">clips</span></div>*/}
-      {/*      <div className="lbl">Per session</div>*/}
-      {/*    </div>*/}
-      {/*    <div className="scoreboard">*/}
-      {/*      <div className="corner" />*/}
-      {/*      <div className="num">0<span className="unit">%</span></div>*/}
-      {/*      <div className="lbl">Manual editing</div>*/}
-      {/*    </div>*/}
-      {/*  </div>*/}
-      {/*</section>*/}
+      {/* Stats Section */}
+      <section className="container section">
+        <div className="scoreboard-row">
+          <div className="scoreboard">
+            <div className="corner" />
+            <div className="num">60<span className="unit">sec</span></div>
+            <div className="lbl">Average export time</div>
+          </div>
+          <div className="scoreboard">
+            <div className="corner" />
+            <div className="num">30<span className="unit">clips</span></div>
+            <div className="lbl">Per session</div>
+          </div>
+          <div className="scoreboard">
+            <div className="corner" />
+            <div className="num">0<span className="unit">%</span></div>
+            <div className="lbl">Manual editing</div>
+          </div>
+        </div>
+      </section>
 
       {/* CTA Section */}
       <section className="container home-cta-section" style={{textAlign: 'center', padding: '64px 32px 24px'}}>
@@ -130,17 +128,17 @@ function HomePage() {
           </h2>
         </Reveal>
 
-        {/*<p className="t-body-lg" style={{maxWidth: 560, margin: '24px auto 40px'}}>*/}
-        {/*  Join the beta. Limited spots available.*/}
-        {/*</p>*/}
-        {/*<div style={{display: 'flex', gap: 16, justifyContent: 'center', flexWrap: 'wrap'}}>*/}
-        {/*  <Link to="/pricing" className="btn btn-amber btn-amber-lg">*/}
-        {/*    Get early access*/}
-        {/*  </Link>*/}
-        {/*  <Link to="/help" className="btn btn-ghost">*/}
-        {/*    Learn more*/}
-        {/*  </Link>*/}
-        {/*</div>*/}
+        <p className="t-body-lg" style={{maxWidth: 560, margin: '24px auto 40px'}}>
+          Join the beta. Limited spots available.
+        </p>
+        <div style={{display: 'flex', gap: 16, justifyContent: 'center', flexWrap: 'wrap'}}>
+          <Link to="/pricing" className="btn btn-amber btn-amber-lg">
+            Get early access
+          </Link>
+          <Link to="/help" className="btn btn-ghost">
+            Learn more
+          </Link>
+        </div>
 
       </section>
     </div>
