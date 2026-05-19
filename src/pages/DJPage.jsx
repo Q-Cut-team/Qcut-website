@@ -30,7 +30,10 @@ function DJPage() {
         <p className="t-body-lg" style={{maxWidth: 560, marginTop: 16}}>
           Drag in your video. Drag in your audio. Hit export. That's literally it.
         </p>
-        <div style={{marginTop: 24, display:"flex", gap: 12, flexWrap:"wrap"}}>
+        <div style={{marginTop: 24, display:"flex", flexDirection:"column", gap: 12, alignItems:"flex-start"}}>
+          <Link to="/dj/download" className="btn btn-amber btn-amber-lg">
+            Download Q·Cut DJ
+          </Link>
           <button className="btn btn-amber btn-amber-lg" onClick={handleSubscribe}>
             Get Q·Cut DJ — €20/mo
           </button>

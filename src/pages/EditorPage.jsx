@@ -35,7 +35,15 @@ function EditorPage() {
         <div>
           <BeatGrid />
         </div>
-        <div style={{marginTop: 24, display:"flex", gap: 12, flexWrap:"wrap"}}>
+        <div style={{marginTop: 24, display:"flex", flexDirection:"column", gap: 12, alignItems:"flex-start"}}>
+          <div style={{display:"flex", gap: 12, flexWrap:"wrap"}}>
+            <Link to="/editor/download" className="btn btn-amber btn-amber-lg">
+              Download Editor
+            </Link>
+            <Link to="/studio/download" className="btn btn-amber btn-amber-lg">
+              Download Studio
+            </Link>
+          </div>
           <Link to="/pricing" className="btn btn-amber btn-amber-lg">
             Choose your plan
           </Link>
