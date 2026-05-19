@@ -30,11 +30,11 @@ function DJPage() {
         <p className="t-body-lg" style={{maxWidth: 560, marginTop: 16}}>
           Drag in your video. Drag in your audio. Hit export. That's literally it.
         </p>
-        {/*<div style={{marginTop: 24, display:"flex", gap: 12, flexWrap:"wrap"}}>*/}
-        {/*  <button className="btn btn-amber btn-amber-lg" onClick={handleSubscribe}>*/}
-        {/*    Get Q·Cut DJ — €20/mo*/}
-        {/*  </button>*/}
-        {/*</div>*/}
+        <div style={{marginTop: 24, display:"flex", gap: 12, flexWrap:"wrap"}}>
+          <button className="btn btn-amber btn-amber-lg" onClick={handleSubscribe}>
+            Get Q·Cut DJ — €20/mo
+          </button>
+        </div>
       </section>
 
       {/* Product Screenshot Section */}
@@ -170,23 +170,23 @@ function DJPage() {
         </div>
       </section>
 
-      {/*/!* CTA Section *!/*/}
-      {/*<section className="container section" style={{textAlign: 'center', padding: '80px 32px'}}>*/}
-      {/*  <h2 className="t-display">*/}
-      {/*    Start cutting smarter.*/}
-      {/*  </h2>*/}
-      {/*  <p className="t-body-lg" style={{maxWidth: 560, margin: '24px auto 40px'}}>*/}
-      {/*    €20/month. Cancel anytime. No questions asked.*/}
-      {/*  </p>*/}
-      {/*  <div style={{display: 'flex', gap: 16, justifyContent: 'center', flexWrap: 'wrap'}}>*/}
-      {/*    <button className="btn btn-amber btn-amber-lg" onClick={handleSubscribe}>*/}
-      {/*      Get Q·Cut DJ*/}
-      {/*    </button>*/}
-      {/*    <Link to="/pricing" className="btn btn-ghost">*/}
-      {/*      Compare all plans*/}
-      {/*    </Link>*/}
-      {/*  </div>*/}
-      {/*</section>*/}
+      {/* CTA Section */}
+      <section className="container section" style={{textAlign: 'center', padding: '80px 32px'}}>
+        <h2 className="t-display">
+          Start cutting smarter.
+        </h2>
+        <p className="t-body-lg" style={{maxWidth: 560, margin: '24px auto 40px'}}>
+          €20/month. Cancel anytime. No questions asked.
+        </p>
+        <div style={{display: 'flex', gap: 16, justifyContent: 'center', flexWrap: 'wrap'}}>
+          <button className="btn btn-amber btn-amber-lg" onClick={handleSubscribe}>
+            Get Q·Cut DJ
+          </button>
+          <Link to="/pricing" className="btn btn-ghost">
+            Compare all plans
+          </Link>
+        </div>
+      </section>
     </div>
   );
 }
