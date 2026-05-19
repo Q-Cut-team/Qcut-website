@@ -10,6 +10,9 @@ import ImpressumPage from './pages/ImpressumPage';
 import PrivacyNoticePage from './pages/PrivacyNoticePage';
 import TestPage from './pages/TestPage';
 import SimpleVideoTest from './pages/SimpleVideoTest';
+import DJDownloadPage from './pages/DJDownloadPage';
+import EditorDownloadPage from './pages/EditorDownloadPage';
+import StudioDownloadPage from './pages/StudioDownloadPage';
 
 // ScrollToTop Component
 function ScrollToTop() {
@@ -142,7 +145,10 @@ function App() {
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="/dj" element={<DJPage />} />
+        <Route path="/dj/download" element={<DJDownloadPage />} />
         <Route path="/editor" element={<EditorPage />} />
+        <Route path="/editor/download" element={<EditorDownloadPage />} />
+        <Route path="/studio/download" element={<StudioDownloadPage />} />
         <Route path="/pricing" element={<PricingPage />} />
         <Route path="/help" element={<HelpPage />} />
         <Route path="/success" element={<SuccessPage />} />
