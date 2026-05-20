@@ -20,3 +20,23 @@ export const redirectToCheckout = async (priceId) => {
 		console.error('Checkout error:', error);
 	}
 };
+
+export const redirectToBillingPortal = async (email) => {
+	const response = await fetch(`${BACKEND_URL}/create-portal-session`, {
+		method: 'POST',
+		headers: { 'Content-Type': 'application/json' },
+		body: JSON.stringify({ email }),
+	});
+
+	const data = await response.json().catch(() => ({}));
+
+	if (!response.ok) {
+		throw new Error(data.error || `Billing portal request failed (${response.status})`);
+	}
+
+	if (!data.url) {
+		throw new Error('No portal URL returned from backend');
+	}
+
+	window.location.href = data.url;
+};

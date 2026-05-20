@@ -1,16 +1,25 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
+import { redirectToBillingPortal } from '../utils/checkout';
 
 function HelpPage() {
   const [email, setEmail] = useState('');
-  const [submitted, setSubmitted] = useState(false);
+  const [status, setStatus] = useState({ type: null, message: '' });
 
-  const handleCheck = (e) => {
+  const handleCheck = async (e) => {
     e.preventDefault();
-    if (email) {
-      // In production, this would send an API request to your backend
-      setSubmitted(true);
-      setTimeout(() => setSubmitted(false), 5000);
+    if (!email) return;
+
+    setStatus({ type: 'loading', message: 'Looking up your subscription…' });
+
+    try {
+      await redirectToBillingPortal(email);
+      // On success the browser is redirected to Stripe and this code does not continue.
+    } catch (err) {
+      setStatus({
+        type: 'error',
+        message: err.message || 'Could not open the billing portal. Try again or contact support.',
+      });
     }
   };
 
@@ -125,13 +134,22 @@ function HelpPage() {
                   fontSize: '14px'
                 }}
               />
-              <button type="submit" className="btn btn-amber">
-                Check
+              <button
+                type="submit"
+                className="btn btn-amber"
+                disabled={status.type === 'loading'}
+              >
+                {status.type === 'loading' ? 'Checking…' : 'Check'}
               </button>
             </div>
-            {submitted && (
+            {status.type === 'loading' && (
               <p className="t-body" style={{fontSize:13, marginTop: 12, color:"var(--amber)"}}>
-                ✓ Stripe portal link sent to {email}.
+                {status.message}
+              </p>
+            )}
+            {status.type === 'error' && (
+              <p className="t-body" style={{fontSize:13, marginTop: 12, color:"#ff6b6b"}}>
+                ✗ {status.message}
               </p>
             )}
           </form>
