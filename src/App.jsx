@@ -27,7 +27,7 @@ function BetaBar() {
   return (
     <div className="beta-bar">
       <span className="pulse" />
-      <span>Free testing week: 25.05 - 31.05</span>
+      <span>Free testing: 25.05 - 08.06</span>
       <span className="pulse" />
     </div>
   );
