@@ -34,9 +34,9 @@ function DJPage() {
           <Link to="/dj/download" className="btn btn-amber btn-amber-lg">
             Download Q·Cut DJ
           </Link>
-          <button className="btn btn-amber btn-amber-lg" onClick={handleSubscribe}>
-            Get Q·Cut DJ — €20/mo
-          </button>
+          {/*<button className="btn btn-amber btn-amber-lg" onClick={handleSubscribe}>*/}
+          {/*  Get Q·Cut DJ — €20/mo*/}
+          {/*</button>*/}
         </div>
       </section>
 

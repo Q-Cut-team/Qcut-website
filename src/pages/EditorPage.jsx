@@ -44,9 +44,9 @@ function EditorPage() {
               Download Studio
             </Link>
           </div>
-          <Link to="/pricing" className="btn btn-amber btn-amber-lg">
-            Choose your plan
-          </Link>
+          {/*<Link to="/pricing" className="btn btn-amber btn-amber-lg">*/}
+          {/*  Choose your plan*/}
+          {/*</Link>*/}
         </div>
       </section>
 

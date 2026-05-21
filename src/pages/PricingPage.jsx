@@ -6,11 +6,11 @@ import Toast from '../components/Toast';
 
 // Price IDs from your requirements
 const PRICE_IDS = {
-  DJ_MONTH: 'price_1TQVJyBSfJ4A9uVJTrQzprla',
-  KREATOR_MONTH: 'price_1TQVNtBSfJ4A9uVJmtEhAaR3',
-  KREATOR_ONETIME: 'price_1TQVNtBSfJ4A9uVJhclSWGnr',
-  STUDIO_MONTH: 'price_1TQVSjBSfJ4A9uVJkyzTq6JV',
-  STUDIO_ONETIME: 'price_1TQVSjBSfJ4A9uVJHMHgrTxr',
+  DJ_MONTH: 'price_1TZZc4PjWn7pNPmY9kopKsZY', //now free trial
+  EDITOR_MONTH: 'price_1TZZd5PjWn7pNPmYOmu7e4o9',//now free trial
+  EDITOR_ONETIME: null,
+  STUDIO_MONTH: 'price_1TZZcZPjWn7pNPmYlst2j6X3',//now free trial
+  STUDIO_ONETIME: null,
   DJ_UNLIMITED: null // Coming soon
 };
 
@@ -79,7 +79,7 @@ function PricingPage() {
               className="btn btn-amber" 
               onClick={() => handleCheckout(PRICE_IDS.DJ_MONTH)}
             >
-              Subscribe €20/month
+              Test for free
             </button>
           </div>
 
@@ -138,9 +138,9 @@ function PricingPage() {
           <h2 className="t-h2" style={{marginTop: 12}}>Professional multicam</h2>
         </div>
         <div className="tier-grid">
-          {/* Kreator Plan */}
+          {/* Editor Plan */}
           <div className="tier-card">
-            <h3>Kreator</h3>
+            <h3>Editor</h3>
             <div className="price">€30<span className="unit">/month</span></div>
             <p>For content creators</p>
             <ul>
@@ -177,16 +177,17 @@ function PricingPage() {
             </ul>
             <button 
               className="btn btn-amber" 
-              onClick={() => handleCheckout(PRICE_IDS.KREATOR_MONTH)}
+              onClick={() => handleCheckout(PRICE_IDS.EDITOR_MONTH)}
             >
-              Subscribe €30/month
+              Test for free
             </button>
+
             <button 
               className="btn btn-ghost" 
-              onClick={() => handleCheckout(PRICE_IDS.KREATOR_ONETIME)}
+              onClick={() => handleCheckout(PRICE_IDS.EDITOR_ONETIME)}
               style={{marginTop: 8}}
             >
-              One-time €299
+              One-time (Coming soon)
             </button>
           </div>
 
@@ -238,14 +239,14 @@ function PricingPage() {
               className="btn btn-amber" 
               onClick={() => handleCheckout(PRICE_IDS.STUDIO_MONTH)}
             >
-              Subscribe €50/month
+              Test for free
             </button>
             <button 
               className="btn btn-ghost" 
               onClick={() => handleCheckout(PRICE_IDS.STUDIO_ONETIME)}
               style={{marginTop: 8}}
             >
-              One-time €499
+              One-time (Coming soon)
             </button>
           </div>
         </div>
