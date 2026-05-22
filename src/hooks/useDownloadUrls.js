@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 
 const UPDATES_API = 'https://qcut-updates-production.up.railway.app/updates';
+const DOWNLOAD_BASE = 'https://qcut-updates-production.up.railway.app/download';
 
 const PRODUCT_MAP = {
   'qcut-dj':      'qcut-dj',
@@ -8,11 +9,12 @@ const PRODUCT_MAP = {
   'qcut-studio':  'qcut-studio',
 };
 
-function extractUrls(versionData) {
+// Build download URLs using the /download/{product}/{version}/{platform} endpoint
+function buildUrls(product, version) {
   return {
-    macSilicon: versionData['macos-arm64']?.download_url || null,
-    macIntel:   versionData['macos-x64']?.download_url || null,
-    windows:    versionData['windows']?.download_url || null,
+    macSilicon: `${DOWNLOAD_BASE}/${product}/${version}/macos-arm64`,
+    macIntel:   `${DOWNLOAD_BASE}/${product}/${version}/macos-x64`,
+    windows:    `${DOWNLOAD_BASE}/${product}/${version}/windows`,
   };
 }
 
@@ -37,16 +39,19 @@ export function useDownloadUrls(product) {
 
         const latestVersion = productData.latest_version;
         const versions = productData.versions;
-        const latest = versions[latestVersion]
-          ? extractUrls(versions[latestVersion])
+
+        // Build latest version download URLs
+        const latest = latestVersion && versions[latestVersion]
+          ? buildUrls(PRODUCT_MAP[product], latestVersion)
           : null;
 
-        const olderVersions = Object.entries(versions)
-          .filter(([v]) => v !== latestVersion)
-          .sort(([a], [b]) => b.localeCompare(a, undefined, { numeric: true }))
-          .map(([version, versionData]) => ({
+        // Build older versions download URLs sorted descending
+        const olderVersions = Object.keys(versions)
+          .filter(v => v !== latestVersion)
+          .sort((a, b) => b.localeCompare(a, undefined, { numeric: true }))
+          .map(version => ({
             version,
-            urls: extractUrls(versionData),
+            urls: buildUrls(PRODUCT_MAP[product], version),
           }));
 
         setState({
