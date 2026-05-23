@@ -1,4 +1,5 @@
 import React, { useRef, useState } from 'react';
+import { Link } from 'react-router-dom';
 import { redirectToCheckout } from '../utils/checkout';
 import BeatGrid from "../components/BeatGrid";
 import qcutDjImage from '../assets/images/qcut_dj.png';
@@ -8,6 +9,7 @@ import Toast from '../components/Toast';
 
 const DJ_MONTH_PRICE_ID = 'price_1TQVJyBSfJ4A9uVJTrQzprla';
 const DJ_UNLIMITED_PRICE_ID = null;
+const DJ_FREE_TRIAL_PRICE_ID = 'price_1TZZc4PjWn7pNPmY9kopKsZY';
 const DJ_COMPARISON_ROWS = [
   { feature: 'Core DJ sync and music-based cutting', free: 'Yes', unlimited: 'Yes' },
   { feature: 'Weekly export quota', free: '6 exports per week', unlimited: 'Unlimited' },
@@ -39,6 +41,10 @@ function DJPage() {
     await redirectToCheckout(priceId);
   };
 
+  const handleGetFree = async () => {
+    await redirectToCheckout(DJ_FREE_TRIAL_PRICE_ID);
+  };
+
   const scrollToCtaSection = () => {
     if (!ctaSectionRef.current) return;
 
@@ -68,10 +74,13 @@ function DJPage() {
         <p className="t-body-lg" style={{maxWidth: 560, marginTop: 16}}>
           Drag in your video. Drag in your audio. Hit export. That's literally it.
         </p>
-        <div style={{marginTop: 24, display:"flex", flexDirection:"column", gap: 12, alignItems:"flex-start"}}>
-          <button type="button" className="btn btn-amber btn-amber-lg" onClick={scrollToCtaSection}>
+        <div style={{marginTop: 24, display:"flex", gap: 12, flexWrap:"wrap"}}>
+          <button type="button" className="btn btn-amber btn-amber-lg" onClick={handleGetFree}>
             Get Q·Cut DJ
           </button>
+          <Link to="/dj/download" className="btn btn-ghost">
+            Download Q·Cut DJ
+          </Link>
         </div>
       </section>
 
