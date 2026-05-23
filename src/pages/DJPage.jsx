@@ -1,12 +1,13 @@
 import React, { useRef, useState } from 'react';
-import { Link } from 'react-router-dom';
 import { redirectToCheckout } from '../utils/checkout';
-import YouTubeEmbed from '../components/YouTubeEmbed';
 import BeatGrid from "../components/BeatGrid";
 import qcutDjImage from '../assets/images/qcut_dj.png';
 import Reveal from '../components/Reveal';
+import { useToast } from '../hooks/useToast';
+import Toast from '../components/Toast';
 
 const DJ_MONTH_PRICE_ID = 'price_1TQVJyBSfJ4A9uVJTrQzprla';
+const DJ_UNLIMITED_PRICE_ID = null;
 const DJ_COMPARISON_ROWS = [
   { feature: 'Core DJ sync and music-based cutting', free: 'Yes', unlimited: 'Yes' },
   { feature: 'Weekly export quota', free: '6 exports per week', unlimited: 'Unlimited' },
@@ -28,9 +29,14 @@ const DJ_COMPARISON_ROWS = [
 function DJPage() {
   const ctaSectionRef = useRef(null);
   const [showDetailedComparison, setShowDetailedComparison] = useState(false);
+  const { isVisible, message, showToast, hideToast } = useToast();
 
-  const handleSubscribe = async () => {
-    await redirectToCheckout(DJ_MONTH_PRICE_ID);
+  const handleCheckout = async (priceId) => {
+    if (!priceId) {
+      showToast("DJ Unlimited coming soon — we're working on it! 🚧");
+      return;
+    }
+    await redirectToCheckout(priceId);
   };
 
   const scrollToCtaSection = () => {
@@ -246,22 +252,98 @@ function DJPage() {
       </section>
 
       {/* CTA Section */}
-      <section ref={ctaSectionRef} id="dj-cta-section" className="container section dj-cta-section" style={{textAlign: 'center'}}>
-        <h2 className="t-display">
-          Start cutting smarter.
-        </h2>
-        <p className="t-body-lg" style={{maxWidth: 560, margin: '24px auto 40px'}}>
-          €20/month. Cancel anytime. No questions asked.
-        </p>
-        <div style={{display: 'flex', gap: 16, justifyContent: 'center', flexWrap: 'wrap'}}>
-          <button className="btn btn-amber btn-amber-lg" onClick={handleSubscribe}>
-            Get Q·Cut DJ
-          </button>
-          <Link to="/pricing" className="btn btn-ghost">
-            Compare all plans
-          </Link>
+      <section ref={ctaSectionRef} id="dj-cta-section" className="container section dj-cta-section">
+        <div style={{textAlign: 'center', marginBottom: 48}}>
+          <span className="t-label">For DJs</span>
+          <h2 className="t-h2" style={{marginTop: 12}}>Choose your plan</h2>
+        </div>
+        <div className="tier-grid pricing-plan-grid">
+          <div className="tier-card">
+            <h3>DJ</h3>
+            <div className="price">Free</div>
+            <p>Perfect for regular gigs</p>
+            <ul>
+              <li>
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3">
+                  <polyline points="20 6 9 17 4 12" />
+                </svg>
+                <span>Up to 10 sets/month</span>
+              </li>
+              <li>
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3">
+                  <polyline points="20 6 9 17 4 12" />
+                </svg>
+                <span>Beat detection</span>
+              </li>
+              <li>
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3">
+                  <polyline points="20 6 9 17 4 12" />
+                </svg>
+                <span>Miniset + Clips modes</span>
+              </li>
+              <li>
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3">
+                  <polyline points="20 6 9 17 4 12" />
+                </svg>
+                <span>Social-ready presets</span>
+              </li>
+            </ul>
+            <button
+              className="btn btn-amber"
+              onClick={() => handleCheckout(DJ_MONTH_PRICE_ID)}
+            >
+              Get for free
+            </button>
+          </div>
+
+          <div className="tier-card featured">
+            <span className="badge">Unlimited</span>
+            <h3>DJ Unlimited</h3>
+            <div className="price">€35<span className="unit">/month</span></div>
+            <p>For touring DJs & agencies</p>
+            <ul>
+              <li>
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3">
+                  <polyline points="20 6 9 17 4 12" />
+                </svg>
+                <span>Unlimited sets</span>
+              </li>
+              <li>
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3">
+                  <polyline points="20 6 9 17 4 12" />
+                </svg>
+                <span>All DJ features</span>
+              </li>
+              <li>
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3">
+                  <polyline points="20 6 9 17 4 12" />
+                </svg>
+                <span>Cloud backup</span>
+              </li>
+              <li>
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3">
+                  <polyline points="20 6 9 17 4 12" />
+                </svg>
+                <span>Priority render queue</span>
+              </li>
+              <li>
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3">
+                  <polyline points="20 6 9 17 4 12" />
+                </svg>
+                <span>Direct upload to socials</span>
+              </li>
+            </ul>
+            <button
+              className="btn btn-amber"
+              onClick={() => handleCheckout(DJ_UNLIMITED_PRICE_ID)}
+            >
+              Coming soon
+            </button>
+          </div>
         </div>
       </section>
+
+      <Toast message={message} isVisible={isVisible} onClose={hideToast} />
     </div>
   );
 }

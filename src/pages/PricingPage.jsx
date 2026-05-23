@@ -47,7 +47,7 @@ function PricingPage() {
           {/* DJ Plan */}
           <div className="tier-card">
             <h3>DJ</h3>
-            <div className="price">€20<span className="unit">/month</span></div>
+            <div className="price">Free</div>
             <p>Perfect for regular gigs</p>
             <ul>
               <li>
@@ -79,7 +79,7 @@ function PricingPage() {
               className="btn btn-amber" 
               onClick={() => handleCheckout(PRICE_IDS.DJ_MONTH)}
             >
-              Test for free
+              Get for free
             </button>
           </div>
 
