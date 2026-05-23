@@ -19,12 +19,17 @@ function HomePage() {
         <div style={{display:"flex", gap: 12, justifyContent:"center", marginTop: 32, flexWrap:"wrap"}}>
 
           <Link to="/dj" className="btn btn-amber btn-amber-lg">
-            See how it works
+            I'm a DJ
             <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
               <line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/>
             </svg>
           </Link>
-
+          <Link to="/creator" className="btn btn-amber btn-amber-lg">
+            I'm a Editor
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+              <line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/>
+            </svg>
+          </Link>
         </div>
 
         </section>
