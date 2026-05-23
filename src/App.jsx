@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { BrowserRouter, Routes, Route, Link, useLocation, useNavigate } from 'react-router-dom';
 import HomePage from './pages/HomePage';
 import DJPage from './pages/DJPage';
-import EditorPage from './pages/EditorPage';
+import CreatorPage from './pages/CreatorPage';
 import PricingPage from './pages/PricingPage';
 import HelpPage from './pages/HelpPage';
 import SuccessPage from './pages/SuccessPage';
@@ -11,7 +11,7 @@ import PrivacyNoticePage from './pages/PrivacyNoticePage';
 import TestPage from './pages/TestPage';
 import SimpleVideoTest from './pages/SimpleVideoTest';
 import DJDownloadPage from './pages/DJDownloadPage';
-import EditorDownloadPage from './pages/EditorDownloadPage';
+import CreatorDownloadPage from './pages/CreatorDownloadPage';
 import StudioDownloadPage from './pages/StudioDownloadPage';
 
 // ScrollToTop Component
@@ -55,7 +55,7 @@ function Nav() {
   const links = [
     { path: '/', label: 'Home' },
     { path: '/dj', label: 'DJ' },
-    { path: '/editor', label: 'Editor' },
+    { path: '/creator', label: 'Creator' },
     { path: '/pricing', label: 'Pricing' },
     { path: '/help', label: 'Help' },
   ];
@@ -111,7 +111,7 @@ function Footer() {
             <h4>Product</h4>
             <ul>
               <li><Link to="/dj">DJ Version</Link></li>
-              <li><Link to="/editor">Editor Version</Link></li>
+              <li><Link to="/creator">Creator Version</Link></li>
               <li><Link to="/pricing">Pricing</Link></li>
             </ul>
           </div>
@@ -146,8 +146,8 @@ function App() {
         <Route path="/" element={<HomePage />} />
         <Route path="/dj" element={<DJPage />} />
         <Route path="/dj/download" element={<DJDownloadPage />} />
-        <Route path="/editor" element={<EditorPage />} />
-        <Route path="/editor/download" element={<EditorDownloadPage />} />
+        <Route path="/creator" element={<CreatorPage />} />
+        <Route path="/creator/download" element={<CreatorDownloadPage />} />
         <Route path="/studio/download" element={<StudioDownloadPage />} />
         <Route path="/pricing" element={<PricingPage />} />
         <Route path="/help" element={<HelpPage />} />

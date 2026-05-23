@@ -131,16 +131,16 @@ function PricingPage() {
         </div>
       </section>
 
-      {/* Editor Plans Section */}
+      {/* Creator Plans Section */}
       <section className="container section">
         <div style={{textAlign: 'center', marginBottom: 48}}>
-          <span className="t-label">For Editors</span>
+          <span className="t-label">For Creators</span>
           <h2 className="t-h2" style={{marginTop: 12}}>Professional multicam</h2>
         </div>
         <div className="tier-grid">
-          {/* Editor Plan */}
+          {/* Creator Plan */}
           <div className="tier-card">
-            <h3>Editor</h3>
+            <h3>Creator</h3>
             <div className="price">€30<span className="unit">/month</span></div>
             <p>For content creators</p>
             <ul>
@@ -264,9 +264,9 @@ function PricingPage() {
           </p>
         </div>
         <div className="card" style={{marginBottom: 16}}>
-          <h3 className="t-h3" style={{marginBottom: 12}}>What's the difference between DJ and Editor?</h3>
+          <h3 className="t-h3" style={{marginBottom: 12}}>What's the difference between DJ and Creator?</h3>
           <p className="t-body">
-            DJ is optimized for live set recordings with beat detection. Editor works with any footage and exports to professional NLE timelines.
+            DJ is optimized for live set recordings with beat detection. Creator works with any footage and exports to professional NLE timelines.
           </p>
         </div>
         <div className="card" style={{marginBottom: 16}}>

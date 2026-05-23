@@ -35,39 +35,6 @@ function HelpPage() {
         </p>
       </section>
 
-      {/* Quick Links */}
-      <section className="container section">
-        <div style={{display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: 24}}>
-          <div className="card">
-            <h3 className="t-h3" style={{marginBottom: 12}}>Getting Started</h3>
-            <p className="t-body">
-              New to Q·Cut? Start with our quick setup guide and be cutting in minutes.
-            </p>
-            <a href="#getting-started" className="btn-link" style={{marginTop: 16}}>
-              Learn basics →
-            </a>
-          </div>
-          <div className="card">
-            <h3 className="t-h3" style={{marginBottom: 12}}>Tutorials</h3>
-            <p className="t-body">
-              Step-by-step video tutorials for both DJ and Editor versions.
-            </p>
-            <a href="#tutorials" className="btn-link" style={{marginTop: 16}}>
-              Watch tutorials →
-            </a>
-          </div>
-          <div className="card">
-            <h3 className="t-h3" style={{marginBottom: 12}}>Contact Support</h3>
-            <p className="t-body">
-              Can't find what you're looking for? Our team is here to help.
-            </p>
-            <a href="#contact" className="btn-link" style={{marginTop: 16}}>
-              Get in touch →
-            </a>
-          </div>
-        </div>
-      </section>
-
       {/* FAQ Section */}
       <section id="faq" className="container section">
         <h2 className="t-h2" style={{textAlign: 'center', marginBottom: 48}}>
@@ -93,9 +60,9 @@ function HelpPage() {
             </p>
           </div>
           <div className="card" style={{marginBottom: 16}}>
-            <h3 className="t-h3" style={{marginBottom: 12}}>Can I use Q·Cut with my existing editor?</h3>
+            <h3 className="t-h3" style={{marginBottom: 12}}>Can I use Q·Cut with my existing creator?</h3>
             <p className="t-body">
-              Yes! The Editor version exports XML timelines that work with DaVinci Resolve, Final Cut Pro, and Adobe Premiere. Your color grades and effects remain intact.
+              Yes! The Creator version exports XML timelines that work with DaVinci Resolve, Final Cut Pro, and Adobe Premiere. Your color grades and effects remain intact.
             </p>
           </div>
           <div className="card" style={{marginBottom: 16}}>

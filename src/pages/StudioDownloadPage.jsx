@@ -113,7 +113,7 @@ function StudioDownloadPage() {
           </>
         )}
         <div style={{textAlign: 'center', marginTop: 40}}>
-          <Link to="/editor" className="btn btn-ghost">← Back to Editor</Link>
+          <Link to="/creator" className="btn btn-ghost">← Back to Creator</Link>
         </div>
       </section>
     </div>

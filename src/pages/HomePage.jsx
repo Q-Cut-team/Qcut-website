@@ -14,7 +14,7 @@ function HomePage() {
           <span style={{color:"var(--amber)"}}>Start Q-cutting</span>
         </h1>
         <p className="t-body-lg" style={{maxWidth: 580, margin:"24px auto 0"}}>
-          Drop your set. Personilize. Press go. Done. All your footage become ready-to-post clips.
+          Drop your set. Personalize. Press go. Done. All your footage becomes ready-to-post clips.
         </p>
         <div style={{display:"flex", gap: 12, justifyContent:"center", marginTop: 32, flexWrap:"wrap"}}>
 
@@ -66,7 +66,7 @@ function HomePage() {
               Two tools<br/>
             </h2>
             <p className="t-body-lg" style={{maxWidth: 640, margin: '20px auto 0', color: 'var(--text-2)'}}>
-              Choose betweean easy clips and full control
+              Choose between easy clips and full control
             </p>
           </div>
         </Reveal>
@@ -84,11 +84,11 @@ function HomePage() {
             </Link>
           </Reveal>
           <Reveal delay={120}>
-            <Link to="/editor" className="tool-card">
-              <span className="tag">For Editors</span>
-              <h3>For editors dealing with multicam sets</h3>
+            <Link to="/creator" className="tool-card">
+              <span className="tag">For Creators</span>
+              <h3>For creators dealing with multicam sets</h3>
               <div className="arrow">
-                Explore Editor version
+                Explore Creator version
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                   <line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/>
                 </svg>

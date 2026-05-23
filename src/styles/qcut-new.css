@@ -983,18 +983,18 @@ button { font-family: inherit; }
   }
 }
 
-.editor-feature-grid {
+.creator-feature-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 20px;
 }
 
-.editor-feature-grid .reveal {
+.creator-feature-grid .reveal {
   display: flex;
   flex-direction: column;
 }
 
-.editor-feature-grid .reveal .card {
+.creator-feature-grid .reveal .card {
   flex: 1;
   padding: 24px 22px;
   display: flex;
@@ -1003,14 +1003,14 @@ button { font-family: inherit; }
   min-height: 120px;
 }
 
-.editor-feature-grid .card h3 {
+.creator-feature-grid .card h3 {
   font-size: 17px;
   font-weight: 600;
   color: var(--text);
   margin: 0;
 }
 
-.editor-feature-grid .card p {
+.creator-feature-grid .card p {
   font-size: 14px;
   color: var(--text-2);
   line-height: 1.45;
@@ -1018,32 +1018,32 @@ button { font-family: inherit; }
 }
 
 @media (max-width: 1024px) {
-  .editor-feature-grid {
+  .creator-feature-grid {
     grid-template-columns: repeat(2, 1fr);
     gap: 16px;
   }
 }
 
 @media (max-width: 640px) {
-  .editor-feature-grid {
+  .creator-feature-grid {
     grid-template-columns: 1fr;
     gap: 12px;
   }
-  .editor-feature-grid .reveal .card {
+  .creator-feature-grid .reveal .card {
     padding: 18px 16px;
     min-height: auto;
   }
-  .editor-feature-grid .card h3 {
+  .creator-feature-grid .card h3 {
     font-size: 16px;
   }
 }
 
-.editor-last-section {
+.creator-last-section {
   padding-bottom: 24px !important;
 }
 
 @media (max-width: 768px) {
-  .editor-last-section {
+  .creator-last-section {
     padding-bottom: 16px !important;
   }
 }

@@ -57,7 +57,7 @@ function PlatformCards({ urls }) {
   );
 }
 
-function EditorDownloadPage() {
+function CreatorDownloadPage() {
   const { latest, olderVersions, loading, error } = useDownloadUrls('qcut-creator');
   const [showOlder, setShowOlder] = useState(false);
 
@@ -66,7 +66,7 @@ function EditorDownloadPage() {
       <section className="container hero-page">
         <h1 className="t-display">
           Download<br/>
-          <span style={{color: 'var(--amber)'}}>Q·Cut Editor</span>
+          <span style={{color: 'var(--amber)'}}>Q·Cut Creator</span>
         </h1>
         <p className="t-body-lg" style={{maxWidth: 560, marginTop: 16}}>
           Pick your platform. Install. Take control of your cut.
@@ -113,11 +113,11 @@ function EditorDownloadPage() {
           </>
         )}
         <div style={{textAlign: 'center', marginTop: 40}}>
-          <Link to="/editor" className="btn btn-ghost">← Back to Editor</Link>
+          <Link to="/creator" className="btn btn-ghost">← Back to Creator</Link>
         </div>
       </section>
     </div>
   );
 }
 
-export default EditorDownloadPage;
+export default CreatorDownloadPage;

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useRef, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { redirectToCheckout } from '../utils/checkout';
 import YouTubeEmbed from '../components/YouTubeEmbed';
@@ -7,10 +7,42 @@ import qcutDjImage from '../assets/images/qcut_dj.png';
 import Reveal from '../components/Reveal';
 
 const DJ_MONTH_PRICE_ID = 'price_1TQVJyBSfJ4A9uVJTrQzprla';
+const DJ_COMPARISON_ROWS = [
+  { feature: 'Core DJ sync and music-based cutting', free: 'Yes', unlimited: 'Yes' },
+  { feature: 'Weekly export quota', free: '6 exports per week', unlimited: 'Unlimited' },
+  { feature: 'Watermark', free: 'Yes', unlimited: 'No' },
+  { feature: 'Input length', free: 'Up to 20 minutes', unlimited: 'Unlimited' },
+  { feature: 'Clips export', free: 'Yes', unlimited: 'Yes' },
+  { feature: 'Miniset export', free: 'No', unlimited: 'Yes, up to 60min' },
+  { feature: 'Clip count', free: 'Up to 3 clips', unlimited: 'As many Drops as we can find' },
+  { feature: 'Dynamic zoom', free: 'Included, locked on', unlimited: 'Editable' },
+  { feature: 'Drop camera shake', free: 'No', unlimited: 'Editable' },
+  { feature: 'Export window', free: 'Up to 20 minutes for clips', unlimited: 'Unlimited' },
+  {
+    feature: 'Best for',
+    free: 'Trying Q-Cut DJ and short clip exports',
+    unlimited: 'Regular DJ content, longer exports, minisets, and full creative control',
+  },
+];
 
 function DJPage() {
+  const ctaSectionRef = useRef(null);
+  const [showDetailedComparison, setShowDetailedComparison] = useState(false);
+
   const handleSubscribe = async () => {
     await redirectToCheckout(DJ_MONTH_PRICE_ID);
+  };
+
+  const scrollToCtaSection = () => {
+    if (!ctaSectionRef.current) return;
+
+    const stickyHeaderOffset = 96;
+    const targetTop = ctaSectionRef.current.getBoundingClientRect().top + window.scrollY - stickyHeaderOffset;
+
+    window.scrollTo({
+      top: Math.max(0, targetTop),
+      behavior: 'smooth',
+    });
   };
 
   return (
@@ -31,12 +63,9 @@ function DJPage() {
           Drag in your video. Drag in your audio. Hit export. That's literally it.
         </p>
         <div style={{marginTop: 24, display:"flex", flexDirection:"column", gap: 12, alignItems:"flex-start"}}>
-          <Link to="/dj/download" className="btn btn-amber btn-amber-lg">
-            Download Q·Cut DJ
-          </Link>
-          {/*<button className="btn btn-amber btn-amber-lg" onClick={handleSubscribe}>*/}
-          {/*  Get Q·Cut DJ — €20/mo*/}
-          {/*</button>*/}
+          <button type="button" className="btn btn-amber btn-amber-lg" onClick={scrollToCtaSection}>
+            Get Q·Cut DJ
+          </button>
         </div>
       </section>
 
@@ -114,23 +143,6 @@ function DJPage() {
         </div>
       </Reveal>
 
-      {/* Tutorial Video Section */}
-      <section className="container section">
-        <div style={{textAlign: 'center', marginBottom: 48}}>
-          <h2 className="t-h2">See it in action</h2>
-          <p className="t-body-lg" style={{maxWidth: 640, margin: '20px auto 0'}}>
-            Watch how Q·Cut DJ transforms hours of footage into perfect clips
-          </p>
-        </div>
-        <div style={{maxWidth: 960, margin: '0 auto'}}>
-          <YouTubeEmbed
-            url="https://youtu.be/Bzbe1ti2tC8"
-            showControls={true}
-            autoPlay={false}
-            title="Q·Cut DJ Tutorial"
-          />
-        </div>
-      </section>
 
       {/* Features Section */}
       <section className="container section dj-last-section">
@@ -173,8 +185,68 @@ function DJPage() {
         </div>
       </section>
 
+      {/* DJ Free vs Unlimited Section */}
+      <section className="container section">
+        <Reveal>
+          <div style={{textAlign: 'center', marginBottom: 32}}>
+            <h2 className="t-h2">Q-Cut DJ Free or Q-Cut DJ Unlimited?</h2>
+          </div>
+        </Reveal>
+
+        <Reveal delay={60}>
+          <div className="card" style={{marginBottom: 24}}>
+            <h3 className="t-h3" style={{marginBottom: 12}}>The fast answer</h3>
+            <p className="t-body" style={{marginBottom: 10}}>
+              Choose <strong>Q-Cut DJ Free</strong> if you want to try Q-Cut with short exports and basic limits.
+            </p>
+            <p className="t-body">
+              Choose <strong>Q-Cut DJ Unlimited</strong> if you produce regular DJ content, need longer exports and minisets, and want full creative control.
+            </p>
+            <div style={{marginTop: 20}}>
+              <button
+                type="button"
+                className="btn btn-amber"
+                onClick={() => setShowDetailedComparison(!showDetailedComparison)}
+                aria-expanded={showDetailedComparison}
+                aria-controls="dj-compare-in-detail"
+              >
+                {showDetailedComparison ? 'Hide detailed comparison' : 'Compare in detail'}
+              </button>
+            </div>
+          </div>
+        </Reveal>
+
+        {showDetailedComparison ? (
+          <Reveal delay={120}>
+            <div id="dj-compare-in-detail" className="card">
+              <h3 className="t-h3" style={{marginBottom: 16}}>Feature snapshot</h3>
+              <div style={{overflowX: 'auto'}}>
+                <table style={{width: '100%', borderCollapse: 'collapse', minWidth: 720}}>
+                  <thead>
+                    <tr>
+                      <th style={{textAlign: 'left', padding: '10px 12px', borderBottom: '1px solid var(--line-2)', color: 'var(--text)'}}>Feature</th>
+                      <th style={{textAlign: 'left', padding: '10px 12px', borderBottom: '1px solid var(--line-2)', color: 'var(--text)'}}>Q-Cut DJ Free</th>
+                      <th style={{textAlign: 'left', padding: '10px 12px', borderBottom: '1px solid var(--line-2)', color: 'var(--text)'}}>Q-Cut DJ Unlimited</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {DJ_COMPARISON_ROWS.map((row) => (
+                      <tr key={row.feature}>
+                        <td style={{padding: '10px 12px', borderBottom: '1px solid var(--line-2)', color: 'var(--text-2)'}}>{row.feature}</td>
+                        <td style={{padding: '10px 12px', borderBottom: '1px solid var(--line-2)', color: 'var(--text)'}}>{row.free}</td>
+                        <td style={{padding: '10px 12px', borderBottom: '1px solid var(--line-2)', color: 'var(--text)'}}>{row.unlimited}</td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </Reveal>
+        ) : null}
+      </section>
+
       {/* CTA Section */}
-      <section className="container section" style={{textAlign: 'center', padding: '80px 32px'}}>
+      <section ref={ctaSectionRef} id="dj-cta-section" className="container section" style={{textAlign: 'center', padding: '80px 32px'}}>
         <h2 className="t-display">
           Start cutting smarter.
         </h2>
