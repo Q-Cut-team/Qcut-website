@@ -75,7 +75,7 @@ function DJPage() {
           Drag in your video. Drag in your audio. Hit export. That's literally it.
         </p>
         <div style={{marginTop: 24, display:"flex", gap: 12, flexWrap:"wrap"}}>
-          <button type="button" className="btn btn-amber btn-amber-lg" onClick={handleGetFree}>
+          <button type="button" className="btn btn-amber btn-amber-lg" onClick={scrollToCtaSection}>
             Get Q·Cut DJ
           </button>
           <Link to="/dj/download" className="btn btn-ghost">
@@ -299,7 +299,7 @@ function DJPage() {
             </ul>
             <button
               className="btn btn-amber"
-              onClick={() => handleCheckout(DJ_MONTH_PRICE_ID)}
+              onClick={handleGetFree}
             >
               Get for free
             </button>

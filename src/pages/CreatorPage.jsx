@@ -7,10 +7,14 @@ import qcutStudioImage from '../assets/images/qcut_studio.png';
 import BeatGrid from "../components/BeatGrid.jsx";
 import Reveal from '../components/Reveal';
 
-const CREATOR_MONTH_PRICE_ID = 'price_1TQVNtBSfJ4A9uVJmtEhAaR3';
-const CREATOR_ONETIME_PRICE_ID = 'price_1TQVNtBSfJ4A9uVJhclSWGnr';
-const STUDIO_MONTH_PRICE_ID = 'price_1TQVSjBSfJ4A9uVJkyzTq6JV';
-const STUDIO_ONETIME_PRICE_ID = 'price_1TQVSjBSfJ4A9uVJHMHgrTxr';
+const PRICE_IDS = {
+  EDITOR_MONTH: 'price_1TZZd5PjWn7pNPmYOmu7e4o9',//now free trial
+  EDITOR_ONETIME: null,
+  STUDIO_MONTH: 'price_1TZZcZPjWn7pNPmYlst2j6X3',//now free trial
+  STUDIO_ONETIME: null,
+  DJ_UNLIMITED: null // Coming soon
+};
+
 
 const STUDIO_KEY_POINTS = [
   'DaVinci Resolve and XML workflows.',
@@ -99,13 +103,14 @@ function CreatorPage() {
   const pricingSectionRef = useRef(null);
   const [showDetailedComparison, setShowDetailedComparison] = useState(false);
 
-  const handleCreatorMonthly = async () => {
-    await redirectToCheckout(CREATOR_MONTH_PRICE_ID);
+  const handleCheckout = async (priceId) => {
+    if (!priceId) {
+      showToast("Coming soon — we're working on it! 🚧");
+      return;
+    }
+    await redirectToCheckout(priceId);
   };
 
-  const handleStudioMonthly = async () => {
-    await redirectToCheckout(STUDIO_MONTH_PRICE_ID);
-  };
 
   const scrollToPricingSection = () => {
     if (!pricingSectionRef.current) return;
@@ -437,98 +442,123 @@ function CreatorPage() {
         <div style={{textAlign: 'center', marginBottom: 48}}>
           <h2 className="t-h2">Choose your workflow</h2>
         </div>
-        <div className="tier-grid" style={{maxWidth: 720, margin: '0 auto'}}>
-          {/* Creator Plan */}
-          <div className="tier-card">
-            <h3>Creator</h3>
-            <div className="price">€30<span className="unit">/month</span></div>
-            <p>Perfect for content creators and small studios</p>
-            <ul>
-              <li>
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3">
-                  <polyline points="20 6 9 17 4 12" />
-                </svg>
-                <span>Up to 10 projects/month</span>
-              </li>
-              <li>
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3">
-                  <polyline points="20 6 9 17 4 12" />
-                </svg>
-                <span>4K export resolution</span>
-              </li>
-              <li>
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3">
-                  <polyline points="20 6 9 17 4 12" />
-                </svg>
-                <span>Beat detection</span>
-              </li>
-              <li>
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3">
-                  <polyline points="20 6 9 17 4 12" />
-                </svg>
-                <span>Preset library</span>
-              </li>
-              <li>
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3">
-                  <polyline points="20 6 9 17 4 12" />
-                </svg>
-                <span>Email support · 72h</span>
-              </li>
-            </ul>
-            <button className="btn btn-amber" onClick={handleCreatorMonthly}>
-              Subscribe €30/month
-            </button>
-          </div>
 
-          {/* Studio Plan */}
-          <div className="tier-card featured">
-            <span className="badge">Studio</span>
-            <h3>Studio</h3>
-            <div className="price">€50<span className="unit">/month</span></div>
-            <p>For professional studios and agencies</p>
-            <ul>
-              <li>
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3">
-                  <polyline points="20 6 9 17 4 12" />
-                </svg>
-                <span>Unlimited projects</span>
-              </li>
-              <li>
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3">
-                  <polyline points="20 6 9 17 4 12" />
-                </svg>
-                <span>8K export resolution</span>
-              </li>
-              <li>
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3">
-                  <polyline points="20 6 9 17 4 12" />
-                </svg>
-                <span>Advanced AI sync</span>
-              </li>
-              <li>
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3">
-                  <polyline points="20 6 9 17 4 12" />
-                </svg>
-                <span>Custom presets</span>
-              </li>
-              <li>
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3">
-                  <polyline points="20 6 9 17 4 12" />
-                </svg>
-                <span>Priority render</span>
-              </li>
-              <li>
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3">
-                  <polyline points="20 6 9 17 4 12" />
-                </svg>
-                <span>Live chat support</span>
-              </li>
-            </ul>
-            <button className="btn btn-amber" onClick={handleStudioMonthly}>
-              Subscribe €50/month
-            </button>
+        {/* Creator Plans Section */}
+        <section id="creator" className="container section">
+          <div className="tier-grid pricing-plan-grid">
+            {/* Creator Plan */}
+            <div className="tier-card">
+              <h3>Creator</h3>
+              <div className="price">€30<span className="unit">/month</span></div>
+              <p>For content creators</p>
+              <ul>
+                <li>
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3">
+                    <polyline points="20 6 9 17 4 12" />
+                  </svg>
+                  <span>Up to 10 projects/month</span>
+                </li>
+                <li>
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3">
+                    <polyline points="20 6 9 17 4 12" />
+                  </svg>
+                  <span>XML export (Resolve, FCPX)</span>
+                </li>
+                <li>
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3">
+                    <polyline points="20 6 9 17 4 12" />
+                  </svg>
+                  <span>4K export</span>
+                </li>
+                <li>
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3">
+                    <polyline points="20 6 9 17 4 12" />
+                  </svg>
+                  <span>Preset library</span>
+                </li>
+                <li>
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3">
+                    <polyline points="20 6 9 17 4 12" />
+                  </svg>
+                  <span>Email support · 72h</span>
+                </li>
+              </ul>
+              <button
+                className="btn btn-amber"
+                onClick={() => handleCheckout(PRICE_IDS.EDITOR_MONTH)}
+              >
+                Test for free
+              </button>
+
+              <button
+                className="btn btn-ghost"
+                onClick={() => handleCheckout(PRICE_IDS.EDITOR_ONETIME)}
+                style={{marginTop: 8}}
+              >
+                One-time (Coming soon)
+              </button>
+            </div>
+
+            {/* Studio Plan */}
+            <div className="tier-card featured">
+              <span className="badge">Studio</span>
+              <h3>Studio</h3>
+              <div className="price">€50<span className="unit">/month</span></div>
+              <p>For production studios</p>
+              <ul>
+                <li>
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3">
+                    <polyline points="20 6 9 17 4 12" />
+                  </svg>
+                  <span>Unlimited projects</span>
+                </li>
+                <li>
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3">
+                    <polyline points="20 6 9 17 4 12" />
+                  </svg>
+                  <span>All NLE support</span>
+                </li>
+                <li>
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3">
+                    <polyline points="20 6 9 17 4 12" />
+                  </svg>
+                  <span>8K export</span>
+                </li>
+                <li>
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3">
+                    <polyline points="20 6 9 17 4 12" />
+                  </svg>
+                  <span>Custom presets</span>
+                </li>
+                <li>
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3">
+                    <polyline points="20 6 9 17 4 12" />
+                  </svg>
+                  <span>Priority render</span>
+                </li>
+                <li>
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3">
+                    <polyline points="20 6 9 17 4 12" />
+                  </svg>
+                  <span>Live chat support</span>
+                </li>
+              </ul>
+              <button
+                className="btn btn-amber"
+                onClick={() => handleCheckout(PRICE_IDS.STUDIO_MONTH)}
+              >
+                Test for free
+              </button>
+              <button
+                className="btn btn-ghost"
+                onClick={() => handleCheckout(PRICE_IDS.STUDIO_ONETIME)}
+                style={{marginTop: 8}}
+              >
+                One-time (Coming soon)
+              </button>
+            </div>
           </div>
-        </div>
+        </section>
       </section>
     </div>
   );
