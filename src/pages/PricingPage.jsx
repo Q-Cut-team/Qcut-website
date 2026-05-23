@@ -19,7 +19,7 @@ function PricingPage() {
 
   const handleCheckout = async (priceId) => {
     if (!priceId) {
-      showToast("DJ Unlimited coming soon — we're working on it! 🚧");
+      showToast("Coming soon — we're working on it! 🚧");
       return;
     }
     await redirectToCheckout(priceId);

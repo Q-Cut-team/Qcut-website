@@ -7,10 +7,14 @@ import qcutStudioImage from '../assets/images/qcut_studio.png';
 import BeatGrid from "../components/BeatGrid.jsx";
 import Reveal from '../components/Reveal';
 
-const CREATOR_MONTH_PRICE_ID = 'price_1TQVNtBSfJ4A9uVJmtEhAaR3';
-const CREATOR_ONETIME_PRICE_ID = 'price_1TQVNtBSfJ4A9uVJhclSWGnr';
-const STUDIO_MONTH_PRICE_ID = 'price_1TQVSjBSfJ4A9uVJkyzTq6JV';
-const STUDIO_ONETIME_PRICE_ID = 'price_1TQVSjBSfJ4A9uVJHMHgrTxr';
+const PRICE_IDS = {
+  EDITOR_MONTH: 'price_1TZZd5PjWn7pNPmYOmu7e4o9',//now free trial
+  EDITOR_ONETIME: null,
+  STUDIO_MONTH: 'price_1TZZcZPjWn7pNPmYlst2j6X3',//now free trial
+  STUDIO_ONETIME: null,
+  DJ_UNLIMITED: null // Coming soon
+};
+
 
 const STUDIO_KEY_POINTS = [
   'DaVinci Resolve and XML workflows.',
@@ -99,13 +103,14 @@ function CreatorPage() {
   const pricingSectionRef = useRef(null);
   const [showDetailedComparison, setShowDetailedComparison] = useState(false);
 
-  const handleCreatorMonthly = async () => {
-    await redirectToCheckout(CREATOR_MONTH_PRICE_ID);
+  const handleCheckout = async (priceId) => {
+    if (!priceId) {
+      showToast("Coming soon — we're working on it! 🚧");
+      return;
+    }
+    await redirectToCheckout(priceId);
   };
 
-  const handleStudioMonthly = async () => {
-    await redirectToCheckout(STUDIO_MONTH_PRICE_ID);
-  };
 
   const scrollToPricingSection = () => {
     if (!pricingSectionRef.current) return;
@@ -136,11 +141,19 @@ function CreatorPage() {
         <div style={{marginTop: 24, display:"flex", flexDirection:"column", gap: 12, alignItems:"flex-start"}}>
           <div style={{display:"flex", gap: 12, flexWrap:"wrap"}}>
             <button type="button" className="btn btn-amber btn-amber-lg" onClick={scrollToPricingSection}>
-              Get Creator
+              Get Q-Cut Creator
             </button>
+            <Link to="/creator/download" className="btn btn-ghost">
+              Download Q-Cut Creator
+            </Link>
+          </div>
+          <div style={{display:"flex", gap: 12, flexWrap:"wrap"}}>
             <button type="button" className="btn btn-amber btn-amber-lg" onClick={scrollToPricingSection}>
-              Get Studio
+              Get Q-Cut Studio
             </button>
+            <Link to="/studio/download" className="btn btn-ghost">
+              Download Q-Cut Studio
+            </Link>
           </div>
           {/*<Link to="/pricing" className="btn btn-amber btn-amber-lg">*/}
           {/*  Choose your plan*/}
@@ -517,7 +530,7 @@ function CreatorPage() {
               One-time (Coming soon)
             </button>
           </div>
-        </div>
+        </section>
       </section>
     </div>
   );
