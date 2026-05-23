@@ -38,7 +38,7 @@ function PricingPage() {
       </section>
 
       {/* DJ Plans Section */}
-      <section className="container section">
+      <section id="dj-cta-section" className="container section">
         <div style={{textAlign: 'center', marginBottom: 48}}>
           <span className="t-label">For DJs</span>
           <h2 className="t-h2" style={{marginTop: 12}}>Live set editing</h2>
