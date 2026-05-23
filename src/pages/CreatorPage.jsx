@@ -120,7 +120,7 @@ function CreatorPage() {
   };
 
   return (
-    <div className="page-fade-enter">
+    <div className="page-fade-enter creator-page">
       {/* Hero Section */}
       <section className="container hero-page">
         <h1 className="t-display">
@@ -325,7 +325,7 @@ function CreatorPage() {
 
         {showDetailedComparison ? (
           <div id="compare-in-detail">
-            <div style={{display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))', gap: 24}}>
+            <div className="comparison-card-grid" style={{display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: 24}}>
               <Reveal delay={100}>
                 <div className="card">
                   <h3 className="t-h3" style={{marginBottom: 8}}>Q/Cut Studio</h3>
@@ -368,8 +368,8 @@ function CreatorPage() {
             <Reveal delay={220}>
               <div className="card" style={{marginTop: 24}}>
                 <h3 className="t-h3" style={{marginBottom: 16}}>Feature snapshot</h3>
-                <div style={{overflowX: 'auto'}}>
-                  <table style={{width: '100%', borderCollapse: 'collapse', minWidth: 680}}>
+                <div className="comparison-table-wrap">
+                  <table className="comparison-table" style={{width: '100%', borderCollapse: 'collapse'}}>
                     <thead>
                       <tr>
                         <th style={{textAlign: 'left', padding: '10px 12px', borderBottom: '1px solid var(--line-2)', color: 'var(--text)'}}>Feature</th>
@@ -380,9 +380,9 @@ function CreatorPage() {
                     <tbody>
                       {FEATURE_SNAPSHOT.map((row) => (
                         <tr key={row.feature}>
-                          <td style={{padding: '10px 12px', borderBottom: '1px solid var(--line-2)', color: 'var(--text-2)'}}>{row.feature}</td>
-                          <td style={{padding: '10px 12px', borderBottom: '1px solid var(--line-2)', color: 'var(--text)'}}>{row.studio}</td>
-                          <td style={{padding: '10px 12px', borderBottom: '1px solid var(--line-2)', color: 'var(--text)'}}>{row.creator}</td>
+                          <td data-label="Feature" style={{padding: '10px 12px', borderBottom: '1px solid var(--line-2)', color: 'var(--text-2)'}}>{row.feature}</td>
+                          <td data-label="Q/Cut Studio" style={{padding: '10px 12px', borderBottom: '1px solid var(--line-2)', color: 'var(--text)'}}>{row.studio}</td>
+                          <td data-label="Q-Cut Creator" style={{padding: '10px 12px', borderBottom: '1px solid var(--line-2)', color: 'var(--text)'}}>{row.creator}</td>
                         </tr>
                       ))}
                     </tbody>
@@ -407,7 +407,7 @@ function CreatorPage() {
       </section>
 
       {/* CTA Section */}
-      <section className="container section" style={{textAlign: 'center', padding: '80px 32px'}}>
+      <section className="container section creator-cta-section" style={{textAlign: 'center'}}>
         <h2 className="t-display">
           Ready to automate?
         </h2>

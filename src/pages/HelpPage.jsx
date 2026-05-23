@@ -84,7 +84,7 @@ function HelpPage() {
             </p>
           </div>
           <form onSubmit={handleCheck} style={{marginTop: 24}}>
-            <div style={{display: 'flex', gap: 8}}>
+            <div className="billing-check-row" style={{display: 'flex', gap: 8}}>
               <input
                 type="email"
                 value={email}

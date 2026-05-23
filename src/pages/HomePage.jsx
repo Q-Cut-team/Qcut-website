@@ -25,7 +25,7 @@ function HomePage() {
             </svg>
           </Link>
           <Link to="/creator" className="btn btn-amber btn-amber-lg">
-            I'm a Editor
+            I'm an Editor
             <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
               <line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/>
             </svg>
@@ -75,7 +75,7 @@ function HomePage() {
             </p>
           </div>
         </Reveal>
-        <div style={{display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))', gap: 24}}>
+        <div style={{display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: 24}}>
           <Reveal delay={0}>
             <Link to="/dj" className="tool-card">
               <span className="tag">For DJs</span>

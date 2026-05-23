@@ -26,7 +26,7 @@ function PricingPage() {
   };
 
   return (
-    <div className="page-fade-enter">
+    <div className="page-fade-enter pricing-page">
       {/* Hero Section */}
       <section className="hero-page container" style={{textAlign:"center"}}>
         <h1 className="t-display" style={{maxWidth: 880, margin:"0 auto"}}>
@@ -38,12 +38,12 @@ function PricingPage() {
       </section>
 
       {/* DJ Plans Section */}
-      <section id="dj-cta-section" className="container section">
+      <section id="dj" className="container section">
         <div style={{textAlign: 'center', marginBottom: 48}}>
           <span className="t-label">For DJs</span>
           <h2 className="t-h2" style={{marginTop: 12}}>Live set editing</h2>
         </div>
-        <div className="tier-grid">
+        <div className="tier-grid pricing-plan-grid">
           {/* DJ Plan */}
           <div className="tier-card">
             <h3>DJ</h3>
@@ -132,12 +132,12 @@ function PricingPage() {
       </section>
 
       {/* Creator Plans Section */}
-      <section className="container section">
+      <section id="creator" className="container section">
         <div style={{textAlign: 'center', marginBottom: 48}}>
           <span className="t-label">For Creators</span>
           <h2 className="t-h2" style={{marginTop: 12}}>Professional multicam</h2>
         </div>
-        <div className="tier-grid">
+        <div className="tier-grid pricing-plan-grid">
           {/* Creator Plan */}
           <div className="tier-card">
             <h3>Creator</h3>
@@ -278,7 +278,7 @@ function PricingPage() {
       </section>
 
       {/* CTA Section */}
-      <section className="container section" style={{textAlign: 'center', padding: '80px 32px'}}>
+      <section className="container section pricing-cta-section" style={{textAlign: 'center'}}>
         <h2 className="t-display">
           Ready to start?
         </h2>

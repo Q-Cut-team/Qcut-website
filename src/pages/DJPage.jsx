@@ -46,7 +46,7 @@ function DJPage() {
   };
 
   return (
-    <div className="page-fade-enter">
+    <div className="page-fade-enter dj-page">
       {/* Hero Section */}
       <section className="container hero-page">
         <h1 className="t-display" style={{
@@ -186,7 +186,7 @@ function DJPage() {
       </section>
 
       {/* DJ Free vs Unlimited Section */}
-      <section className="container section">
+      <section className="container section dj-compare-section">
         <Reveal>
           <div style={{textAlign: 'center', marginBottom: 32}}>
             <h2 className="t-h2">Q-Cut DJ Free or Q-Cut DJ Unlimited?</h2>
@@ -220,8 +220,8 @@ function DJPage() {
           <Reveal delay={120}>
             <div id="dj-compare-in-detail" className="card">
               <h3 className="t-h3" style={{marginBottom: 16}}>Feature snapshot</h3>
-              <div style={{overflowX: 'auto'}}>
-                <table style={{width: '100%', borderCollapse: 'collapse', minWidth: 720}}>
+              <div className="comparison-table-wrap">
+                <table className="comparison-table" style={{width: '100%', borderCollapse: 'collapse'}}>
                   <thead>
                     <tr>
                       <th style={{textAlign: 'left', padding: '10px 12px', borderBottom: '1px solid var(--line-2)', color: 'var(--text)'}}>Feature</th>
@@ -232,9 +232,9 @@ function DJPage() {
                   <tbody>
                     {DJ_COMPARISON_ROWS.map((row) => (
                       <tr key={row.feature}>
-                        <td style={{padding: '10px 12px', borderBottom: '1px solid var(--line-2)', color: 'var(--text-2)'}}>{row.feature}</td>
-                        <td style={{padding: '10px 12px', borderBottom: '1px solid var(--line-2)', color: 'var(--text)'}}>{row.free}</td>
-                        <td style={{padding: '10px 12px', borderBottom: '1px solid var(--line-2)', color: 'var(--text)'}}>{row.unlimited}</td>
+                        <td data-label="Feature" style={{padding: '10px 12px', borderBottom: '1px solid var(--line-2)', color: 'var(--text-2)'}}>{row.feature}</td>
+                        <td data-label="Q-Cut DJ Free" style={{padding: '10px 12px', borderBottom: '1px solid var(--line-2)', color: 'var(--text)'}}>{row.free}</td>
+                        <td data-label="Q-Cut DJ Unlimited" style={{padding: '10px 12px', borderBottom: '1px solid var(--line-2)', color: 'var(--text)'}}>{row.unlimited}</td>
                       </tr>
                     ))}
                   </tbody>
@@ -246,7 +246,7 @@ function DJPage() {
       </section>
 
       {/* CTA Section */}
-      <section ref={ctaSectionRef} id="dj-cta-section" className="container section" style={{textAlign: 'center', padding: '80px 32px'}}>
+      <section ref={ctaSectionRef} id="dj-cta-section" className="container section dj-cta-section" style={{textAlign: 'center'}}>
         <h2 className="t-display">
           Start cutting smarter.
         </h2>

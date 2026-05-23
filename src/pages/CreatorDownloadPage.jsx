@@ -7,7 +7,7 @@ function PlatformCards({ urls }) {
   return (
     <div style={{
       display: 'grid',
-      gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))',
+      gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))',
       gap: 24,
       maxWidth: 880,
       margin: '0 auto',
