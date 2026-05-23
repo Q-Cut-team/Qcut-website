@@ -10,7 +10,7 @@ const DJ_MONTH_PRICE_ID = 'price_1TQVJyBSfJ4A9uVJTrQzprla';
 const DJ_UNLIMITED_PRICE_ID = null;
 const DJ_COMPARISON_ROWS = [
   { feature: 'Core DJ sync and music-based cutting', free: 'Yes', unlimited: 'Yes' },
-  { feature: 'Weekly export quota', free: '6 exports per week', unlimited: 'Unlimited' },
+  { feature: 'Weekly export quota', free: '4 exports per week', unlimited: 'Unlimited' },
   { feature: 'Watermark', free: 'Yes', unlimited: 'No' },
   { feature: 'Input length', free: 'Up to 20 minutes', unlimited: 'Unlimited' },
   { feature: 'Clips export', free: 'Yes', unlimited: 'Yes' },
@@ -70,14 +70,14 @@ function DJPage() {
         </p>
         <div style={{marginTop: 24, display:"flex", flexDirection:"column", gap: 12, alignItems:"flex-start"}}>
           <button type="button" className="btn btn-amber btn-amber-lg" onClick={scrollToCtaSection}>
-            Get Q·Cut DJ
+            Download Q-Cut DJ
           </button>
         </div>
       </section>
 
       {/* Product Screenshot Section */}
       <Reveal as="section" className="container section">
-        <div className="product-grid" style={{display:"grid", gridTemplateColumns:"1fr 1.4fr", gap: 32, alignItems:"center"}}>
+        <div className="product-grid dj-product-grid" style={{display:"grid", gridTemplateColumns:"1fr 1.4fr", gap: 32, alignItems:"center"}}>
           <div>
             <h2 className="t-h2">Two clicks<br/>One button</h2>
             <p className="t-body-lg" style={{marginTop: 16, maxWidth: 440}}>
@@ -125,10 +125,10 @@ function DJPage() {
         </div>
       </Reveal>
 
-      {/* Stats Section */}
+      {/* Stats Section 
       <Reveal as="section" className="container section">
         <h2 className="t-h2" style={{marginBottom: 32, maxWidth: 720}}>
-          30 clips. Under a minute. Every time.
+          Fast Social Media Clips. Every Time.
         </h2>
         <div className="scoreboard-row">
           <div className="scoreboard">
@@ -147,7 +147,7 @@ function DJPage() {
             <div className="lbl">Total effort</div>
           </div>
         </div>
-      </Reveal>
+      </Reveal>*/}
 
 
       {/* Features Section */}
@@ -203,7 +203,7 @@ function DJPage() {
           <div className="card" style={{marginBottom: 24}}>
             <h3 className="t-h3" style={{marginBottom: 12}}>The fast answer</h3>
             <p className="t-body" style={{marginBottom: 10}}>
-              Choose <strong>Q-Cut DJ Free</strong> if you want to try Q-Cut with short exports and basic limits.
+              Choose <strong>Q-Cut DJ Free</strong> if you want to use Q-Cut for free with short exports and basic limits.
             </p>
             <p className="t-body">
               Choose <strong>Q-Cut DJ Unlimited</strong> if you produce regular DJ content, need longer exports and minisets, and want full creative control.
@@ -267,7 +267,7 @@ function DJPage() {
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3">
                   <polyline points="20 6 9 17 4 12" />
                 </svg>
-                <span>Up to 10 sets/month</span>
+                <span>Up to 20 minutes </span>
               </li>
               <li>
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3">
@@ -279,27 +279,27 @@ function DJPage() {
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3">
                   <polyline points="20 6 9 17 4 12" />
                 </svg>
-                <span>Miniset + Clips modes</span>
+                <span>Up to 3 clips</span>
               </li>
               <li>
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3">
                   <polyline points="20 6 9 17 4 12" />
                 </svg>
-                <span>Social-ready presets</span>
+                <span>4 exports per week</span>
               </li>
             </ul>
             <button
               className="btn btn-amber"
               onClick={() => handleCheckout(DJ_MONTH_PRICE_ID)}
             >
-              Get for free
+              Download for free
             </button>
           </div>
 
           <div className="tier-card featured">
             <span className="badge">Unlimited</span>
             <h3>DJ Unlimited</h3>
-            <div className="price">€35<span className="unit">/month</span></div>
+            <div className="price">€TBA<span className="unit">/month</span></div>
             <p>For touring DJs & agencies</p>
             <ul>
               <li>
@@ -318,19 +318,19 @@ function DJPage() {
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3">
                   <polyline points="20 6 9 17 4 12" />
                 </svg>
-                <span>Cloud backup</span>
+                <span>Unlimited input length</span>
               </li>
               <li>
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3">
                   <polyline points="20 6 9 17 4 12" />
                 </svg>
-                <span>Priority render queue</span>
+                <span>Miniset export</span>
               </li>
               <li>
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3">
                   <polyline points="20 6 9 17 4 12" />
                 </svg>
-                <span>Direct upload to socials</span>
+                <span>No Watermark</span>
               </li>
             </ul>
             <button

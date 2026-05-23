@@ -25,7 +25,7 @@ function HomePage() {
             </svg>
           </Link>
           <Link to="/creator" className="btn btn-amber btn-amber-lg">
-            I'm an Editor
+            I'm a Creator
             <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
               <line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/>
             </svg>
@@ -39,18 +39,18 @@ function HomePage() {
           left: 0,
           right: 0,
           height: '120px',
-          background: 'linear-gradient(180deg, transparent 0%, var(--bg) 100%)',
+          
           pointerEvents: 'none',
           zIndex: 2
         }} />
       </div>
 
       {/* Tutorial Video Section */}
-      <Reveal as="section" className="container" style={{paddingTop: 16, paddingBottom: 40}}>
+      <Reveal as="section" className="container" style={{ paddingTop: 16, paddingBottom: 40}}>
         <div style={{textAlign: 'center', marginBottom: 32}}>
           <h2 className="t-h2">See how it performs</h2>
           <p className="t-body-lg" style={{maxWidth: 640, margin: '20px auto 0'}}>
-            Watch how Q·Cut DJ transforms hours of footage into perfect clips
+            Watch how Q-Cut DJ transforms hours of footage into perfect clips
           </p>
         </div>
         <div style={{maxWidth: 960, margin: '0 auto'}}>
@@ -104,37 +104,19 @@ function HomePage() {
         </div>
       </section>
 
-      {/* Stats Section */}
-      <section className="container section">
-        <div className="scoreboard-row">
-          <div className="scoreboard">
-            <div className="corner" />
-            <div className="num">60<span className="unit">sec</span></div>
-            <div className="lbl">Average export time</div>
-          </div>
-          <div className="scoreboard">
-            <div className="corner" />
-            <div className="num">30<span className="unit">clips</span></div>
-            <div className="lbl">Per session</div>
-          </div>
-          <div className="scoreboard">
-            <div className="corner" />
-            <div className="num">0<span className="unit">%</span></div>
-            <div className="lbl">Manual editing</div>
-          </div>
-        </div>
-      </section>
-
       {/* CTA Section */}
       <section className="container home-cta-section" style={{textAlign: 'center', padding: '64px 32px 24px'}}>
         <Reveal>
+          <h2 className="t-display" style={{color:"white"}}>
+            Skip the monotonous editing and get back to 
+          </h2>
           <h2 className="t-display" style={{color:"var(--amber)"}}>
-            Skip the monotonous editing and get back to creative work
+            creative work
           </h2>
         </Reveal>
 
         <p className="t-body-lg" style={{maxWidth: 560, margin: '24px auto 40px'}}>
-          Join the beta. Limited spots available.
+          try for free and see how Q-Cut can transform your workflow.
         </p>
         <div style={{display: 'flex', gap: 16, justifyContent: 'center', flexWrap: 'wrap'}}>
           <Link to="/pricing" className="btn btn-amber btn-amber-lg">

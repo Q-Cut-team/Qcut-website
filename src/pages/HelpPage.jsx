@@ -54,23 +54,18 @@ function HelpPage() {
             </p>
           </div>
           <div className="card" style={{marginBottom: 16}}>
-            <h3 className="t-h3" style={{marginBottom: 12}}>Which video formats are supported?</h3>
-            <p className="t-body">
-              Q·Cut supports all major video formats including MP4, MOV, ProRes, DNxHD, and more. We handle mixed frame rates and resolutions automatically.
-            </p>
-          </div>
-          <div className="card" style={{marginBottom: 16}}>
             <h3 className="t-h3" style={{marginBottom: 12}}>Can I use Q·Cut with my existing creator?</h3>
             <p className="t-body">
-              Yes! The Creator version exports XML timelines that work with DaVinci Resolve, Final Cut Pro, and Adobe Premiere. Your color grades and effects remain intact.
+              Yes! Creator & Studio versions can exports XML timelines that work with DaVinci Resolve and Adobe Premiere. Studio can also directly connect with Resolve to optimize the workflow
             </p>
           </div>
+          {/*
           <div className="card" style={{marginBottom: 16}}>
             <h3 className="t-h3" style={{marginBottom: 12}}>What's the difference between subscription and one-time purchase?</h3>
             <p className="t-body">
               Subscriptions include all updates and new features. One-time purchases include 12 months of updates, after which you can continue using your version or renew for updates.
             </p>
-          </div>
+          </div>*/}
         </div>
       </section>
 

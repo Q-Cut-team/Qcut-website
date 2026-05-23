@@ -41,7 +41,7 @@ function PricingPage() {
       <section id="dj" className="container section">
         <div style={{textAlign: 'center', marginBottom: 48}}>
           <span className="t-label">For DJs</span>
-          <h2 className="t-h2" style={{marginTop: 12}}>Live set editing</h2>
+          <h2 className="t-h2" style={{marginTop: 12}}>Fast & Easy Clips</h2>
         </div>
         <div className="tier-grid pricing-plan-grid">
           {/* DJ Plan */}
@@ -54,7 +54,7 @@ function PricingPage() {
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3">
                   <polyline points="20 6 9 17 4 12" />
                 </svg>
-                <span>Up to 10 sets/month</span>
+                <span>Up to 20 minutes </span>
               </li>
               <li>
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3">
@@ -66,13 +66,13 @@ function PricingPage() {
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3">
                   <polyline points="20 6 9 17 4 12" />
                 </svg>
-                <span>Miniset + Clips modes</span>
+                <span>Up to 3 clips</span>
               </li>
               <li>
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3">
                   <polyline points="20 6 9 17 4 12" />
                 </svg>
-                <span>Social-ready presets</span>
+                <span>4 exports per week</span>
               </li>
             </ul>
             <button 
@@ -87,7 +87,7 @@ function PricingPage() {
           <div className="tier-card featured">
             <span className="badge">Unlimited</span>
             <h3>DJ Unlimited</h3>
-            <div className="price">€35<span className="unit">/month</span></div>
+            <div className="price">€TBA<span className="unit">/month</span></div>
             <p>For touring DJs & agencies</p>
             <ul>
               <li>
@@ -106,19 +106,19 @@ function PricingPage() {
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3">
                   <polyline points="20 6 9 17 4 12" />
                 </svg>
-                <span>Cloud backup</span>
+                <span>Unlimited input length</span>
               </li>
               <li>
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3">
                   <polyline points="20 6 9 17 4 12" />
                 </svg>
-                <span>Priority render queue</span>
+                <span>Miniset export</span>
               </li>
               <li>
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3">
                   <polyline points="20 6 9 17 4 12" />
                 </svg>
-                <span>Direct upload to socials</span>
+                <span>No Watermark</span>
               </li>
             </ul>
             <button 
@@ -141,38 +141,32 @@ function PricingPage() {
           {/* Creator Plan */}
           <div className="tier-card">
             <h3>Creator</h3>
-            <div className="price">€30<span className="unit">/month</span></div>
+            <div className="price">€TBA<span className="unit">/month</span></div>
             <p>For content creators</p>
             <ul>
               <li>
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3">
                   <polyline points="20 6 9 17 4 12" />
                 </svg>
-                <span>Up to 10 projects/month</span>
+                <span>XML workflow</span>
               </li>
               <li>
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3">
                   <polyline points="20 6 9 17 4 12" />
                 </svg>
-                <span>XML export (Resolve, FCPX)</span>
+                <span>Vibe based Cutting</span>
               </li>
               <li>
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3">
                   <polyline points="20 6 9 17 4 12" />
                 </svg>
-                <span>4K export</span>
+                <span>Audio and timecode synchronization</span>
               </li>
               <li>
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3">
                   <polyline points="20 6 9 17 4 12" />
                 </svg>
                 <span>Preset library</span>
-              </li>
-              <li>
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3">
-                  <polyline points="20 6 9 17 4 12" />
-                </svg>
-                <span>Email support · 72h</span>
               </li>
             </ul>
             <button 
@@ -195,32 +189,32 @@ function PricingPage() {
           <div className="tier-card featured">
             <span className="badge">Studio</span>
             <h3>Studio</h3>
-            <div className="price">€50<span className="unit">/month</span></div>
+            <div className="price">€TBA<span className="unit">/month</span></div>
             <p>For production studios</p>
             <ul>
               <li>
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3">
                   <polyline points="20 6 9 17 4 12" />
                 </svg>
-                <span>Unlimited projects</span>
+                <span>XML and DaVinci Resolve workflow</span>
               </li>
               <li>
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3">
                   <polyline points="20 6 9 17 4 12" />
                 </svg>
-                <span>All NLE support</span>
+                <span>Audio and timecode synchronization</span>
               </li>
               <li>
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3">
                   <polyline points="20 6 9 17 4 12" />
                 </svg>
-                <span>8K export</span>
+                <span>Full Control over how the cut looks</span>
               </li>
               <li>
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3">
                   <polyline points="20 6 9 17 4 12" />
                 </svg>
-                <span>Custom presets</span>
+                <span>Social Media Clips</span>
               </li>
               <li>
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3">
@@ -232,7 +226,7 @@ function PricingPage() {
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3">
                   <polyline points="20 6 9 17 4 12" />
                 </svg>
-                <span>Live chat support</span>
+                <span>Fusion/effect options</span>
               </li>
             </ul>
             <button 
@@ -258,15 +252,9 @@ function PricingPage() {
           <h2 className="t-h2">Questions?</h2>
         </div>
         <div className="card" style={{marginBottom: 16}}>
-          <h3 className="t-h3" style={{marginBottom: 12}}>Can I switch plans?</h3>
-          <p className="t-body">
-            Yes. Upgrade or downgrade anytime. Changes take effect on your next billing cycle.
-          </p>
-        </div>
-        <div className="card" style={{marginBottom: 16}}>
           <h3 className="t-h3" style={{marginBottom: 12}}>What's the difference between DJ and Creator?</h3>
           <p className="t-body">
-            DJ is optimized for live set recordings with beat detection. Creator works with any footage and exports to professional NLE timelines.
+            DJ is optimized to quickly get highlights out of your Dj Set. Creator works with any footage and exports to professional NLE timelines.
           </p>
         </div>
         <div className="card" style={{marginBottom: 16}}>
@@ -277,7 +265,7 @@ function PricingPage() {
         </div>
       </section>
 
-      {/* CTA Section */}
+      {/* CTA Section 
       <section className="container section pricing-cta-section" style={{textAlign: 'center'}}>
         <h2 className="t-display">
           Ready to start?
@@ -290,7 +278,7 @@ function PricingPage() {
             Contact sales
           </Link>
         </div>
-      </section>
+      </section>*/}
 
       <Toast message={message} isVisible={isVisible} onClose={hideToast} />
     </div>

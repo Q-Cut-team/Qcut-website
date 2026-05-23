@@ -34,7 +34,7 @@ const CREATOR_KEY_POINTS = [
 const FEATURE_SNAPSHOT = [
   { feature: 'XML workflow', studio: 'Yes', creator: 'Yes' },
   { feature: 'DaVinci Resolve workflow', studio: 'Yes', creator: 'No' },
-  { feature: 'Music Based Cutting', studio: 'No', creator: 'Yes' },
+  { feature: 'Music Based Cutting', studio: 'Yes', creator: 'Yes' },
   { feature: 'Control over how the cut looks', studio: 'Yes', creator: 'Set the vibe' },
   { feature: 'Audio and timecode synchronization', studio: 'Yes', creator: 'Yes' },
   { feature: 'Clip colors for checking sync/results', studio: 'Yes', creator: 'No' },
@@ -136,10 +136,10 @@ function CreatorPage() {
         <div style={{marginTop: 24, display:"flex", flexDirection:"column", gap: 12, alignItems:"flex-start"}}>
           <div style={{display:"flex", gap: 12, flexWrap:"wrap"}}>
             <button type="button" className="btn btn-amber btn-amber-lg" onClick={scrollToPricingSection}>
-              Download Creator
+              Get Creator
             </button>
             <button type="button" className="btn btn-amber btn-amber-lg" onClick={scrollToPricingSection}>
-              Download Studio
+              Get Studio
             </button>
           </div>
           {/*<Link to="/pricing" className="btn btn-amber btn-amber-lg">*/}
@@ -411,17 +411,6 @@ function CreatorPage() {
         <h2 className="t-display">
           Ready to automate?
         </h2>
-        <p className="t-body-lg" style={{maxWidth: 560, margin: '24px auto 40px'}}>
-          Start with Creator. Upgrade anytime.
-        </p>
-        <div style={{display: 'flex', gap: 16, justifyContent: 'center', flexWrap: 'wrap'}}>
-          <Link to="/pricing" className="btn btn-amber btn-amber-lg">
-            See all plans
-          </Link>
-          <Link to="/help" className="btn btn-ghost">
-            Learn more
-          </Link>
-        </div>
       </section>
 
       {/* Plans Section */}
@@ -433,26 +422,26 @@ function CreatorPage() {
           {/* Creator Plan */}
           <div className="tier-card">
             <h3>Creator</h3>
-            <div className="price">€30<span className="unit">/month</span></div>
+            <div className="price">€TBA<span className="unit">/month</span></div>
             <p>Perfect for content creators and small studios</p>
             <ul>
               <li>
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3">
                   <polyline points="20 6 9 17 4 12" />
                 </svg>
-                <span>Up to 10 projects/month</span>
+                <span>XML workflow</span>
               </li>
               <li>
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3">
                   <polyline points="20 6 9 17 4 12" />
                 </svg>
-                <span>4K export resolution</span>
+                <span>Vibe based Cutting</span>
               </li>
               <li>
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3">
                   <polyline points="20 6 9 17 4 12" />
                 </svg>
-                <span>Beat detection</span>
+                <span>Audio and timecode synchronization</span>
               </li>
               <li>
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3">
@@ -460,15 +449,16 @@ function CreatorPage() {
                 </svg>
                 <span>Preset library</span>
               </li>
-              <li>
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3">
-                  <polyline points="20 6 9 17 4 12" />
-                </svg>
-                <span>Email support · 72h</span>
-              </li>
             </ul>
             <button className="btn btn-amber" onClick={handleCreatorMonthly}>
-              Subscribe €30/month
+              Test for Free
+            </button>
+            <button 
+              className="btn btn-ghost" 
+              onClick={() => handleCheckout(PRICE_IDS.EDITOR_ONETIME)}
+              style={{marginTop: 8}}
+            >
+              One-time (Coming soon)
             </button>
           </div>
 
@@ -476,32 +466,32 @@ function CreatorPage() {
           <div className="tier-card featured">
             <span className="badge">Studio</span>
             <h3>Studio</h3>
-            <div className="price">€50<span className="unit">/month</span></div>
+            <div className="price">€TBA<span className="unit">/month</span></div>
             <p>For professional studios and agencies</p>
             <ul>
               <li>
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3">
                   <polyline points="20 6 9 17 4 12" />
                 </svg>
-                <span>Unlimited projects</span>
+                <span>XML and DaVinci Resolve workflow</span>
               </li>
               <li>
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3">
                   <polyline points="20 6 9 17 4 12" />
                 </svg>
-                <span>8K export resolution</span>
+                <span>Audio and timecode synchronization</span>
               </li>
               <li>
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3">
                   <polyline points="20 6 9 17 4 12" />
                 </svg>
-                <span>Advanced AI sync</span>
+                <span>Full Control over how the cut looks</span>
               </li>
               <li>
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3">
                   <polyline points="20 6 9 17 4 12" />
                 </svg>
-                <span>Custom presets</span>
+                <span>Social Media Clips</span>
               </li>
               <li>
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3">
@@ -513,11 +503,18 @@ function CreatorPage() {
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3">
                   <polyline points="20 6 9 17 4 12" />
                 </svg>
-                <span>Live chat support</span>
+                <span>Fusion/effect options</span>
               </li>
             </ul>
             <button className="btn btn-amber" onClick={handleStudioMonthly}>
-              Subscribe €50/month
+              Test for Free
+            </button>
+            <button 
+              className="btn btn-ghost" 
+              onClick={() => handleCheckout(PRICE_IDS.STUDIO_ONETIME)}
+              style={{marginTop: 8}}
+            >
+              One-time (Coming soon)
             </button>
           </div>
         </div>

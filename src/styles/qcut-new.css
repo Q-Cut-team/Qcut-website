@@ -861,6 +861,12 @@ button { font-family: inherit; }
   .product-grid > div:last-child {
     order: 1;
   }
+  .dj-page .dj-product-grid > div:first-child {
+    order: 1;
+  }
+  .dj-page .dj-product-grid > div:last-child {
+    order: 2;
+  }
   .tier-grid { 
     grid-template-columns: 1fr !important;
   }
