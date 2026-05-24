@@ -76,11 +76,9 @@ function DJPage() {
         </p>
         <div style={{marginTop: 24, display:"flex", gap: 12, flexWrap:"wrap"}}>
           <button type="button" className="btn btn-amber btn-amber-lg" onClick={scrollToCtaSection}>
-            Download Q-Cut DJ
+            Get Q-Cut DJ
           </button>
-          <Link to="/dj/download" className="btn btn-ghost">
-            Download Q·Cut DJ
-          </Link>
+
         </div>
       </section>
 
@@ -297,12 +295,15 @@ function DJPage() {
                 <span>4 exports per week</span>
               </li>
             </ul>
-            <button
-              className="btn btn-amber"
-              onClick={handleGetFree}
-            >
-              Download for free
-            </button>
+            <Link to="/dj/download" className="btn btn-ghost">
+              Download Q·Cut DJ
+            </Link>
+            {/*<button*/}
+            {/*  className="btn btn-amber"*/}
+            {/*  onClick={handleGetFree}*/}
+            {/*>*/}
+            {/*  Download for free*/}
+            {/*</button>*/}
           </div>
 
           <div className="tier-card featured">
@@ -342,11 +343,12 @@ function DJPage() {
                 <span>No Watermark</span>
               </li>
             </ul>
+
             <button
               className="btn btn-amber"
-              onClick={() => handleCheckout(DJ_UNLIMITED_PRICE_ID)}
+              onClick={handleGetFree}
             >
-              Coming soon
+              Test for Free
             </button>
           </div>
         </div>
