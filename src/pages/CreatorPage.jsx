@@ -21,7 +21,9 @@ import creatorStep5Image from '../assets/images/creator-step-5.png';
 import BeatGrid from "../components/BeatGrid.jsx";
 import Reveal from '../components/Reveal';
 import { useToast } from '../hooks/useToast';
+import { useTermsAccepted } from '../hooks/useTermsAccepted';
 import Toast from '../components/Toast';
+import TermsCheckbox from '../components/TermsCheckbox';
 
 const PRICE_IDS = {
   EDITOR_MONTH: 'price_1TZZd5PjWn7pNPmYOmu7e4o9',//now free trial
@@ -121,6 +123,8 @@ function CreatorPage() {
   const [openStudioGuideStep, setOpenStudioGuideStep] = useState(1);
   const [openCreatorGuideStep, setOpenCreatorGuideStep] = useState(1);
   const { isVisible, message, showToast, hideToast } = useToast();
+  const creatorTerms = useTermsAccepted();
+  const studioTerms = useTermsAccepted();
 
   const handleCheckout = async (priceId) => {
     if (!priceId) {
@@ -1193,11 +1197,17 @@ function CreatorPage() {
                 <span>Preset library</span>
               </li>
             </ul>
-            <button className="btn btn-amber" onClick={handleCreatorMonthly}>
+            <TermsCheckbox accepted={creatorTerms.accepted} onChange={creatorTerms.setAccepted} />
+            <button
+              className="btn btn-amber"
+              disabled={!creatorTerms.accepted}
+              style={{opacity: creatorTerms.accepted ? 1 : 0.5, cursor: creatorTerms.accepted ? 'pointer' : 'not-allowed'}}
+              onClick={() => creatorTerms.accepted && handleCreatorMonthly()}
+            >
               Test for Free
             </button>
-            <button 
-              className="btn btn-ghost" 
+            <button
+              className="btn btn-ghost"
               onClick={() => handleCheckout(PRICE_IDS.EDITOR_ONETIME)}
               style={{marginTop: 8}}
             >
@@ -1249,11 +1259,17 @@ function CreatorPage() {
                 <span>Fusion/effect options</span>
               </li>
             </ul>
-            <button className="btn btn-amber" onClick={handleStudioMonthly}>
+            <TermsCheckbox accepted={studioTerms.accepted} onChange={studioTerms.setAccepted} />
+            <button
+              className="btn btn-amber"
+              disabled={!studioTerms.accepted}
+              style={{opacity: studioTerms.accepted ? 1 : 0.5, cursor: studioTerms.accepted ? 'pointer' : 'not-allowed'}}
+              onClick={() => studioTerms.accepted && handleStudioMonthly()}
+            >
               Test for Free
             </button>
-            <button 
-              className="btn btn-ghost" 
+            <button
+              className="btn btn-ghost"
               onClick={() => handleCheckout(PRICE_IDS.STUDIO_ONETIME)}
               style={{marginTop: 8}}
             >

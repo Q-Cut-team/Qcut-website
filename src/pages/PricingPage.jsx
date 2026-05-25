@@ -2,7 +2,9 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { redirectToCheckout } from '../utils/checkout';
 import { useToast } from '../hooks/useToast';
+import { useTermsAccepted } from '../hooks/useTermsAccepted';
 import Toast from '../components/Toast';
+import TermsCheckbox from '../components/TermsCheckbox';
 
 // Price IDs from your requirements
 const PRICE_IDS = {
@@ -16,6 +18,10 @@ const PRICE_IDS = {
 
 function PricingPage() {
   const { isVisible, message, showToast, hideToast } = useToast();
+  const djTerms = useTermsAccepted();
+  const djUnlimitedTerms = useTermsAccepted();
+  const creatorTerms = useTermsAccepted();
+  const studioTerms = useTermsAccepted();
 
   const handleCheckout = async (priceId) => {
     if (!priceId) {
@@ -77,9 +83,16 @@ function PricingPage() {
               </li>
             </ul>
             {/* Download button — links to installer page */}
-            <Link to="/dj/download" className="btn btn-ghost">
-              Download Q·Cut DJ
-            </Link>
+            <TermsCheckbox accepted={djTerms.accepted} onChange={djTerms.setAccepted} />
+            {djTerms.accepted ? (
+              <Link to="/dj/download" className="btn btn-ghost">
+                Download Q·Cut DJ
+              </Link>
+            ) : (
+              <button className="btn btn-ghost" disabled style={{opacity: 0.5, cursor: 'not-allowed'}}>
+                Download Q·Cut DJ
+              </button>
+            )}
           </div>
 
           {/* DJ Unlimited Plan */}
@@ -121,9 +134,12 @@ function PricingPage() {
               </li>
             </ul>
             {/* Coming soon — no price ID yet */}
+            <TermsCheckbox accepted={djUnlimitedTerms.accepted} onChange={djUnlimitedTerms.setAccepted} />
             <button
               className="btn btn-amber"
-              onClick={() => handleCheckout(PRICE_IDS.DJ_UNLIMITED)}
+              disabled={!djUnlimitedTerms.accepted}
+              style={{opacity: djUnlimitedTerms.accepted ? 1 : 0.5, cursor: djUnlimitedTerms.accepted ? 'pointer' : 'not-allowed'}}
+              onClick={() => djUnlimitedTerms.accepted && handleCheckout(PRICE_IDS.DJ_UNLIMITED)}
             >
               Test for free
             </button>
@@ -169,15 +185,18 @@ function PricingPage() {
                 <span>Preset library</span>
               </li>
             </ul>
-            <button 
-              className="btn btn-amber" 
-              onClick={() => handleCheckout(PRICE_IDS.EDITOR_MONTH)}
+            <TermsCheckbox accepted={creatorTerms.accepted} onChange={creatorTerms.setAccepted} />
+            <button
+              className="btn btn-amber"
+              disabled={!creatorTerms.accepted}
+              style={{opacity: creatorTerms.accepted ? 1 : 0.5, cursor: creatorTerms.accepted ? 'pointer' : 'not-allowed'}}
+              onClick={() => creatorTerms.accepted && handleCheckout(PRICE_IDS.EDITOR_MONTH)}
             >
               Test for free
             </button>
 
-            <button 
-              className="btn btn-ghost" 
+            <button
+              className="btn btn-ghost"
               onClick={() => handleCheckout(PRICE_IDS.EDITOR_ONETIME)}
               style={{marginTop: 8}}
             >
@@ -229,14 +248,17 @@ function PricingPage() {
                 <span>Fusion/effect options</span>
               </li>
             </ul>
-            <button 
-              className="btn btn-amber" 
-              onClick={() => handleCheckout(PRICE_IDS.STUDIO_MONTH)}
+            <TermsCheckbox accepted={studioTerms.accepted} onChange={studioTerms.setAccepted} />
+            <button
+              className="btn btn-amber"
+              disabled={!studioTerms.accepted}
+              style={{opacity: studioTerms.accepted ? 1 : 0.5, cursor: studioTerms.accepted ? 'pointer' : 'not-allowed'}}
+              onClick={() => studioTerms.accepted && handleCheckout(PRICE_IDS.STUDIO_MONTH)}
             >
               Test for free
             </button>
-            <button 
-              className="btn btn-ghost" 
+            <button
+              className="btn btn-ghost"
               onClick={() => handleCheckout(PRICE_IDS.STUDIO_ONETIME)}
               style={{marginTop: 8}}
             >

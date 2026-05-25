@@ -5,7 +5,9 @@ import BeatGrid from "../components/BeatGrid";
 import qcutDjImage from '../assets/images/qcut_dj.png';
 import Reveal from '../components/Reveal';
 import { useToast } from '../hooks/useToast';
+import { useTermsAccepted } from '../hooks/useTermsAccepted';
 import Toast from '../components/Toast';
+import TermsCheckbox from '../components/TermsCheckbox';
 
 const DJ_MONTH_PRICE_ID = 'price_1TQVJyBSfJ4A9uVJTrQzprla';
 const DJ_UNLIMITED_PRICE_ID = null;
@@ -32,6 +34,8 @@ function DJPage() {
   const ctaSectionRef = useRef(null);
   const [showDetailedComparison, setShowDetailedComparison] = useState(false);
   const { isVisible, message, showToast, hideToast } = useToast();
+  const djDownloadTerms = useTermsAccepted();
+  const djUnlimitedTerms = useTermsAccepted();
 
   const handleCheckout = async (priceId) => {
     if (!priceId) {
@@ -295,9 +299,16 @@ function DJPage() {
                 <span>4 exports per week</span>
               </li>
             </ul>
-            <Link to="/dj/download" className="btn btn-ghost">
-              Download Q·Cut DJ
-            </Link>
+            <TermsCheckbox accepted={djDownloadTerms.accepted} onChange={djDownloadTerms.setAccepted} />
+            {djDownloadTerms.accepted ? (
+              <Link to="/dj/download" className="btn btn-ghost">
+                Download Q·Cut DJ
+              </Link>
+            ) : (
+              <button className="btn btn-ghost" disabled style={{opacity: 0.5, cursor: 'not-allowed'}}>
+                Download Q·Cut DJ
+              </button>
+            )}
             {/*<button*/}
             {/*  className="btn btn-amber"*/}
             {/*  onClick={handleGetFree}*/}
@@ -344,9 +355,12 @@ function DJPage() {
               </li>
             </ul>
 
+            <TermsCheckbox accepted={djUnlimitedTerms.accepted} onChange={djUnlimitedTerms.setAccepted} />
             <button
               className="btn btn-amber"
-              onClick={handleGetFree}
+              disabled={!djUnlimitedTerms.accepted}
+              style={{opacity: djUnlimitedTerms.accepted ? 1 : 0.5, cursor: djUnlimitedTerms.accepted ? 'pointer' : 'not-allowed'}}
+              onClick={() => djUnlimitedTerms.accepted && handleGetFree()}
             >
               Test for Free
             </button>
