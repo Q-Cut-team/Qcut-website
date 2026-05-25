@@ -2,8 +2,13 @@ import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import Reveal from '../components/Reveal';
 import { useDownloadUrls } from '../hooks/useDownloadUrls';
+import { useTermsAccepted } from '../hooks/useTermsAccepted';
+import TermsCheckbox from '../components/TermsCheckbox';
 
-function PlatformCards({ urls }) {
+function PlatformCards({ urls, disabled = false }) {
+  const macSiliconEnabled = !disabled && urls.macSilicon;
+  const macIntelEnabled = !disabled && urls.macIntel;
+  const windowsEnabled = !disabled && urls.windows;
   return (
     <div style={{
       display: 'grid',
@@ -20,16 +25,16 @@ function PlatformCards({ urls }) {
           </p>
           <div style={{display: 'flex', flexDirection: 'column', gap: 12}}>
             <a
-              href={urls.macSilicon || '#'}
+              href={macSiliconEnabled ? urls.macSilicon : '#'}
               className="btn btn-amber"
-              style={{opacity: urls.macSilicon ? 1 : 0.5, pointerEvents: urls.macSilicon ? 'auto' : 'none'}}
+              style={{opacity: macSiliconEnabled ? 1 : 0.5, pointerEvents: macSiliconEnabled ? 'auto' : 'none'}}
             >
               Download for Apple Silicon
             </a>
             <a
-              href={urls.macIntel || '#'}
+              href={macIntelEnabled ? urls.macIntel : '#'}
               className="btn btn-ghost"
-              style={{opacity: urls.macIntel ? 1 : 0.5, pointerEvents: urls.macIntel ? 'auto' : 'none'}}
+              style={{opacity: macIntelEnabled ? 1 : 0.5, pointerEvents: macIntelEnabled ? 'auto' : 'none'}}
             >
               Download for Intel
             </a>
@@ -44,9 +49,9 @@ function PlatformCards({ urls }) {
           </p>
           <div style={{display: 'flex', flexDirection: 'column', gap: 12}}>
             <a
-              href={urls.windows || '#'}
+              href={windowsEnabled ? urls.windows : '#'}
               className="btn btn-amber"
-              style={{opacity: urls.windows ? 1 : 0.5, pointerEvents: urls.windows ? 'auto' : 'none'}}
+              style={{opacity: windowsEnabled ? 1 : 0.5, pointerEvents: windowsEnabled ? 'auto' : 'none'}}
             >
               Download for Windows
             </a>
@@ -60,6 +65,7 @@ function PlatformCards({ urls }) {
 function DJDownloadPage() {
   const { latest, olderVersions, loading, error } = useDownloadUrls('qcut-dj');
   const [showOlder, setShowOlder] = useState(false);
+  const terms = useTermsAccepted();
 
   return (
     <div className="page-fade-enter">
@@ -84,8 +90,11 @@ function DJDownloadPage() {
         )}
         {!loading && !error && (
           <>
+            <div style={{maxWidth: 880, margin: '0 auto 24px', display: 'flex', justifyContent: 'center'}}>
+              <TermsCheckbox accepted={terms.accepted} onChange={terms.setAccepted} />
+            </div>
             {latest
-              ? <PlatformCards urls={latest} />
+              ? <PlatformCards urls={latest} disabled={!terms.accepted} />
               : (
                 <p className="t-body" style={{textAlign: 'center', color: 'var(--text-3)'}}>
                   No downloads available yet. Check back soon.
@@ -105,7 +114,7 @@ function DJDownloadPage() {
                     <p className="t-label" style={{textAlign: 'center', marginBottom: 20, color: 'var(--text-3)'}}>
                       Version {version}
                     </p>
-                    <PlatformCards urls={urls} />
+                    <PlatformCards urls={urls} disabled={!terms.accepted} />
                   </div>
                 ))}
               </div>

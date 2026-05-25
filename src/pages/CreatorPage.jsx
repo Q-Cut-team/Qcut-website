@@ -180,7 +180,7 @@ function CreatorPage() {
         <div style={{marginTop: 24, display:"flex", flexDirection:"column", gap: 12, alignItems:"flex-start"}}>
           <div style={{display:"flex", gap: 12, flexWrap:"wrap"}}>
             <button type="button" className="btn btn-amber btn-amber-lg" onClick={scrollToPricingSection}>
-              Get Q-Cut Creator / giStudio
+              Get Q-Cut Creator / Studio
             </button>
             {/*<Link to="/creator/download" className="btn btn-ghost">*/}
             {/*  Download Q-Cut Creator*/}

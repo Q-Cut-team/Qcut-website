@@ -13,6 +13,7 @@ import SimpleVideoTest from './pages/SimpleVideoTest';
 import DJDownloadPage from './pages/DJDownloadPage';
 import CreatorDownloadPage from './pages/CreatorDownloadPage';
 import StudioDownloadPage from './pages/StudioDownloadPage';
+import TermsOfUsePage from './pages/TermsOfUsePage';
 
 // ScrollToTop Component
 function ScrollToTop() {
@@ -126,6 +127,7 @@ function Footer() {
             <h4>Legal</h4>
             <ul>
               <li><Link to="/privacy-notice">Privacy</Link></li>
+              <li><Link to="/terms-of-use">Terms of Use</Link></li>
               <li><Link to="/impressum">Impressum</Link></li>
             </ul>
           </div>
@@ -154,6 +156,7 @@ function App() {
         <Route path="/success" element={<SuccessPage />} />
         <Route path="/impressum" element={<ImpressumPage />} />
         <Route path="/privacy-notice" element={<PrivacyNoticePage />} />
+        <Route path="/terms-of-use" element={<TermsOfUsePage />} />
         <Route path="/test" element={<TestPage />} />
         <Route path="/video-test" element={<SimpleVideoTest />} />
       </Routes>

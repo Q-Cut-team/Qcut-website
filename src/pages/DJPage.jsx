@@ -34,7 +34,6 @@ function DJPage() {
   const ctaSectionRef = useRef(null);
   const [showDetailedComparison, setShowDetailedComparison] = useState(false);
   const { isVisible, message, showToast, hideToast } = useToast();
-  const djDownloadTerms = useTermsAccepted();
   const djUnlimitedTerms = useTermsAccepted();
 
   const handleCheckout = async (priceId) => {
@@ -299,16 +298,9 @@ function DJPage() {
                 <span>4 exports per week</span>
               </li>
             </ul>
-            <TermsCheckbox accepted={djDownloadTerms.accepted} onChange={djDownloadTerms.setAccepted} />
-            {djDownloadTerms.accepted ? (
-              <Link to="/dj/download" className="btn btn-ghost">
-                Download Q·Cut DJ
-              </Link>
-            ) : (
-              <button className="btn btn-ghost" disabled style={{opacity: 0.5, cursor: 'not-allowed'}}>
-                Download Q·Cut DJ
-              </button>
-            )}
+            <Link to="/dj/download" className="btn btn-ghost">
+              Download Q·Cut DJ
+            </Link>
             {/*<button*/}
             {/*  className="btn btn-amber"*/}
             {/*  onClick={handleGetFree}*/}

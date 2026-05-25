@@ -29,7 +29,7 @@ export default function TermsCheckbox({ accepted, onChange }) {
       <span>
         I agree to the{' '}
         <Link
-          to="/privacy-notice"
+          to="/terms-of-use"
           style={{color: '#3b82f6', textDecoration: 'underline'}}
           onClick={e => e.stopPropagation()}
         >
