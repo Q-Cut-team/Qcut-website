@@ -3,6 +3,8 @@ import { BrowserRouter, Routes, Route, Link, useLocation, useNavigate } from 're
 import HomePage from './pages/HomePage';
 import DJPage from './pages/DJPage';
 import CreatorPage from './pages/CreatorPage';
+import CreatorTutorialPage from './pages/CreatorTutorialPage';
+import StudioTutorialPage from './pages/StudioTutorialPage';
 import PricingPage from './pages/PricingPage';
 import HelpPage from './pages/HelpPage';
 import SuccessPage from './pages/SuccessPage';
@@ -149,6 +151,8 @@ function App() {
         <Route path="/dj" element={<DJPage />} />
         <Route path="/dj/download" element={<DJDownloadPage />} />
         <Route path="/creator" element={<CreatorPage />} />
+        <Route path="/creator/tutorial" element={<CreatorTutorialPage />} />
+        <Route path="/studio/tutorial" element={<StudioTutorialPage />} />
         <Route path="/creator/download" element={<CreatorDownloadPage />} />
         <Route path="/studio/download" element={<StudioDownloadPage />} />
         <Route path="/pricing" element={<PricingPage />} />
