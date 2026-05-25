@@ -11,7 +11,7 @@ const PRICE_IDS = {
   EDITOR_ONETIME: null,
   STUDIO_MONTH: 'price_1TZZcZPjWn7pNPmYlst2j6X3',//now free trial
   STUDIO_ONETIME: null,
-  DJ_UNLIMITED: null // Coming soon
+  DJ_UNLIMITED: 'price_1TZZc4PjWn7pNPmY9kopKsZY' // now free trial
 };
 
 function PricingPage() {
@@ -38,6 +38,7 @@ function PricingPage() {
       </section>
 
       {/* DJ Plans Section */}
+      {/* DJ Plans Section */}
       <section id="dj" className="container section">
         <div style={{textAlign: 'center', marginBottom: 48}}>
           <span className="t-label">For DJs</span>
@@ -54,7 +55,7 @@ function PricingPage() {
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3">
                   <polyline points="20 6 9 17 4 12" />
                 </svg>
-                <span>Up to 20 minutes </span>
+                <span>Up to 20 minutes</span>
               </li>
               <li>
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3">
@@ -75,12 +76,10 @@ function PricingPage() {
                 <span>4 exports per week</span>
               </li>
             </ul>
-            <button 
-              className="btn btn-amber" 
-              onClick={() => handleCheckout(PRICE_IDS.DJ_MONTH)}
-            >
-              Get for free
-            </button>
+            {/* Download button — links to installer page */}
+            <Link to="/dj/download" className="btn btn-ghost">
+              Download Q·Cut DJ
+            </Link>
           </div>
 
           {/* DJ Unlimited Plan */}
@@ -121,11 +120,12 @@ function PricingPage() {
                 <span>No Watermark</span>
               </li>
             </ul>
-            <button 
-              className="btn btn-amber" 
+            {/* Coming soon — no price ID yet */}
+            <button
+              className="btn btn-amber"
               onClick={() => handleCheckout(PRICE_IDS.DJ_UNLIMITED)}
             >
-              Coming soon
+              Test for free
             </button>
           </div>
         </div>
