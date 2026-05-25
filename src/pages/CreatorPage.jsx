@@ -149,7 +149,7 @@ function CreatorPage() {
                   <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--amber)" strokeWidth="3">
                     <polyline points="20 6 9 17 4 12" />
                   </svg>
-                  <span className="t-body">DaVinci Resolve integration</span>
+                  <span className="t-body">DaVinci resolve Studio integration</span>
                 </div>
                 <div style={{display: 'flex', alignItems: 'center', gap: 10}}>
                   <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--amber)" strokeWidth="3">
@@ -163,27 +163,22 @@ function CreatorPage() {
                   </svg>
                   <span className="t-body">Save or share cut Presets</span>
                 </div>
+                <div style={{display: 'flex', alignItems: 'center', gap: 10}}>
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--amber)" strokeWidth="3">
+                    <polyline points="20 6 9 17 4 12" />
+                  </svg>
+                  <span className="t-body">full Control Over all Settings</span>
+                </div>
+                <div style={{display: 'flex', alignItems: 'center', gap: 10}}>
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--amber)" strokeWidth="3">
+                    <polyline points="20 6 9 17 4 12" />
+                  </svg>
+                  <span className="t-body">Integrated Fusion Effects</span>
+                </div>
               </div>
             </div>
           </Reveal>
         </div>
-        {/* Tutorial Video Section */}
-        <Reveal as="section" className="container" style={{marginTop: 40, paddingTop: 16, paddingBottom: 40}}>
-          <div style={{textAlign: 'center', marginBottom: 32}}>
-            <h2 className="t-h2">Studio Quick Start</h2>
-            <p className="t-body-lg" style={{maxWidth: 640, margin: '20px auto 0'}}>
-              How to use Studio to create a fully automated cut with custom settings and effects
-            </p>
-          </div>
-          <div style={{maxWidth: 960, margin: '0 auto'}}>
-            <YouTubeEmbed
-              url="https://youtu.be/duT_VXu5W0Y?si=NSc5fd21Ew415gLM"
-              showControls={true}
-              autoPlay={false}
-              title="Q·Cut Studio Tutorial"
-            />
-          </div>
-        </Reveal>
         <div style={{ marginTop: 24, textAlign: 'center' }}>
           <h2 className="t-h2" style={{ marginBottom: 16 }}>
             Need the Full Studio Walkthrough?
@@ -235,22 +230,6 @@ function CreatorPage() {
             </div>
           </Reveal>
         </div>
-        <Reveal as="section" className="container" style={{ marginTop: 40, paddingTop: 16, paddingBottom: 40 }}>
-        <div style={{ textAlign: 'center', marginBottom: 32 }}>
-          <h2 className="t-h2">Creator Quick Start</h2>
-          <p className="t-body-lg" style={{ maxWidth: 640, margin: '20px auto 0' }}>
-            How to use Creator to create a fully automated cut with custom settings and effects
-          </p>
-        </div>
-        <div style={{ maxWidth: 960, margin: '0 auto' }}>
-          <YouTubeEmbed
-            url="https://youtu.be/nZ1dXmnT3HA?si=BCEzHNKIZOVHH45I"
-            showControls={true}
-            autoPlay={false}
-            title="Q·Cut Creator Tutorial"
-          />
-        </div>
-      </Reveal>
         <div style={{ marginTop: 24, textAlign: 'center' }}>
           <h2 className="t-h2" style={{ marginBottom: 16 }}>
             Need a Full Walkthrough?
@@ -448,7 +427,7 @@ function CreatorPage() {
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3">
                   <polyline points="20 6 9 17 4 12" />
                 </svg>
-                <span>XML and DaVinci Resolve workflow</span>
+                <span>DaVinci Resolve Studio & XML Workflow</span>
               </li>
               <li>
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3">
@@ -467,12 +446,6 @@ function CreatorPage() {
                   <polyline points="20 6 9 17 4 12" />
                 </svg>
                 <span>Social Media Clips</span>
-              </li>
-              <li>
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3">
-                  <polyline points="20 6 9 17 4 12" />
-                </svg>
-                <span>Priority render</span>
               </li>
               <li>
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3">

@@ -44,7 +44,6 @@ function PricingPage() {
       </section>
 
       {/* DJ Plans Section */}
-      {/* DJ Plans Section */}
       <section id="dj" className="container section">
         <div style={{textAlign: 'center', marginBottom: 48}}>
           <span className="t-label">For DJs</span>
@@ -210,7 +209,7 @@ function PricingPage() {
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3">
                   <polyline points="20 6 9 17 4 12" />
                 </svg>
-                <span>XML and DaVinci Resolve workflow</span>
+                <span>DaVinci Resolve Studio & XML Workflow</span>
               </li>
               <li>
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3">
@@ -229,12 +228,6 @@ function PricingPage() {
                   <polyline points="20 6 9 17 4 12" />
                 </svg>
                 <span>Social Media Clips</span>
-              </li>
-              <li>
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3">
-                  <polyline points="20 6 9 17 4 12" />
-                </svg>
-                <span>Priority render</span>
               </li>
               <li>
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3">

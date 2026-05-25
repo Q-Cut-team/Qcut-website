@@ -127,7 +127,7 @@ function HelpPage() {
           Our support team typically responds within 24 hours.
         </p>
         <div style={{display: 'flex', gap: 16, justifyContent: 'center', flexWrap: 'wrap'}}>
-          <a href="mailto:support@qcut.app" className="btn btn-amber">
+          <a href="mailto:info@qcut.at" className="btn btn-amber">
             Email support
           </a>
           <Link to="/pricing" className="btn btn-ghost">

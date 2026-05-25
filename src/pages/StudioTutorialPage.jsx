@@ -14,7 +14,6 @@ function StudioTutorialPage() {
         <p className="t-body-lg" style={{ maxWidth: 640, marginTop: 16 }}>
           Full step-by-step guide for Q-Cut Studio from timeline prep to final export settings.
         </p>
-        <BeatGrid />
         <div style={{ marginTop: 24, display: 'flex', gap: 12, flexWrap: 'wrap' }}>
           <Link to="/creator" className="btn btn-ghost">
             Back to Overview

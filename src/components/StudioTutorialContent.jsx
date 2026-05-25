@@ -102,9 +102,9 @@ function StudioTutorialContent() {
             <p className="t-body" style={{marginBottom: 10}}>
               You can load your timeline through a direct editor connection or via exported XML.
             </p>
-            <p className="t-body" style={{marginBottom: 6}}><strong>Option A: direct connection</strong></p>
+            <p className="t-body" style={{marginBottom: 6}}><strong>Option A: Resolve Studio Connection</strong></p>
             <ol style={{margin: 0, paddingLeft: 18, display: 'grid', gap: 6}}>
-              <li className="t-body">Open your prepared timeline in your editor.</li>
+              <li className="t-body">Open your prepared timeline in DaVinci Resolve Studio.</li>
               <li className="t-body">In Studio, go to the direct connection tab.</li>
               <li className="t-body">Click <strong>Connect</strong>.</li>
             </ol>
@@ -151,7 +151,7 @@ function StudioTutorialContent() {
               Preparation deletes video-audio files after sync and cuts the timeline to the recorded audio range.
             </p>
             <p className="t-body">
-              Enable <strong>Don't Prepare</strong> if you only want synchronization or prefer manual timeline prep.
+              Enable Don't Prepare if you only want to synchronise your Footage or prefer prepping your timeline manually.
             </p>
           </div>
         ) : null}
@@ -165,7 +165,7 @@ function StudioTutorialContent() {
           aria-expanded={openStudioGuideStep === 4}
           aria-controls="studio-guide-step-4"
         >
-          <h3 className="t-h3">4. Choose the Synchronization Method</h3>
+          <h3 className="t-h3">3.1 Choose the Synchronization Method</h3>
           <span style={{fontSize: 24, lineHeight: 1, color: 'var(--amber)'}}>{openStudioGuideStep === 4 ? '−' : '+'}</span>
         </button>
         {openStudioGuideStep === 4 ? (
@@ -195,7 +195,7 @@ function StudioTutorialContent() {
           aria-expanded={openStudioGuideStep === 5}
           aria-controls="studio-guide-step-5"
         >
-          <h3 className="t-h3">5. Review the Synchronization Results</h3>
+          <h3 className="t-h3">3.2 Review the Synchronization Results</h3>
           <span style={{fontSize: 24, lineHeight: 1, color: 'var(--amber)'}}>{openStudioGuideStep === 5 ? '−' : '+'}</span>
         </button>
         {openStudioGuideStep === 5 ? (
@@ -228,7 +228,7 @@ function StudioTutorialContent() {
           aria-expanded={openStudioGuideStep === 6}
           aria-controls="studio-guide-step-6"
         >
-          <h3 className="t-h3">6. Configure the Audio</h3>
+          <h3 className="t-h3">4. Configure the Audio</h3>
           <span style={{fontSize: 24, lineHeight: 1, color: 'var(--amber)'}}>{openStudioGuideStep === 6 ? '−' : '+'}</span>
         </button>
         {openStudioGuideStep === 6 ? (
@@ -258,7 +258,7 @@ function StudioTutorialContent() {
           aria-expanded={openStudioGuideStep === 7}
           aria-controls="studio-guide-step-7"
         >
-          <h3 className="t-h3">7. Set Up Each Camera</h3>
+          <h3 className="t-h3">5. Set Up Each Camera</h3>
           <span style={{fontSize: 24, lineHeight: 1, color: 'var(--amber)'}}>{openStudioGuideStep === 7 ? '−' : '+'}</span>
         </button>
         {openStudioGuideStep === 7 ? (
@@ -299,7 +299,7 @@ function StudioTutorialContent() {
           aria-expanded={openStudioGuideStep === 8}
           aria-controls="studio-guide-step-8"
         >
-          <h3 className="t-h3">8. Shape the Automatic Cut</h3>
+          <h3 className="t-h3">6. Shape the Automatic Cut</h3>
           <span style={{fontSize: 24, lineHeight: 1, color: 'var(--amber)'}}>{openStudioGuideStep === 8 ? '−' : '+'}</span>
         </button>
         {openStudioGuideStep === 8 ? (
@@ -338,7 +338,7 @@ function StudioTutorialContent() {
           aria-expanded={openStudioGuideStep === 9}
           aria-controls="studio-guide-step-9"
         >
-          <h3 className="t-h3">9. Export the Result</h3>
+          <h3 className="t-h3">7. Export the Result</h3>
           <span style={{fontSize: 24, lineHeight: 1, color: 'var(--amber)'}}>{openStudioGuideStep === 9 ? '−' : '+'}</span>
         </button>
         {openStudioGuideStep === 9 ? (
@@ -368,7 +368,7 @@ function StudioTutorialContent() {
           aria-expanded={openStudioGuideStep === 10}
           aria-controls="studio-guide-step-10"
         >
-          <h3 className="t-h3">10. Adjust Cameras for Vertical Content</h3>
+          <h3 className="t-h3">8. Adjust Cameras for Vertical Content</h3>
           <span style={{fontSize: 24, lineHeight: 1, color: 'var(--amber)'}}>{openStudioGuideStep === 10 ? '−' : '+'}</span>
         </button>
         {openStudioGuideStep === 10 ? (
@@ -379,7 +379,7 @@ function StudioTutorialContent() {
               style={{width: '100%', borderRadius: 12, border: '1px solid var(--line)', marginBottom: 16}}
             />
             <p className="t-body">
-              Use <strong>Adjust Offset for Vertical</strong> to reposition cameras quickly so shots fit a vertical frame better.
+              Use Adjust Offset for Vertical to reposition cameras quickly so shots fit a vertical frame better. We are not able to create Vertical Timelines in Resolve Copy everything in the Timeline we gave out and paste it into a new vertical timeline to get Vertical results.
             </p>
           </div>
         ) : null}
@@ -393,7 +393,7 @@ function StudioTutorialContent() {
           aria-expanded={openStudioGuideStep === 11}
           aria-controls="studio-guide-step-11"
         >
-          <h3 className="t-h3">11. Save and Reuse Presets</h3>
+          <h3 className="t-h3">9. Save and Reuse Presets</h3>
           <span style={{fontSize: 24, lineHeight: 1, color: 'var(--amber)'}}>{openStudioGuideStep === 11 ? '−' : '+'}</span>
         </button>
         {openStudioGuideStep === 11 ? (
@@ -422,7 +422,7 @@ function StudioTutorialContent() {
           aria-expanded={openStudioGuideStep === 12}
           aria-controls="studio-guide-step-12"
         >
-          <h3 className="t-h3">12. Troubleshooting: Problems Connecting to Resolve</h3>
+          <h3 className="t-h3">10. Troubleshooting: Problems Connecting to Resolve</h3>
           <span style={{fontSize: 24, lineHeight: 1, color: 'var(--amber)'}}>{openStudioGuideStep === 12 ? '−' : '+'}</span>
         </button>
         {openStudioGuideStep === 12 ? (

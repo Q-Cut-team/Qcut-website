@@ -251,7 +251,7 @@ function CreatorTutorialContent() {
               aria-expanded={openCreatorGuideStep === 7}
               aria-controls="creator-guide-step-7"
             >
-              <h3 className="t-h3">7. Zoom Timing</h3>
+              <h3 className="t-h3">6.1 Zoom Timing</h3>
               <span style={{ fontSize: 24, lineHeight: 1, color: 'var(--amber)' }}>{openCreatorGuideStep === 7 ? '−' : '+'}</span>
             </button>
             {openCreatorGuideStep === 7 ? (
@@ -276,7 +276,7 @@ function CreatorTutorialContent() {
               aria-expanded={openCreatorGuideStep === 8}
               aria-controls="creator-guide-step-8"
             >
-              <h3 className="t-h3">8. Zoom Settings per Camera</h3>
+              <h3 className="t-h3">6.2 Zoom Settings per Camera</h3>
               <span style={{ fontSize: 24, lineHeight: 1, color: 'var(--amber)' }}>{openCreatorGuideStep === 8 ? '−' : '+'}</span>
             </button>
             {openCreatorGuideStep === 8 ? (
@@ -304,7 +304,7 @@ function CreatorTutorialContent() {
               aria-expanded={openCreatorGuideStep === 9}
               aria-controls="creator-guide-step-9"
             >
-              <h3 className="t-h3">9. Intensity</h3>
+              <h3 className="t-h3">7. Intensity</h3>
               <span style={{ fontSize: 24, lineHeight: 1, color: 'var(--amber)' }}>{openCreatorGuideStep === 9 ? '−' : '+'}</span>
             </button>
             {openCreatorGuideStep === 9 ? (
