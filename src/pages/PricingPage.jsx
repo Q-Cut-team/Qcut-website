@@ -83,16 +83,11 @@ function PricingPage() {
               </li>
             </ul>
             {/* Download button — links to installer page */}
-            <TermsCheckbox accepted={djTerms.accepted} onChange={djTerms.setAccepted} />
-            {djTerms.accepted ? (
+
               <Link to="/dj/download" className="btn btn-ghost">
                 Download Q·Cut DJ
               </Link>
-            ) : (
-              <button className="btn btn-ghost" disabled style={{opacity: 0.5, cursor: 'not-allowed'}}>
-                Download Q·Cut DJ
-              </button>
-            )}
+
           </div>
 
           {/* DJ Unlimited Plan */}
