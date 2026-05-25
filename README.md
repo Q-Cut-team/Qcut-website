@@ -32,7 +32,7 @@ The project is structured to enforce a strict design system and code reusability
 - **`src/pages/`**: The main route views.
   - `HomePage.jsx`: The main landing page.
   - `HelpPage.jsx`: Support & documentation.
-  - `DJVersionPage.jsx` / `EditorVersionPage.jsx`: Specific license details.
+  - `DJVersionPage.jsx` / `CreatorVersionPage.jsx`: Specific license details.
   - `ImpressumPage.jsx` / `PrivacyNoticePage.jsx`: Legal pages.
 - **`src/assets/`**: Static media files (`images/`, `videos/`).
 - **`src/styles/`**: Global styles (`tailwind.css`).

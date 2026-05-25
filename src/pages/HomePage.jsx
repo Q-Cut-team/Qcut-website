@@ -14,20 +14,23 @@ function HomePage() {
           <span style={{color:"var(--amber)"}}>Start Q-cutting</span>
         </h1>
         <p className="t-body-lg" style={{maxWidth: 580, margin:"24px auto 0"}}>
-          Drop your set. Personilize. Press go. Done. All your footage become ready-to-post clips.
+          Drop your set. Personalize. Press go. Done. All your footage becomes ready-to-post clips.
         </p>
-        {/*
         <div style={{display:"flex", gap: 12, justifyContent:"center", marginTop: 32, flexWrap:"wrap"}}>
 
           <Link to="/dj" className="btn btn-amber btn-amber-lg">
-            See how it works
+            I'm a DJ
             <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
               <line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/>
             </svg>
           </Link>
-
+          <Link to="/creator" className="btn btn-amber btn-amber-lg">
+            I'm a Creator
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+              <line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/>
+            </svg>
+          </Link>
         </div>
-        */}
 
         </section>
         <div style={{
@@ -36,19 +39,19 @@ function HomePage() {
           left: 0,
           right: 0,
           height: '120px',
-          background: 'linear-gradient(180deg, transparent 0%, var(--bg) 100%)',
+          
           pointerEvents: 'none',
           zIndex: 2
         }} />
       </div>
 
       {/* Tutorial Video Section */}
-      <Reveal as="section" className="container" style={{paddingTop: 16, paddingBottom: 40}}>
+      <Reveal as="section" className="container" style={{ paddingTop: 16, paddingBottom: 40}}>
         <div style={{textAlign: 'center', marginBottom: 32}}>
           <h2 className="t-h2">See how it performs</h2>
-          {/*<p className="t-body-lg" style={{maxWidth: 640, margin: '20px auto 0'}}>*/}
-          {/*  Watch how Q·Cut DJ transforms hours of footage into perfect clips*/}
-          {/*</p>*/}
+          <p className="t-body-lg" style={{maxWidth: 640, margin: '20px auto 0'}}>
+            Watch how Q-Cut DJ transforms hours of footage into perfect clips
+          </p>
         </div>
         <div style={{maxWidth: 960, margin: '0 auto'}}>
           <YouTubeEmbed
@@ -68,11 +71,11 @@ function HomePage() {
               Two tools<br/>
             </h2>
             <p className="t-body-lg" style={{maxWidth: 640, margin: '20px auto 0', color: 'var(--text-2)'}}>
-              Choose betweean easy clips and full control
+              Choose between easy clips and full control
             </p>
           </div>
         </Reveal>
-        <div style={{display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))', gap: 24}}>
+        <div style={{display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: 24}}>
           <Reveal delay={0}>
             <Link to="/dj" className="tool-card">
               <span className="tag">For DJs</span>
@@ -86,11 +89,11 @@ function HomePage() {
             </Link>
           </Reveal>
           <Reveal delay={120}>
-            <Link to="/editor" className="tool-card">
-              <span className="tag">For Editors</span>
-              <h3>For editors dealing with multicam sets</h3>
+            <Link to="/creator" className="tool-card">
+              <span className="tag">For Creators</span>
+              <h3>For creators dealing with multicam sets</h3>
               <div className="arrow">
-                Explore Editor version
+                Explore Creator version
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                   <line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/>
                 </svg>
@@ -101,46 +104,25 @@ function HomePage() {
         </div>
       </section>
 
-      {/*/!* Stats Section *!/*/}
-      {/*<section className="container section">*/}
-      {/*  <div className="scoreboard-row">*/}
-      {/*    <div className="scoreboard">*/}
-      {/*      <div className="corner" />*/}
-      {/*      <div className="num">60<span className="unit">sec</span></div>*/}
-      {/*      <div className="lbl">Average export time</div>*/}
-      {/*    </div>*/}
-      {/*    <div className="scoreboard">*/}
-      {/*      <div className="corner" />*/}
-      {/*      <div className="num">30<span className="unit">clips</span></div>*/}
-      {/*      <div className="lbl">Per session</div>*/}
-      {/*    </div>*/}
-      {/*    <div className="scoreboard">*/}
-      {/*      <div className="corner" />*/}
-      {/*      <div className="num">0<span className="unit">%</span></div>*/}
-      {/*      <div className="lbl">Manual editing</div>*/}
-      {/*    </div>*/}
-      {/*  </div>*/}
-      {/*</section>*/}
-
       {/* CTA Section */}
       <section className="container home-cta-section" style={{textAlign: 'center', padding: '64px 32px 24px'}}>
         <Reveal>
+          <h2 className="t-display" style={{color:"white"}}>
+            Skip the monotonous editing and get back to 
+          </h2>
           <h2 className="t-display" style={{color:"var(--amber)"}}>
-            Skip the monotonous editing and get back to creative work
+            creative work
           </h2>
         </Reveal>
 
-        {/*<p className="t-body-lg" style={{maxWidth: 560, margin: '24px auto 40px'}}>*/}
-        {/*  Join the beta. Limited spots available.*/}
-        {/*</p>*/}
-        {/*<div style={{display: 'flex', gap: 16, justifyContent: 'center', flexWrap: 'wrap'}}>*/}
-        {/*  <Link to="/pricing" className="btn btn-amber btn-amber-lg">*/}
-        {/*    Get early access*/}
-        {/*  </Link>*/}
-        {/*  <Link to="/help" className="btn btn-ghost">*/}
-        {/*    Learn more*/}
-        {/*  </Link>*/}
-        {/*</div>*/}
+        <p className="t-body-lg" style={{maxWidth: 560, margin: '24px auto 40px'}}>
+          Try for free and see how Q-Cut can transform your workflow
+        </p>
+        <div style={{display: 'flex', gap: 16, justifyContent: 'center', flexWrap: 'wrap'}}>
+          <Link to="/pricing" className="btn btn-amber btn-amber-lg">
+            Get early access
+          </Link>
+        </div>
 
       </section>
     </div>

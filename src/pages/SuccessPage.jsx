@@ -33,8 +33,8 @@ function SuccessPage() {
           
           <p className="t-body" style={{marginBottom: 40, color: 'var(--text-3)'}}>
             Having trouble? Contact us at{' '}
-            <a href="mailto:support@qcut.app" style={{color: 'var(--amber)'}}>
-              support@qcut.app
+            <a href="mailto:info@qcut.at" style={{color: 'var(--amber)'}}>
+              info@qcut.at
             </a>
           </p>
 

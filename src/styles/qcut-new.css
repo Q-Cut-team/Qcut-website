@@ -95,6 +95,7 @@ button { font-family: inherit; }
   line-height: 1.3;
   letter-spacing: -0.01em;
   font-weight: 600;
+  color: var(--text);
   margin: 0;
 }
 .amber { color: var(--amber); }
@@ -602,6 +603,11 @@ button { font-family: inherit; }
   width: 100%;
 }
 
+/* ---------- Pricing page ---------- */
+.pricing-cta-section {
+  padding: 80px 32px;
+}
+
 /* ---------- Footer ---------- */
 .footer {
   padding: 64px 0 32px;
@@ -856,6 +862,12 @@ button { font-family: inherit; }
   .product-grid > div:last-child {
     order: 1;
   }
+  .dj-page .dj-product-grid > div:first-child {
+    order: 1;
+  }
+  .dj-page .dj-product-grid > div:last-child {
+    order: 2;
+  }
   .tier-grid { 
     grid-template-columns: 1fr !important;
   }
@@ -904,6 +916,31 @@ button { font-family: inherit; }
   
   .tool-card { padding: 24px; }
   .card { padding: 16px; }
+
+  .pricing-page .pricing-plan-grid {
+    grid-template-columns: 1fr !important;
+    margin: 32px auto;
+    gap: 16px;
+  }
+
+  .pricing-page .pricing-cta-section {
+    padding: 56px 20px !important;
+  }
+
+  .pricing-page .tier-card {
+    padding: 24px 18px;
+    gap: 18px;
+  }
+
+  .pricing-page .tier-card .price {
+    font-size: 32px;
+  }
+
+  .pricing-page .tier-card .btn {
+    white-space: normal;
+    line-height: 1.35;
+    min-height: 44px;
+  }
   
   .footer-inner { 
     flex-direction: column; 
@@ -943,58 +980,33 @@ button { font-family: inherit; }
     font-size: 15px;
     padding: 12px 20px;
   }
+
+  .pricing-page .pricing-cta-section {
+    padding: 44px 16px !important;
+  }
 }
 
-@media (max-width: 390px) {
-  .container, .container-narrow { padding: 0 16px; }
-  .hero-home { padding: 20px 16px; }
-  .section { padding: 32px 0; }
-  
-  .nav-inner { 
-    padding: 10px 16px;
-    height: 56px;
-  }
-  
-  .footer-inner {
-    padding: 24px 16px;
-  }
-  
-  .footer { 
-    margin-top: 16px; 
-  }
-  
-  .home-cta-section {
-    padding: 48px 20px 16px !important;
-  }
-  
-  .hero-page {
-    border-bottom: 1px solid var(--line);
-    padding-bottom: 32px !important;
-    margin-bottom: 24px;
-  }
-
+/* ---------- Creator / DJ sections ---------- */
 .dj-last-section {
   padding-bottom: 24px !important;
 }
 
-@media (max-width: 768px) {
-  .dj-last-section {
-    padding-bottom: 16px !important;
-  }
+.creator-last-section {
+  padding-bottom: 24px !important;
 }
 
-.editor-feature-grid {
+.creator-feature-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 20px;
 }
 
-.editor-feature-grid .reveal {
+.creator-feature-grid .reveal {
   display: flex;
   flex-direction: column;
 }
 
-.editor-feature-grid .reveal .card {
+.creator-feature-grid .reveal .card {
   flex: 1;
   padding: 24px 22px;
   display: flex;
@@ -1003,58 +1015,167 @@ button { font-family: inherit; }
   min-height: 120px;
 }
 
-.editor-feature-grid .card h3 {
+.creator-feature-grid .card h3 {
   font-size: 17px;
   font-weight: 600;
   color: var(--text);
   margin: 0;
 }
 
-.editor-feature-grid .card p {
+.creator-feature-grid .card p {
   font-size: 14px;
   color: var(--text-2);
   line-height: 1.45;
   margin: 0;
 }
 
+.comparison-card-grid {
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+}
+
+.comparison-table-wrap {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+.comparison-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.comparison-table th,
+.comparison-table td {
+  vertical-align: top;
+}
+
 @media (max-width: 1024px) {
-  .editor-feature-grid {
+  .creator-feature-grid {
     grid-template-columns: repeat(2, 1fr);
     gap: 16px;
   }
 }
 
+@media (max-width: 768px) {
+  .dj-last-section {
+    padding-bottom: 16px !important;
+  }
+
+  .creator-last-section {
+    padding-bottom: 16px !important;
+  }
+
+  .home-cta-section,
+  .creator-cta-section,
+  .dj-cta-section {
+    padding: 56px 20px 20px !important;
+  }
+
+  .comparison-table thead {
+    display: none;
+  }
+
+  .comparison-table,
+  .comparison-table tbody,
+  .comparison-table tr,
+  .comparison-table td {
+    display: block;
+    width: 100%;
+  }
+
+  .comparison-table tbody {
+    display: grid;
+    gap: 12px;
+  }
+
+  .comparison-table tr {
+    border: 1px solid var(--line-2);
+    border-radius: 12px;
+    padding: 10px 12px;
+    background: var(--surface-2);
+  }
+
+  .comparison-table td {
+    border: none !important;
+    padding: 0 !important;
+  }
+
+  .comparison-table td + td {
+    margin-top: 10px;
+  }
+
+  .comparison-table td::before {
+    content: attr(data-label);
+    display: block;
+    margin-bottom: 4px;
+    font-family: var(--mono);
+    font-size: 10px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--text-3);
+  }
+}
+
 @media (max-width: 640px) {
-  .editor-feature-grid {
+  .billing-check-row {
+    flex-direction: column;
+  }
+
+  .billing-check-row .btn {
+    width: 100%;
+  }
+
+  .creator-feature-grid {
     grid-template-columns: 1fr;
     gap: 12px;
   }
-  .editor-feature-grid .reveal .card {
+  .creator-feature-grid .reveal .card {
     padding: 18px 16px;
     min-height: auto;
   }
-  .editor-feature-grid .card h3 {
+  .creator-feature-grid .card h3 {
     font-size: 16px;
   }
 }
 
-.editor-last-section {
-  padding-bottom: 24px !important;
-}
-
-@media (max-width: 768px) {
-  .editor-last-section {
-    padding-bottom: 16px !important;
+@media (max-width: 480px) {
+  .home-cta-section,
+  .creator-cta-section,
+  .dj-cta-section {
+    padding: 44px 16px 16px !important;
   }
 }
-  
+
+@media (max-width: 390px) {
+  .container, .container-narrow { padding: 0 16px; }
+  .hero-home { padding: 20px 16px; }
+  .section { padding: 32px 0; }
+
+  .nav-inner {
+    padding: 10px 16px;
+    height: 56px;
+  }
+
+  .footer-inner {
+    padding: 24px 16px;
+  }
+
+  .footer {
+    margin-top: 16px;
+  }
+
+  .hero-page {
+    border-bottom: 1px solid var(--line);
+    padding-bottom: 32px !important;
+    margin-bottom: 24px;
+  }
+
   .t-display-xl { font-size: clamp(32px, 9vw, 48px); }
   .t-display { font-size: clamp(28px, 8vw, 42px); }
-  
+
   .feature-grid-3 {
     grid-template-columns: 1fr;
   }
-  
+
   .product-grid {
     gap: 24px !important;
   }

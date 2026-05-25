@@ -2,31 +2,37 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { redirectToCheckout } from '../utils/checkout';
 import { useToast } from '../hooks/useToast';
+import { useTermsAccepted } from '../hooks/useTermsAccepted';
 import Toast from '../components/Toast';
+import TermsCheckbox from '../components/TermsCheckbox';
 
 // Price IDs from your requirements
 const PRICE_IDS = {
-  DJ_MONTH: 'price_1TQVJyBSfJ4A9uVJTrQzprla',
-  KREATOR_MONTH: 'price_1TQVNtBSfJ4A9uVJmtEhAaR3',
-  KREATOR_ONETIME: 'price_1TQVNtBSfJ4A9uVJhclSWGnr',
-  STUDIO_MONTH: 'price_1TQVSjBSfJ4A9uVJkyzTq6JV',
-  STUDIO_ONETIME: 'price_1TQVSjBSfJ4A9uVJHMHgrTxr',
-  DJ_UNLIMITED: null // Coming soon
+  DJ_MONTH: 'price_1TZZc4PjWn7pNPmY9kopKsZY', //now free trial
+  EDITOR_MONTH: 'price_1TZZd5PjWn7pNPmYOmu7e4o9',//now free trial
+  EDITOR_ONETIME: null,
+  STUDIO_MONTH: 'price_1TZZcZPjWn7pNPmYlst2j6X3',//now free trial
+  STUDIO_ONETIME: null,
+  DJ_UNLIMITED: 'price_1TZZc4PjWn7pNPmY9kopKsZY' // now free trial
 };
 
 function PricingPage() {
   const { isVisible, message, showToast, hideToast } = useToast();
+  const djTerms = useTermsAccepted();
+  const djUnlimitedTerms = useTermsAccepted();
+  const creatorTerms = useTermsAccepted();
+  const studioTerms = useTermsAccepted();
 
   const handleCheckout = async (priceId) => {
     if (!priceId) {
-      showToast("DJ Unlimited coming soon — we're working on it! 🚧");
+      showToast("Coming soon — we're working on it! 🚧");
       return;
     }
     await redirectToCheckout(priceId);
   };
 
   return (
-    <div className="page-fade-enter">
+    <div className="page-fade-enter pricing-page">
       {/* Hero Section */}
       <section className="hero-page container" style={{textAlign:"center"}}>
         <h1 className="t-display" style={{maxWidth: 880, margin:"0 auto"}}>
@@ -38,23 +44,23 @@ function PricingPage() {
       </section>
 
       {/* DJ Plans Section */}
-      <section className="container section">
+      <section id="dj" className="container section">
         <div style={{textAlign: 'center', marginBottom: 48}}>
           <span className="t-label">For DJs</span>
-          <h2 className="t-h2" style={{marginTop: 12}}>Live set editing</h2>
+          <h2 className="t-h2" style={{marginTop: 12}}>Fast & Easy Clips</h2>
         </div>
-        <div className="tier-grid">
+        <div className="tier-grid pricing-plan-grid">
           {/* DJ Plan */}
           <div className="tier-card">
             <h3>DJ</h3>
-            <div className="price">€20<span className="unit">/month</span></div>
+            <div className="price">Free</div>
             <p>Perfect for regular gigs</p>
             <ul>
               <li>
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3">
                   <polyline points="20 6 9 17 4 12" />
                 </svg>
-                <span>Up to 10 sets/month</span>
+                <span>Up to 20 minutes</span>
               </li>
               <li>
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3">
@@ -66,28 +72,28 @@ function PricingPage() {
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3">
                   <polyline points="20 6 9 17 4 12" />
                 </svg>
-                <span>Miniset + Clips modes</span>
+                <span>Up to 3 clips</span>
               </li>
               <li>
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3">
                   <polyline points="20 6 9 17 4 12" />
                 </svg>
-                <span>Social-ready presets</span>
+                <span>4 exports per week</span>
               </li>
             </ul>
-            <button 
-              className="btn btn-amber" 
-              onClick={() => handleCheckout(PRICE_IDS.DJ_MONTH)}
-            >
-              Subscribe €20/month
-            </button>
+            {/* Download button — links to installer page */}
+
+              <Link to="/dj/download" className="btn btn-ghost">
+                Download Q·Cut DJ
+              </Link>
+
           </div>
 
           {/* DJ Unlimited Plan */}
           <div className="tier-card featured">
             <span className="badge">Unlimited</span>
             <h3>DJ Unlimited</h3>
-            <div className="price">€35<span className="unit">/month</span></div>
+            <div className="price">€TBA<span className="unit">/month</span></div>
             <p>For touring DJs & agencies</p>
             <ul>
               <li>
@@ -106,61 +112,72 @@ function PricingPage() {
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3">
                   <polyline points="20 6 9 17 4 12" />
                 </svg>
-                <span>Cloud backup</span>
+                <span>Unlimited input length</span>
               </li>
               <li>
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3">
                   <polyline points="20 6 9 17 4 12" />
                 </svg>
-                <span>Priority render queue</span>
+                <span>Miniset export</span>
               </li>
               <li>
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3">
                   <polyline points="20 6 9 17 4 12" />
                 </svg>
-                <span>Direct upload to socials</span>
+                <span>No Watermark</span>
               </li>
             </ul>
-            <button 
-              className="btn btn-amber" 
-              onClick={() => handleCheckout(PRICE_IDS.DJ_UNLIMITED)}
+            {/* Coming soon — no price ID yet */}
+            <TermsCheckbox accepted={djUnlimitedTerms.accepted} onChange={djUnlimitedTerms.setAccepted} />
+            <button
+              className="btn btn-amber"
+              disabled={!djUnlimitedTerms.accepted}
+              style={{opacity: djUnlimitedTerms.accepted ? 1 : 0.5, cursor: djUnlimitedTerms.accepted ? 'pointer' : 'not-allowed'}}
+              onClick={() => djUnlimitedTerms.accepted && handleCheckout(PRICE_IDS.DJ_UNLIMITED)}
             >
-              Coming soon
+              Test for free
+            </button>
+            <button
+              className="btn btn-ghost"
+              onClick={() => handleCheckout(PRICE_IDS.STUDIO_ONETIME)}
+              style={{marginTop: 8}}
+            >
+              One-time purchase (Coming soon)
             </button>
           </div>
         </div>
       </section>
 
-      {/* Editor Plans Section */}
-      <section className="container section">
+      {/* Creator Plans Section */}
+      <section id="creator" className="container section">
         <div style={{textAlign: 'center', marginBottom: 48}}>
-          <span className="t-label">For Editors</span>
+          <span className="t-label">For Creators</span>
           <h2 className="t-h2" style={{marginTop: 12}}>Professional multicam</h2>
         </div>
-        <div className="tier-grid">
-          {/* Kreator Plan */}
+        <div className="tier-grid pricing-plan-grid">
+          {/* Creator Plan */}
           <div className="tier-card">
-            <h3>Kreator</h3>
-            <div className="price">€30<span className="unit">/month</span></div>
-            <p>For content creators</p>
+            <h3>Creator</h3>
+            <div className="price">€TBA<span className="unit">/month</span></div>
+            {/*<p>For content creators</p>*/}
             <ul>
               <li>
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3">
                   <polyline points="20 6 9 17 4 12" />
                 </svg>
-                <span>Up to 10 projects/month</span>
+                <span>XML workflow</span>
               </li>
               <li>
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3">
                   <polyline points="20 6 9 17 4 12" />
                 </svg>
-                <span>XML export (Resolve, FCPX)</span>
+                <span>Set the vibe of your Cut</span>
               </li>
               <li>
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3">
                   <polyline points="20 6 9 17 4 12" />
                 </svg>
-                <span>4K export</span>
+                <span>Audio and timecode synchronization</span>
               </li>
               <li>
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3">
@@ -168,25 +185,23 @@ function PricingPage() {
                 </svg>
                 <span>Preset library</span>
               </li>
-              <li>
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3">
-                  <polyline points="20 6 9 17 4 12" />
-                </svg>
-                <span>Email support · 72h</span>
-              </li>
             </ul>
-            <button 
-              className="btn btn-amber" 
-              onClick={() => handleCheckout(PRICE_IDS.KREATOR_MONTH)}
+            <TermsCheckbox accepted={creatorTerms.accepted} onChange={creatorTerms.setAccepted} />
+            <button
+              className="btn btn-amber"
+              disabled={!creatorTerms.accepted}
+              style={{opacity: creatorTerms.accepted ? 1 : 0.5, cursor: creatorTerms.accepted ? 'pointer' : 'not-allowed'}}
+              onClick={() => creatorTerms.accepted && handleCheckout(PRICE_IDS.EDITOR_MONTH)}
             >
-              Subscribe €30/month
+              Test for free
             </button>
-            <button 
-              className="btn btn-ghost" 
-              onClick={() => handleCheckout(PRICE_IDS.KREATOR_ONETIME)}
+
+            <button
+              className="btn btn-ghost"
+              onClick={() => handleCheckout(PRICE_IDS.EDITOR_ONETIME)}
               style={{marginTop: 8}}
             >
-              One-time €299
+              One-time purchase (Coming soon)
             </button>
           </div>
 
@@ -194,58 +209,55 @@ function PricingPage() {
           <div className="tier-card featured">
             <span className="badge">Studio</span>
             <h3>Studio</h3>
-            <div className="price">€50<span className="unit">/month</span></div>
-            <p>For production studios</p>
+            <div className="price">€TBA<span className="unit">/month</span></div>
+            <p>Take full Control over your Cut</p>
             <ul>
               <li>
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3">
                   <polyline points="20 6 9 17 4 12" />
                 </svg>
-                <span>Unlimited projects</span>
+                <span>DaVinci Resolve Studio & XML Workflow</span>
               </li>
               <li>
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3">
                   <polyline points="20 6 9 17 4 12" />
                 </svg>
-                <span>All NLE support</span>
+                <span>Audio and timecode synchronization</span>
               </li>
               <li>
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3">
                   <polyline points="20 6 9 17 4 12" />
                 </svg>
-                <span>8K export</span>
+                <span>Full Control over how the cut looks</span>
               </li>
               <li>
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3">
                   <polyline points="20 6 9 17 4 12" />
                 </svg>
-                <span>Custom presets</span>
+                <span>Social Media Clips</span>
               </li>
               <li>
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3">
                   <polyline points="20 6 9 17 4 12" />
                 </svg>
-                <span>Priority render</span>
-              </li>
-              <li>
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3">
-                  <polyline points="20 6 9 17 4 12" />
-                </svg>
-                <span>Live chat support</span>
+                <span>Fusion/effect options</span>
               </li>
             </ul>
-            <button 
-              className="btn btn-amber" 
-              onClick={() => handleCheckout(PRICE_IDS.STUDIO_MONTH)}
+            <TermsCheckbox accepted={studioTerms.accepted} onChange={studioTerms.setAccepted} />
+            <button
+              className="btn btn-amber"
+              disabled={!studioTerms.accepted}
+              style={{opacity: studioTerms.accepted ? 1 : 0.5, cursor: studioTerms.accepted ? 'pointer' : 'not-allowed'}}
+              onClick={() => studioTerms.accepted && handleCheckout(PRICE_IDS.STUDIO_MONTH)}
             >
-              Subscribe €50/month
+              Test for free
             </button>
-            <button 
-              className="btn btn-ghost" 
+            <button
+              className="btn btn-ghost"
               onClick={() => handleCheckout(PRICE_IDS.STUDIO_ONETIME)}
               style={{marginTop: 8}}
             >
-              One-time €499
+              One-time purchase (Coming soon)
             </button>
           </div>
         </div>
@@ -257,15 +269,9 @@ function PricingPage() {
           <h2 className="t-h2">Questions?</h2>
         </div>
         <div className="card" style={{marginBottom: 16}}>
-          <h3 className="t-h3" style={{marginBottom: 12}}>Can I switch plans?</h3>
+          <h3 className="t-h3" style={{marginBottom: 12}}>What's the difference between DJ and Creator?</h3>
           <p className="t-body">
-            Yes. Upgrade or downgrade anytime. Changes take effect on your next billing cycle.
-          </p>
-        </div>
-        <div className="card" style={{marginBottom: 16}}>
-          <h3 className="t-h3" style={{marginBottom: 12}}>What's the difference between DJ and Editor?</h3>
-          <p className="t-body">
-            DJ is optimized for live set recordings with beat detection. Editor works with any footage and exports to professional NLE timelines.
+            DJ is optimized to quickly get highlights out of your Dj Set. Creator works with any footage and exports to professional NLE timelines.
           </p>
         </div>
         <div className="card" style={{marginBottom: 16}}>
@@ -276,8 +282,8 @@ function PricingPage() {
         </div>
       </section>
 
-      {/* CTA Section */}
-      <section className="container section" style={{textAlign: 'center', padding: '80px 32px'}}>
+      {/* CTA Section 
+      <section className="container section pricing-cta-section" style={{textAlign: 'center'}}>
         <h2 className="t-display">
           Ready to start?
         </h2>
@@ -289,7 +295,7 @@ function PricingPage() {
             Contact sales
           </Link>
         </div>
-      </section>
+      </section>*/}
 
       <Toast message={message} isVisible={isVisible} onClose={hideToast} />
     </div>

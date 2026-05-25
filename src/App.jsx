@@ -2,7 +2,9 @@ import React, { useState, useEffect } from 'react';
 import { BrowserRouter, Routes, Route, Link, useLocation, useNavigate } from 'react-router-dom';
 import HomePage from './pages/HomePage';
 import DJPage from './pages/DJPage';
-import EditorPage from './pages/EditorPage';
+import CreatorPage from './pages/CreatorPage';
+import CreatorTutorialPage from './pages/CreatorTutorialPage';
+import StudioTutorialPage from './pages/StudioTutorialPage';
 import PricingPage from './pages/PricingPage';
 import HelpPage from './pages/HelpPage';
 import SuccessPage from './pages/SuccessPage';
@@ -10,6 +12,10 @@ import ImpressumPage from './pages/ImpressumPage';
 import PrivacyNoticePage from './pages/PrivacyNoticePage';
 import TestPage from './pages/TestPage';
 import SimpleVideoTest from './pages/SimpleVideoTest';
+import DJDownloadPage from './pages/DJDownloadPage';
+import CreatorDownloadPage from './pages/CreatorDownloadPage';
+import StudioDownloadPage from './pages/StudioDownloadPage';
+import TermsOfUsePage from './pages/TermsOfUsePage';
 
 // ScrollToTop Component
 function ScrollToTop() {
@@ -52,9 +58,9 @@ function Nav() {
   const links = [
     { path: '/', label: 'Home' },
     { path: '/dj', label: 'DJ' },
-    { path: '/editor', label: 'Editor' },
-    // { path: '/pricing', label: 'Pricing' },
-    // { path: '/help', label: 'Help' },
+    { path: '/creator', label: 'Creator' },
+    { path: '/pricing', label: 'Pricing' },
+    { path: '/help', label: 'Help' },
   ];
 
   useEffect(() => {
@@ -105,33 +111,28 @@ function Footer() {
         <div className="footer-links">
 
           <div className="footer-col">
+            <h4>Product</h4>
+            <ul>
+              <li><Link to="/dj">DJ Version</Link></li>
+              <li><Link to="/creator">Creator Version</Link></li>
+              <li><Link to="/pricing">Pricing</Link></li>
+            </ul>
+          </div>
+          <div className="footer-col">
+            <h4>Support</h4>
+            <ul>
+              <li><Link to="/help">Help Center</Link></li>
+              <li><a href="mailto:info@qcut.app">Contact</a></li>
+            </ul>
+          </div>
+          <div className="footer-col">
             <h4>Legal</h4>
             <ul>
+              <li><Link to="/privacy-notice">Privacy</Link></li>
+              <li><Link to="/terms-of-use">Terms of Use</Link></li>
               <li><Link to="/impressum">Impressum</Link></li>
             </ul>
           </div>
-          {/*<div className="footer-col">*/}
-          {/*  <h4>Product</h4>*/}
-          {/*  <ul>*/}
-          {/*    <li><Link to="/dj">DJ Version</Link></li>*/}
-          {/*    <li><Link to="/editor">Editor Version</Link></li>*/}
-          {/*    /!*<li><Link to="/pricing">Pricing</Link></li>*!/*/}
-          {/*  </ul>*/}
-          {/*</div>*/}
-          {/*<div className="footer-col">*/}
-          {/*  <h4>Support</h4>*/}
-          {/*  <ul>*/}
-          {/*    <li><Link to="/help">Help Center</Link></li>*/}
-          {/*    <li><a href="mailto:support@qcut.app">Contact</a></li>*/}
-          {/*  </ul>*/}
-          {/*</div>*/}
-          {/*<div className="footer-col">*/}
-          {/*  <h4>Legal</h4>*/}
-          {/*  <ul>*/}
-          {/*    <li><Link to="/privacy-notice">Privacy</Link></li>*/}
-          {/*    <li><Link to="/impressum">Impressum</Link></li>*/}
-          {/*  </ul>*/}
-          {/*</div>*/}
         </div>
       </div>
     </footer>
@@ -148,12 +149,18 @@ function App() {
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="/dj" element={<DJPage />} />
-        <Route path="/editor" element={<EditorPage />} />
-        {/*<Route path="/pricing" element={<PricingPage />} />*/}
+        <Route path="/dj/download" element={<DJDownloadPage />} />
+        <Route path="/creator" element={<CreatorPage />} />
+        <Route path="/creator/tutorial" element={<CreatorTutorialPage />} />
+        <Route path="/studio/tutorial" element={<StudioTutorialPage />} />
+        <Route path="/creator/download" element={<CreatorDownloadPage />} />
+        <Route path="/studio/download" element={<StudioDownloadPage />} />
+        <Route path="/pricing" element={<PricingPage />} />
         <Route path="/help" element={<HelpPage />} />
         <Route path="/success" element={<SuccessPage />} />
         <Route path="/impressum" element={<ImpressumPage />} />
         <Route path="/privacy-notice" element={<PrivacyNoticePage />} />
+        <Route path="/terms-of-use" element={<TermsOfUsePage />} />
         <Route path="/test" element={<TestPage />} />
         <Route path="/video-test" element={<SimpleVideoTest />} />
       </Routes>

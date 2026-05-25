@@ -22,7 +22,7 @@ function SiteFooter() {
                   onMouseLeave={(e) => e.target.style.color = ""}>
               Privacy
             </Link>
-            <a href="mailto:support@qcut.app" 
+            <a href="mailto:info@qcut.at" 
                className="t-label" 
                style={{transition: "color .2s ease"}}
                onMouseEnter={(e) => e.target.style.color = "var(--amber)"}
