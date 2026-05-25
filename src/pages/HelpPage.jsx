@@ -69,54 +69,54 @@ function HelpPage() {
         </div>
       </section>
 
-      {/* Subscription Check Section */}
-      <section id="check-subscription" className="container section">
-        <div className="card" style={{maxWidth: 560, margin: '0 auto', textAlign: 'center'}}>
-          <div>
-            <h2 className="t-h3">Check your subscription status</h2>
-            <p className="t-body" style={{fontSize:14, marginTop: 8}}>
-              Enter the email you bought with — we'll redirect to your Stripe billing portal.
-            </p>
-          </div>
-          <form onSubmit={handleCheck} style={{marginTop: 24}}>
-            <div className="billing-check-row" style={{display: 'flex', gap: 8}}>
-              <input
-                type="email"
-                value={email}
-                onChange={(e) => setEmail(e.target.value)}
-                placeholder="your@email.com"
-                required
-                style={{
-                  flex: 1,
-                  padding: '12px 16px',
-                  background: 'var(--surface-2)',
-                  border: '1px solid var(--line-2)',
-                  borderRadius: '8px',
-                  color: 'var(--text)',
-                  fontSize: '14px'
-                }}
-              />
-              <button
-                type="submit"
-                className="btn btn-amber"
-                disabled={status.type === 'loading'}
-              >
-                {status.type === 'loading' ? 'Checking…' : 'Check'}
-              </button>
-            </div>
-            {status.type === 'loading' && (
-              <p className="t-body" style={{fontSize:13, marginTop: 12, color:"var(--amber)"}}>
-                {status.message}
-              </p>
-            )}
-            {status.type === 'error' && (
-              <p className="t-body" style={{fontSize:13, marginTop: 12, color:"#ff6b6b"}}>
-                ✗ {status.message}
-              </p>
-            )}
-          </form>
-        </div>
-      </section>
+      {/*/!* Subscription Check Section *!/*/}
+      {/*<section id="check-subscription" className="container section">*/}
+      {/*  <div className="card" style={{maxWidth: 560, margin: '0 auto', textAlign: 'center'}}>*/}
+      {/*    <div>*/}
+      {/*      <h2 className="t-h3">Check your subscription status</h2>*/}
+      {/*      <p className="t-body" style={{fontSize:14, marginTop: 8}}>*/}
+      {/*        Enter the email you bought with — we'll redirect to your Stripe billing portal.*/}
+      {/*      </p>*/}
+      {/*    </div>*/}
+      {/*    <form onSubmit={handleCheck} style={{marginTop: 24}}>*/}
+      {/*      <div className="billing-check-row" style={{display: 'flex', gap: 8}}>*/}
+      {/*        <input*/}
+      {/*          type="email"*/}
+      {/*          value={email}*/}
+      {/*          onChange={(e) => setEmail(e.target.value)}*/}
+      {/*          placeholder="your@email.com"*/}
+      {/*          required*/}
+      {/*          style={{*/}
+      {/*            flex: 1,*/}
+      {/*            padding: '12px 16px',*/}
+      {/*            background: 'var(--surface-2)',*/}
+      {/*            border: '1px solid var(--line-2)',*/}
+      {/*            borderRadius: '8px',*/}
+      {/*            color: 'var(--text)',*/}
+      {/*            fontSize: '14px'*/}
+      {/*          }}*/}
+      {/*        />*/}
+      {/*        <button*/}
+      {/*          type="submit"*/}
+      {/*          className="btn btn-amber"*/}
+      {/*          disabled={status.type === 'loading'}*/}
+      {/*        >*/}
+      {/*          {status.type === 'loading' ? 'Checking…' : 'Check'}*/}
+      {/*        </button>*/}
+      {/*      </div>*/}
+      {/*      {status.type === 'loading' && (*/}
+      {/*        <p className="t-body" style={{fontSize:13, marginTop: 12, color:"var(--amber)"}}>*/}
+      {/*          {status.message}*/}
+      {/*        </p>*/}
+      {/*      )}*/}
+      {/*      {status.type === 'error' && (*/}
+      {/*        <p className="t-body" style={{fontSize:13, marginTop: 12, color:"#ff6b6b"}}>*/}
+      {/*          ✗ {status.message}*/}
+      {/*        </p>*/}
+      {/*      )}*/}
+      {/*    </form>*/}
+      {/*  </div>*/}
+      {/*</section>*/}
 
       {/* Contact Section */}
       <section id="contact" className="container section" style={{textAlign: 'center'}}>
