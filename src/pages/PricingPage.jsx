@@ -137,6 +137,13 @@ function PricingPage() {
             >
               Test for free
             </button>
+            <button
+              className="btn btn-ghost"
+              onClick={() => handleCheckout(PRICE_IDS.STUDIO_ONETIME)}
+              style={{marginTop: 8}}
+            >
+              One-time purchase (Coming soon)
+            </button>
           </div>
         </div>
       </section>
@@ -152,7 +159,7 @@ function PricingPage() {
           <div className="tier-card">
             <h3>Creator</h3>
             <div className="price">€TBA<span className="unit">/month</span></div>
-            <p>For content creators</p>
+            {/*<p>For content creators</p>*/}
             <ul>
               <li>
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3">
@@ -164,7 +171,7 @@ function PricingPage() {
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3">
                   <polyline points="20 6 9 17 4 12" />
                 </svg>
-                <span>Vibe based Cutting</span>
+                <span>Set the vibe of your Cut</span>
               </li>
               <li>
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3">
@@ -194,7 +201,7 @@ function PricingPage() {
               onClick={() => handleCheckout(PRICE_IDS.EDITOR_ONETIME)}
               style={{marginTop: 8}}
             >
-              One-time (Coming soon)
+              One-time purchase (Coming soon)
             </button>
           </div>
 
@@ -203,7 +210,7 @@ function PricingPage() {
             <span className="badge">Studio</span>
             <h3>Studio</h3>
             <div className="price">€TBA<span className="unit">/month</span></div>
-            <p>For production studios</p>
+            <p>Take full Control over your Cut</p>
             <ul>
               <li>
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3">
@@ -250,7 +257,7 @@ function PricingPage() {
               onClick={() => handleCheckout(PRICE_IDS.STUDIO_ONETIME)}
               style={{marginTop: 8}}
             >
-              One-time (Coming soon)
+              One-time purchase (Coming soon)
             </button>
           </div>
         </div>

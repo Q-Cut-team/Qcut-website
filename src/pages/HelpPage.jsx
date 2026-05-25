@@ -124,7 +124,7 @@ function HelpPage() {
           Still need help?
         </h2>
         <p className="t-body-lg" style={{maxWidth: 560, margin: '0 auto 32px'}}>
-          Our support team typically responds within 24 hours.
+          We'll try to respond as fast as possible!
         </p>
         <div style={{display: 'flex', gap: 16, justifyContent: 'center', flexWrap: 'wrap'}}>
           <a href="mailto:info@qcut.at" className="btn btn-amber">

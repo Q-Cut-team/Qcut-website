@@ -181,10 +181,10 @@ function CreatorPage() {
         </div>
         <div style={{ marginTop: 24, textAlign: 'center' }}>
           <h2 className="t-h2" style={{ marginBottom: 16 }}>
-            Need the Full Studio Walkthrough?
+            See how to use Studio
           </h2>
           <Link to="/studio/tutorial" className="btn btn-amber" style={{ color: '#fff' }}>
-            Step by Step Description
+            Open tutorial
           </Link>
         </div>
       </section>
@@ -232,10 +232,10 @@ function CreatorPage() {
         </div>
         <div style={{ marginTop: 24, textAlign: 'center' }}>
           <h2 className="t-h2" style={{ marginBottom: 16 }}>
-            Need a Full Walkthrough?
+            See how to use Creator
           </h2>
           <Link to="/creator/tutorial" className="btn btn-amber" style={{ color: '#fff' }}>
-            Step by Step Description
+            Open tutorial
           </Link>
         </div>
       </section>
@@ -244,7 +244,7 @@ function CreatorPage() {
       <section className="container section">
         <Reveal>
           <div style={{textAlign: 'center', marginBottom: 32}}>
-            <h2 className="t-h2">Q/Cut Studio or Q-Cut Creator?</h2>
+            <h2 className="t-h2">Q-Cut Studio or Q-Cut Creator?</h2>
           </div>
         </Reveal>
 
@@ -252,10 +252,10 @@ function CreatorPage() {
           <div className="card" style={{marginBottom: 24}}>
             <h3 className="t-h3" style={{marginBottom: 12}}>The fast answer</h3>
             <p className="t-body" style={{marginBottom: 10}}>
-              Choose <strong>Q/Cut Studio</strong> if you want the full editing tool. Choose <strong>Q-Cut Creator</strong> if you want a simple XML-in/XML-out workflow.
+              Choose <strong>Q-Cut Studio</strong> if you want the full editing tool. Choose <strong>Q-Cut Creator</strong> if you want a simple XML-in/XML-out workflow.
             </p>
             <p className="t-body">
-              For most editors, <strong>Q/Cut Studio is the better choice</strong> because it gives you more ways to start, more ways to finish, and more control over the edit.
+              For most editors, <strong>Q-Cut Studio is the better choice</strong> because it gives you more ways to start, more ways to finish, and more control over the edit.
             </p>
             <div style={{marginTop: 20}}>
               <button
@@ -276,10 +276,10 @@ function CreatorPage() {
             <div className="comparison-card-grid" style={{display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: 24}}>
               <Reveal delay={100}>
                 <div className="card">
-                  <h3 className="t-h3" style={{marginBottom: 8}}>Q/Cut Studio</h3>
+                  <h3 className="t-h3" style={{marginBottom: 8}}>Q-Cut Studio</h3>
                   <p className="t-body" style={{marginBottom: 14}}><strong>Best for editors who want control.</strong></p>
                   <p className="t-body" style={{marginBottom: 16}}>
-                    Q/Cut Studio is the professional version. It is made for multicam jobs where you want full control, strong workflow integration, personalized settings, flexible export paths, and fast revision rounds from start to finish.
+                    Q-Cut Studio is the professional version. It is made for multicam jobs where you want full control, strong workflow integration, personalized settings, flexible export paths, and fast revision rounds from start to finish.
                   </p>
                   <p className="t-body" style={{marginBottom: 10}}><strong>Studio gives you:</strong></p>
                   <ul style={{display: 'grid', gap: 10, paddingLeft: 18, margin: 0}}>
@@ -321,7 +321,7 @@ function CreatorPage() {
                     <thead>
                       <tr>
                         <th style={{textAlign: 'left', padding: '10px 12px', borderBottom: '1px solid var(--line-2)', color: 'var(--text)'}}>Feature</th>
-                        <th style={{textAlign: 'left', padding: '10px 12px', borderBottom: '1px solid var(--line-2)', color: 'var(--text)'}}>Q/Cut Studio</th>
+                        <th style={{textAlign: 'left', padding: '10px 12px', borderBottom: '1px solid var(--line-2)', color: 'var(--text)'}}>Q-Cut Studio</th>
                         <th style={{textAlign: 'left', padding: '10px 12px', borderBottom: '1px solid var(--line-2)', color: 'var(--text)'}}>Q-Cut Creator</th>
                       </tr>
                     </thead>
@@ -329,7 +329,7 @@ function CreatorPage() {
                       {FEATURE_SNAPSHOT.map((row) => (
                         <tr key={row.feature}>
                           <td data-label="Feature" style={{padding: '10px 12px', borderBottom: '1px solid var(--line-2)', color: 'var(--text-2)'}}>{row.feature}</td>
-                          <td data-label="Q/Cut Studio" style={{padding: '10px 12px', borderBottom: '1px solid var(--line-2)', color: 'var(--text)'}}>{row.studio}</td>
+                          <td data-label="Q-Cut Studio" style={{padding: '10px 12px', borderBottom: '1px solid var(--line-2)', color: 'var(--text)'}}>{row.studio}</td>
                           <td data-label="Q-Cut Creator" style={{padding: '10px 12px', borderBottom: '1px solid var(--line-2)', color: 'var(--text)'}}>{row.creator}</td>
                         </tr>
                       ))}
@@ -343,7 +343,7 @@ function CreatorPage() {
               <div className="card" style={{marginTop: 24}}>
                 <h3 className="t-h3" style={{marginBottom: 12}}>Main difference</h3>
                 <p className="t-body" style={{marginBottom: 12}}>
-                  <strong>Q/Cut Studio is the full production tool.</strong> It is better when you want control, the workflow is more complex, or you want room to adjust the edit.
+                  <strong>Q-Cut Studio is the full production tool.</strong> It is better when you want control, the workflow is more complex, or you want room to adjust the edit.
                 </p>
                 <p className="t-body">
                   <strong>Q-Cut Creator is the focused XML tool.</strong> It is better when you want a quick, guided way to create a good cut.
@@ -371,7 +371,7 @@ function CreatorPage() {
           <div className="tier-card">
             <h3>Creator</h3>
             <div className="price">€TBA<span className="unit">/month</span></div>
-            <p>Perfect for content creators and small studios</p>
+            {/*<p>Perfect for content creators and small studios</p>*/}
             <ul>
               <li>
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3">
@@ -383,7 +383,7 @@ function CreatorPage() {
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3">
                   <polyline points="20 6 9 17 4 12" />
                 </svg>
-                <span>Vibe based Cutting</span>
+                <span>Set the vibe of your Cut</span>
               </li>
               <li>
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3">
@@ -412,7 +412,7 @@ function CreatorPage() {
               onClick={() => handleCheckout(PRICE_IDS.EDITOR_ONETIME)}
               style={{marginTop: 8}}
             >
-              One-time (Coming soon)
+              One-time purchase (Coming soon)
             </button>
           </div>
 
@@ -421,7 +421,7 @@ function CreatorPage() {
             <span className="badge">Studio</span>
             <h3>Studio</h3>
             <div className="price">€TBA<span className="unit">/month</span></div>
-            <p>For professional studios and agencies</p>
+            <p>Take full Control over your Cut</p>
             <ul>
               <li>
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3">
@@ -468,7 +468,7 @@ function CreatorPage() {
               onClick={() => handleCheckout(PRICE_IDS.STUDIO_ONETIME)}
               style={{marginTop: 8}}
             >
-              One-time (Coming soon)
+              One-time purchase (Coming soon)
             </button>
           </div>
         </div>
