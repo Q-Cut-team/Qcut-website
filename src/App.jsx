@@ -122,7 +122,7 @@ function Footer() {
             <h4>Support</h4>
             <ul>
               <li><Link to="/help">Help Center</Link></li>
-              <li><a href="mailto:info@qcut.app">Contact</a></li>
+              <li><a href="mailto:info@qcut.at">Contact</a></li>
             </ul>
           </div>
           <div className="footer-col">
