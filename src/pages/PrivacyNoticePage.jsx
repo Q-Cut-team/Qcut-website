@@ -1,24 +1,6 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 
 function PrivacyNoticePage() {
-  useEffect(() => {
-    // Load Cookiebot declaration script
-    const script = document.createElement('script');
-    script.id = 'CookieDeclaration';
-    script.src = 'https://consent.cookiebot.com/2a475210-b203-4225-953a-af0cec101a9f/cd.js';
-    script.type = 'text/javascript';
-    script.async = true;
-    document.body.appendChild(script);
-
-    return () => {
-      // Cleanup script when component unmounts
-      const existingScript = document.getElementById('CookieDeclaration');
-      if (existingScript) {
-        existingScript.remove();
-      }
-    };
-  }, []);
-
   return (
     <div className="page-fade-enter">
       <div className="container-narrow" style={{paddingTop: 80, paddingBottom: 80}}>
@@ -119,7 +101,12 @@ function PrivacyNoticePage() {
         </div>
 
         {/* Cookie declaration injected by Cookiebot script */}
-        <div id="CookiebotDeclaration" style={{marginTop: 48}}></div>
+        <script
+          id="CookieDeclaration"
+          src="https://consent.cookiebot.com/2a475210-b203-4225-953a-af0cec101a9f/cd.js"
+          type="text/javascript"
+          async
+        ></script>
       </div>
     </div>
   );
