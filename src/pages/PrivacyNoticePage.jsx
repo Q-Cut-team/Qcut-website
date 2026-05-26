@@ -1,6 +1,21 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 
 function PrivacyNoticePage() {
+  const [iframeHeight, setIframeHeight] = useState(520);
+
+  useEffect(() => {
+    function handleMessage(event) {
+      if (event.origin !== window.location.origin) return;
+      if (!event.data || event.data.type !== 'cookieDeclarationHeight') return;
+      if (typeof event.data.height !== 'number') return;
+
+      setIframeHeight(Math.max(320, Math.ceil(event.data.height)));
+    }
+
+    window.addEventListener('message', handleMessage);
+    return () => window.removeEventListener('message', handleMessage);
+  }, []);
+
   return (
     <div className="page-fade-enter">
       <div className="container-narrow" style={{paddingTop: 80, paddingBottom: 80}}>
@@ -101,12 +116,17 @@ function PrivacyNoticePage() {
         </div>
 
         {/* Cookie declaration injected by Cookiebot script */}
-        <script
-          id="CookieDeclaration"
-          src="https://consent.cookiebot.com/2a475210-b203-4225-953a-af0cec101a9f/cd.js"
-          type="text/javascript"
-          async
-        ></script>
+        <iframe
+          title="Cookie Declaration"
+          src="/cookie-declaration.html"
+          style={{
+            width: '100%',
+            border: 'none',
+            marginTop: 48,
+            minHeight: 320,
+            height: iframeHeight,
+          }}
+        />
       </div>
     </div>
   );
