@@ -391,12 +391,6 @@ function CreatorPage() {
                 </svg>
                 <span>Audio and timecode synchronization</span>
               </li>
-              <li>
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3">
-                  <polyline points="20 6 9 17 4 12" />
-                </svg>
-                <span>Preset library</span>
-              </li>
             </ul>
             <TermsCheckbox accepted={creatorTerms.accepted} onChange={creatorTerms.setAccepted} />
             <button
