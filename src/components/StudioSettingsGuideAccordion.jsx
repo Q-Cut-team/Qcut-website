@@ -62,6 +62,14 @@ function parseTableRow(line) {
     .map((cell) => cell.trim());
 }
 
+function getHeadingMatch(line) {
+  return line.match(/^(#{3,5})\s+(.*)$/);
+}
+
+function isListItem(line) {
+  return /^(\d+\.|[-*])\s+/.test(line.trim());
+}
+
 function parseBlocks(lines) {
   const blocks = [];
   let index = 0;
@@ -74,8 +82,13 @@ function parseBlocks(lines) {
       continue;
     }
 
-    if (line.startsWith('### ')) {
-      blocks.push({ type: 'h3', text: line.replace(/^### /, '') });
+    const headingMatch = getHeadingMatch(line);
+    if (headingMatch) {
+      blocks.push({
+        type: 'heading',
+        level: headingMatch[1].length,
+        text: headingMatch[2],
+      });
       index += 1;
       continue;
     }
@@ -98,12 +111,26 @@ function parseBlocks(lines) {
       continue;
     }
 
+    if (isListItem(line)) {
+      const items = [];
+      const ordered = /^\d+\.\s+/.test(line.trim());
+
+      while (index < lines.length && isListItem(lines[index])) {
+        items.push(lines[index].trim().replace(/^(\d+\.|[-*])\s+/, ''));
+        index += 1;
+      }
+
+      blocks.push({ type: ordered ? 'orderedList' : 'unorderedList', items });
+      continue;
+    }
+
     const paragraphLines = [];
     while (
       index < lines.length
       && lines[index].trim()
-      && !lines[index].startsWith('### ')
+      && !getHeadingMatch(lines[index])
       && !lines[index].trim().startsWith('|')
+      && !isListItem(lines[index])
     ) {
       paragraphLines.push(lines[index]);
       index += 1;
@@ -184,12 +211,21 @@ function renderInlineText(text, keyPrefix) {
 }
 
 function renderBlock(block, index) {
-  if (block.type === 'h3') {
+  if (block.type === 'heading') {
+    const headingStyle = {
+      marginTop: index === 0 ? 0 : block.level === 3 ? 24 : 18,
+      marginBottom: 8,
+      color: block.level === 5 ? 'var(--amber)' : 'var(--text)',
+      fontSize: block.level === 3 ? 18 : block.level === 4 ? 16 : 14,
+      lineHeight: 1.35,
+      fontWeight: block.level === 5 ? 600 : 700,
+      letterSpacing: 0,
+    };
+
     return (
       <h4
         key={`heading-${index}`}
-        className="t-h3"
-        style={{ marginTop: index === 0 ? 0 : 22, marginBottom: 8 }}
+        style={headingStyle}
       >
         {block.text}
       </h4>
@@ -222,6 +258,23 @@ function renderBlock(block, index) {
           </tbody>
         </table>
       </div>
+    );
+  }
+
+  if (block.type === 'orderedList' || block.type === 'unorderedList') {
+    const ListTag = block.type === 'orderedList' ? 'ol' : 'ul';
+
+    return (
+      <ListTag
+        key={`list-${index}`}
+        style={{ margin: index === 0 ? '0' : '12px 0 0', paddingLeft: 20, display: 'grid', gap: 6 }}
+      >
+        {block.items.map((item, itemIndex) => (
+          <li key={`item-${itemIndex}`} className="t-body">
+            {renderInlineText(item, `list-${index}-item-${itemIndex}`)}
+          </li>
+        ))}
+      </ListTag>
     );
   }
 
