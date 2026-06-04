@@ -10,6 +10,7 @@ import HelpPage from './pages/HelpPage';
 import SuccessPage from './pages/SuccessPage';
 import ImpressumPage from './pages/ImpressumPage';
 import PrivacyNoticePage from './pages/PrivacyNoticePage';
+import AboutUsPage from './pages/AboutUsPage';
 import TestPage from './pages/TestPage';
 import SimpleVideoTest from './pages/SimpleVideoTest';
 import DJDownloadPage from './pages/DJDownloadPage';
@@ -61,6 +62,7 @@ function Nav() {
     { path: '/creator', label: 'Creator' },
     { path: '/pricing', label: 'Pricing' },
     { path: '/help', label: 'Help' },
+    { path: '/about', label: 'About us' },
   ];
 
   useEffect(() => {
@@ -122,7 +124,9 @@ function Footer() {
             <h4>Support</h4>
             <ul>
               <li><Link to="/help">Help Center</Link></li>
+              <li><Link to="/about">About us</Link></li>
               <li><a href="mailto:info@qcut.at">Contact</a></li>
+              <li><Link to="/help#contact">Subscription Status</Link></li>
             </ul>
           </div>
           <div className="footer-col">
@@ -158,6 +162,7 @@ function App() {
         <Route path="/pricing" element={<PricingPage />} />
         <Route path="/help" element={<HelpPage />} />
         <Route path="/success" element={<SuccessPage />} />
+        <Route path="/about" element={<AboutUsPage />} />
         <Route path="/impressum" element={<ImpressumPage />} />
         <Route path="/privacy-notice" element={<PrivacyNoticePage />} />
         <Route path="/terms-of-use" element={<TermsOfUsePage />} />
