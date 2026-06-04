@@ -13,7 +13,7 @@ import studioStep8Image from '../assets/images/studio-step-8.png';
 import studioStep9Image from '../assets/images/studio-step-9.png';
 
 function StudioTutorialContent() {
-  const [openStudioGuideStep, setOpenStudioGuideStep] = useState(1);
+  const [openStudioGuideStep, setOpenStudioGuideStep] = useState(0);
 
   const toggleStudioGuideStep = (step) => {
     setOpenStudioGuideStep((currentStep) => (currentStep === step ? 0 : step));

@@ -85,6 +85,12 @@ function DJPage() {
         </div>
       </section>
 
+      <Reveal as="section" className="container" style={{paddingTop: 12, paddingBottom: 8}}>
+        <p className="t-body-lg" style={{maxWidth: 780, margin: '0 auto', textAlign: 'center'}}>
+          Film Yourself mixing with up to 3 cameras simultaniously (example: phone and laptop) and record the audio seperately. Drag and Drop The Clips into Q-Cut and well make Social Media Clips in Minutes!
+        </p>
+      </Reveal>
+
       {/* Product Screenshot Section */}
       <Reveal as="section" className="container section">
         <div className="product-grid dj-product-grid" style={{display:"grid", gridTemplateColumns:"1fr 1.4fr", gap: 32, alignItems:"center"}}>

@@ -8,7 +8,7 @@ import creatorStep4Image from '../assets/images/creator-step-4.png';
 import creatorStep5Image from '../assets/images/creator-step-5.png';
 
 function CreatorTutorialContent() {
-  const [openCreatorGuideStep, setOpenCreatorGuideStep] = useState(1);
+  const [openCreatorGuideStep, setOpenCreatorGuideStep] = useState(0);
 
   const toggleCreatorGuideStep = (step) => {
     setOpenCreatorGuideStep((currentStep) => (currentStep === step ? 0 : step));

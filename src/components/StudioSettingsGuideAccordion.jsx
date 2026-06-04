@@ -287,7 +287,7 @@ function renderBlock(block, index) {
 
 function StudioSettingsGuideAccordion() {
   const guide = useMemo(() => parseGuideMarkdown(studioSettingsGuideMarkdown), []);
-  const [openSection, setOpenSection] = useState(0);
+  const [openSection, setOpenSection] = useState(-1);
 
   const toggleSection = (sectionIndex) => {
     setOpenSection((currentSection) => (currentSection === sectionIndex ? -1 : sectionIndex));
