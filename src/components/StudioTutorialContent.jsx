@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import Reveal from './Reveal';
 import YouTubeEmbed from './YouTubeEmbed';
+import StudioSettingsGuideAccordion from './StudioSettingsGuideAccordion';
 import studioStep1Image from '../assets/images/studio-step-1.png';
 import studioStep2Image from '../assets/images/studio-step-2.png';
 import studioStep3Image from '../assets/images/studio-step-3.png';
@@ -447,6 +448,7 @@ function StudioTutorialContent() {
       </article>
     </div>
   </Reveal>
+  <StudioSettingsGuideAccordion />
     </>
   );
 }
