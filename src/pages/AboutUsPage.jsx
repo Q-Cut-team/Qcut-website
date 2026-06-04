@@ -7,7 +7,7 @@ function AboutUsPage() {
         <section style={{marginBottom: 64}}>
           <h1 className="t-h1" style={{marginBottom: 24}}>Who we are:</h1>
           
-          <div style={{padding: 32, marginBottom: 32}}>
+          <div style={{marginBottom: 32}}>
             <p className="t-body-lg" style={{color: 'var(--text-2)', lineHeight: 1.7, marginBottom: 32}}>
               Mulcut Schwarzer & Antropow GesbR<br />
               Software in Audio/Video-Analysis and video editing.
@@ -49,7 +49,7 @@ function AboutUsPage() {
         <section style={{marginBottom: 64}}>
           <h2 className="t-h2" style={{marginBottom: 32}}>What we stand for:</h2>
           
-          <div style={{padding: 32}}>
+          <div>
             <p className="t-body" style={{color: 'var(--text-2)', lineHeight: 1.7, marginBottom: 16}}>
               We are against the mindset of throwing AI at every problem, wrapping it in vague promises, and calling it a product.
             </p>
