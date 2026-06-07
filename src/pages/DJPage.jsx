@@ -318,7 +318,8 @@ function DJPage() {
           <div className="tier-card featured">
             <span className="badge">Unlimited</span>
             <h3>DJ Unlimited</h3>
-            <div className="price">€8.50<span className="unit">/month</span></div>
+            <div className="price">€10<span className="unit">/month</span></div>
+            <span className="t-body" style={{display: 'block', fontSize: 12, color: 'var(--text-3)', marginTop: 4}}>incl. 20% VAT</span>
             <p>For touring DJs & agencies</p>
             <ul>
               <li>
@@ -351,6 +352,7 @@ function DJPage() {
                 </svg>
                 <span>No Watermark</span>
               </li>
+
             </ul>
 
             <TermsCheckbox accepted={djUnlimitedTerms.accepted} onChange={djUnlimitedTerms.setAccepted} />
@@ -367,10 +369,13 @@ function DJPage() {
               onClick={() => handleCheckout(DJ_UNLIMITED_ONETIME_PRICE_ID)}
               style={{marginTop: 8}}
             >
-              One-time purchase
+              One-time for €300
             </button>
           </div>
         </div>
+        <p className="t-body" style={{textAlign: 'center', fontSize: 13, color: 'var(--text-3)', marginTop: 24}}>
+          All prices include 20% VAT (Austria) and can differ slightly depending on your location. Final price is shown at checkout.
+        </p>
       </section>
 
       <Toast message={message} isVisible={isVisible} onClose={hideToast} />

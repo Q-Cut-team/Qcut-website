@@ -93,7 +93,8 @@ function PricingPage() {
           <div className="tier-card featured">
             <span className="badge">Unlimited</span>
             <h3>DJ Unlimited</h3>
-            <div className="price">€8.50<span className="unit">/month</span></div>
+            <div className="price">€10<span className="unit">/month</span></div>
+            <span className="t-body" style={{display: 'block', fontSize: 12, color: 'var(--text-3)', marginTop: 4}}>incl. 20% VAT</span>
             <p>For touring DJs & agencies</p>
             <ul>
               <li>
@@ -141,7 +142,7 @@ function PricingPage() {
               onClick={() => handleCheckout(PRICE_IDS.DJ_UNLIMITED_ONETIME)}
               style={{marginTop: 8}}
             >
-              One-time - €250
+              One-time - €300
             </button>
           </div>
         </div>
@@ -157,7 +158,8 @@ function PricingPage() {
           {/* Creator Plan */}
           <div className="tier-card">
             <h3>Creator</h3>
-            <div className="price">€29.50<span className="unit">/month</span></div>
+            <div className="price">€35<span className="unit">/month</span></div>
+            <span className="t-body" style={{display: 'block', fontSize: 12, color: 'var(--text-3)', marginTop: 4}}>incl. 20% VAT</span>
             {/*<p>For content creators</p>*/}
             <ul>
               <li>
@@ -194,7 +196,7 @@ function PricingPage() {
               onClick={() => handleCheckout(PRICE_IDS.EDITOR_ONETIME)}
               style={{marginTop: 8}}
             >
-              One-time - €350
+              One-time - €420
             </button>
           </div>
 
@@ -202,7 +204,8 @@ function PricingPage() {
           <div className="tier-card featured">
             <span className="badge">Studio</span>
             <h3>Studio</h3>
-            <div className="price">€54.50<span className="unit">/month</span></div>
+            <div className="price">€65<span className="unit">/month</span></div>
+            <span className="t-body" style={{display: 'block', fontSize: 12, color: 'var(--text-3)', marginTop: 4}}>incl. 20% VAT</span>
             <p>Take full Control over your Cut</p>
             <ul>
               <li>
@@ -250,10 +253,13 @@ function PricingPage() {
               onClick={() => handleCheckout(PRICE_IDS.STUDIO_ONETIME)}
               style={{marginTop: 8}}
             >
-              One-time - €600
+              One-time - €720
             </button>
           </div>
         </div>
+        <p className="t-body" style={{textAlign: 'center', fontSize: 13, color: 'var(--text-3)', marginTop: 24}}>
+          All prices include 20% VAT (Austria) and can differ slightly depending on your location. Final price is shown at checkout.
+        </p>
       </section>
 
       {/* FAQ Section */}

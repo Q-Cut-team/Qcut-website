@@ -370,7 +370,8 @@ function CreatorPage() {
           {/* Creator Plan */}
           <div className="tier-card">
             <h3>Creator</h3>
-            <div className="price">€29.50<span className="unit">/month</span></div>
+            <div className="price">€35<span className="unit">/month</span></div>
+            <span className="t-body" style={{display: 'block', fontSize: 12, color: 'var(--text-3)', marginTop: 4}}>incl. 20% VAT</span>
             {/*<p>Perfect for content creators and small studios</p>*/}
             <ul>
               <li>
@@ -406,7 +407,7 @@ function CreatorPage() {
               onClick={() => handleCheckout(PRICE_IDS.EDITOR_ONETIME)}
               style={{marginTop: 8}}
             >
-              One-time - €350
+              One-time - €420
             </button>
           </div>
 
@@ -414,7 +415,8 @@ function CreatorPage() {
           <div className="tier-card featured">
             <span className="badge">Studio</span>
             <h3>Studio</h3>
-            <div className="price">€54.50<span className="unit">/month</span></div>
+            <div className="price">€65<span className="unit">/month</span></div>
+            <span className="t-body" style={{display: 'block', fontSize: 12, color: 'var(--text-3)', marginTop: 4}}>incl. 20% VAT</span>
             <p>Take full Control over your Cut</p>
             <ul>
               <li>
@@ -462,10 +464,13 @@ function CreatorPage() {
               onClick={() => handleCheckout(PRICE_IDS.STUDIO_ONETIME)}
               style={{marginTop: 8}}
             >
-              One-time - €600
+              One-time - €720
             </button>
           </div>
         </div>
+        <p className="t-body" style={{textAlign: 'center', fontSize: 13, color: 'var(--text-3)', marginTop: 24}}>
+          All prices include 20% VAT (Austria) and can differ slightly depending on your location. Final price is shown at checkout.
+        </p>
       </section>
       <Toast message={message} isVisible={isVisible} onClose={hideToast} />
     </div>
