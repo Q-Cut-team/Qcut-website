@@ -34,7 +34,7 @@ function BetaBar() {
   return (
     <div className="beta-bar">
       <span className="pulse" />
-      <span>Free testing: 25.05 - 08.06</span>
+      <span>7-day free trial for new subscribers — cancel anytime</span>
       <span className="pulse" />
     </div>
   );

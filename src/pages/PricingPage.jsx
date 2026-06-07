@@ -8,12 +8,12 @@ import TermsCheckbox from '../components/TermsCheckbox';
 
 // Price IDs from your requirements
 const PRICE_IDS = {
-  DJ_MONTH: 'price_1TZZc4PjWn7pNPmY9kopKsZY', //now free trial
-  EDITOR_MONTH: 'price_1TZZd5PjWn7pNPmYOmu7e4o9',//now free trial
-  EDITOR_ONETIME: null,
-  STUDIO_MONTH: 'price_1TZZcZPjWn7pNPmYlst2j6X3',//now free trial
-  STUDIO_ONETIME: null,
-  DJ_UNLIMITED: 'price_1TZZc4PjWn7pNPmY9kopKsZY' // now free trial
+  DJ_UNLIMITED:        'price_1TduQoPjWn7pNPmYW7R0cVZl',
+  EDITOR_MONTH:        'price_1TecRdPjWn7pNPmY6LDpvNMv',
+  STUDIO_MONTH:        'price_1TecSzPjWn7pNPmY1OqTMEk0',
+  DJ_UNLIMITED_ONETIME:'price_1TduW2PjWn7pNPmYigHywfuf',
+  EDITOR_ONETIME:      'price_1TecQoPjWn7pNPmY9b0rRmXR',
+  STUDIO_ONETIME:      'price_1TecUiPjWn7pNPmYvOVX4aRa',
 };
 
 function PricingPage() {
@@ -93,7 +93,7 @@ function PricingPage() {
           <div className="tier-card featured">
             <span className="badge">Unlimited</span>
             <h3>DJ Unlimited</h3>
-            <div className="price">€TBA<span className="unit">/month</span></div>
+            <div className="price">€8.50<span className="unit">/month</span></div>
             <p>For touring DJs & agencies</p>
             <ul>
               <li>
@@ -127,7 +127,6 @@ function PricingPage() {
                 <span>No Watermark</span>
               </li>
             </ul>
-            {/* Coming soon — no price ID yet */}
             <TermsCheckbox accepted={djUnlimitedTerms.accepted} onChange={djUnlimitedTerms.setAccepted} />
             <button
               className="btn btn-amber"
@@ -139,10 +138,10 @@ function PricingPage() {
             </button>
             <button
               className="btn btn-ghost"
-              onClick={() => handleCheckout(PRICE_IDS.STUDIO_ONETIME)}
+              onClick={() => handleCheckout(PRICE_IDS.DJ_UNLIMITED_ONETIME)}
               style={{marginTop: 8}}
             >
-              One-time purchase (Coming soon)
+              One-time - €250
             </button>
           </div>
         </div>
@@ -158,7 +157,7 @@ function PricingPage() {
           {/* Creator Plan */}
           <div className="tier-card">
             <h3>Creator</h3>
-            <div className="price">€TBA<span className="unit">/month</span></div>
+            <div className="price">€29.50<span className="unit">/month</span></div>
             {/*<p>For content creators</p>*/}
             <ul>
               <li>
@@ -195,7 +194,7 @@ function PricingPage() {
               onClick={() => handleCheckout(PRICE_IDS.EDITOR_ONETIME)}
               style={{marginTop: 8}}
             >
-              One-time purchase (Coming soon)
+              One-time - €350
             </button>
           </div>
 
@@ -203,7 +202,7 @@ function PricingPage() {
           <div className="tier-card featured">
             <span className="badge">Studio</span>
             <h3>Studio</h3>
-            <div className="price">€TBA<span className="unit">/month</span></div>
+            <div className="price">€54.50<span className="unit">/month</span></div>
             <p>Take full Control over your Cut</p>
             <ul>
               <li>
@@ -251,7 +250,7 @@ function PricingPage() {
               onClick={() => handleCheckout(PRICE_IDS.STUDIO_ONETIME)}
               style={{marginTop: 8}}
             >
-              One-time purchase (Coming soon)
+              One-time - €600
             </button>
           </div>
         </div>

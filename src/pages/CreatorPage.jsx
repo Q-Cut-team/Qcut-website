@@ -12,11 +12,11 @@ import TermsCheckbox from '../components/TermsCheckbox';
 import YouTubeEmbed from '../components/YouTubeEmbed';
 
 const PRICE_IDS = {
-  EDITOR_MONTH: 'price_1TZZd5PjWn7pNPmYOmu7e4o9',//now free trial
-  EDITOR_ONETIME: null,
-  STUDIO_MONTH: 'price_1TZZcZPjWn7pNPmYlst2j6X3',//now free trial
-  STUDIO_ONETIME: null,
-  DJ_UNLIMITED: null // Coming soon
+  EDITOR_MONTH:  'price_1TecRdPjWn7pNPmY6LDpvNMv',
+  STUDIO_MONTH:  'price_1TecSzPjWn7pNPmY1OqTMEk0',
+  EDITOR_ONETIME:'price_1TecQoPjWn7pNPmY9b0rRmXR',
+  STUDIO_ONETIME:'price_1TecUiPjWn7pNPmYvOVX4aRa',
+  DJ_UNLIMITED:  null, // в дуще не ебу нахуя
 };
 
 
@@ -370,7 +370,7 @@ function CreatorPage() {
           {/* Creator Plan */}
           <div className="tier-card">
             <h3>Creator</h3>
-            <div className="price">€TBA<span className="unit">/month</span></div>
+            <div className="price">€29.50<span className="unit">/month</span></div>
             {/*<p>Perfect for content creators and small studios</p>*/}
             <ul>
               <li>
@@ -406,7 +406,7 @@ function CreatorPage() {
               onClick={() => handleCheckout(PRICE_IDS.EDITOR_ONETIME)}
               style={{marginTop: 8}}
             >
-              One-time purchase (Coming soon)
+              One-time - €350
             </button>
           </div>
 
@@ -414,7 +414,7 @@ function CreatorPage() {
           <div className="tier-card featured">
             <span className="badge">Studio</span>
             <h3>Studio</h3>
-            <div className="price">€TBA<span className="unit">/month</span></div>
+            <div className="price">€54.50<span className="unit">/month</span></div>
             <p>Take full Control over your Cut</p>
             <ul>
               <li>
@@ -462,7 +462,7 @@ function CreatorPage() {
               onClick={() => handleCheckout(PRICE_IDS.STUDIO_ONETIME)}
               style={{marginTop: 8}}
             >
-              One-time purchase (Coming soon)
+              One-time - €600
             </button>
           </div>
         </div>

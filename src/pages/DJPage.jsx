@@ -9,9 +9,9 @@ import { useTermsAccepted } from '../hooks/useTermsAccepted';
 import Toast from '../components/Toast';
 import TermsCheckbox from '../components/TermsCheckbox';
 
-const DJ_MONTH_PRICE_ID = 'price_1TQVJyBSfJ4A9uVJTrQzprla';
-const DJ_UNLIMITED_PRICE_ID = null;
-const DJ_FREE_TRIAL_PRICE_ID = 'price_1TZZc4PjWn7pNPmY9kopKsZY';
+const DJ_UNLIMITED_MONTH_PRICE_ID   = 'price_1TduQoPjWn7pNPmYW7R0cVZl';
+const DJ_UNLIMITED_ONETIME_PRICE_ID = 'price_1TduW2PjWn7pNPmYigHywfuf';
+
 const DJ_COMPARISON_ROWS = [
   { feature: 'Core DJ sync and music-based cutting', free: 'Yes', unlimited: 'Yes' },
   { feature: 'Weekly export quota', free: '4 exports per week', unlimited: 'Unlimited' },
@@ -45,7 +45,7 @@ function DJPage() {
   };
 
   const handleGetFree = async () => {
-    await redirectToCheckout(DJ_FREE_TRIAL_PRICE_ID);
+    await redirectToCheckout(DJ_UNLIMITED_MONTH_PRICE_ID);
   };
 
   const scrollToCtaSection = () => {
@@ -318,7 +318,7 @@ function DJPage() {
           <div className="tier-card featured">
             <span className="badge">Unlimited</span>
             <h3>DJ Unlimited</h3>
-            <div className="price">€TBA<span className="unit">/month</span></div>
+            <div className="price">€8.50<span className="unit">/month</span></div>
             <p>For touring DJs & agencies</p>
             <ul>
               <li>
@@ -361,6 +361,13 @@ function DJPage() {
               onClick={() => djUnlimitedTerms.accepted && handleGetFree()}
             >
               Test for Free
+            </button>
+            <button
+              className="btn btn-ghost"
+              onClick={() => handleCheckout(DJ_UNLIMITED_ONETIME_PRICE_ID)}
+              style={{marginTop: 8}}
+            >
+              One-time purchase
             </button>
           </div>
         </div>
