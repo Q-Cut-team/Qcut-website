@@ -115,14 +115,14 @@ function HomePage() {
           </h2>
         </Reveal>
 
-        <p className="t-body-lg" style={{maxWidth: 560, margin: '24px auto 40px'}}>
-          Try for free and see how Q-Cut can transform your workflow
-        </p>
-        <div style={{display: 'flex', gap: 16, justifyContent: 'center', flexWrap: 'wrap'}}>
-          <Link to="/pricing" className="btn btn-amber btn-amber-lg">
-            Get early access
-          </Link>
-        </div>
+        {/*<p className="t-body-lg" style={{maxWidth: 560, margin: '24px auto 40px'}}>*/}
+        {/*  Try for free and see how Q-Cut can transform your workflow*/}
+        {/*</p>*/}
+        {/*<div style={{display: 'flex', gap: 16, justifyContent: 'center', flexWrap: 'wrap'}}>*/}
+        {/*  <Link to="/pricing" className="btn btn-amber btn-amber-lg">*/}
+        {/*    See Pricing*/}
+        {/*  </Link>*/}
+        {/*</div>*/}
 
       </section>
     </div>
