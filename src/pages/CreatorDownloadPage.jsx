@@ -2,13 +2,12 @@ import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import Reveal from '../components/Reveal';
 import { useDownloadUrls } from '../hooks/useDownloadUrls';
-import { useTermsAccepted } from '../hooks/useTermsAccepted';
-import TermsCheckbox from '../components/TermsCheckbox';
+import DownloadConsentModal from '../components/DownloadConsentModal';
 
-function PlatformCards({ urls, disabled = false }) {
-  const macSiliconEnabled = !disabled && urls.macSilicon;
-  const macIntelEnabled = !disabled && urls.macIntel;
-  const windowsEnabled = !disabled && urls.windows;
+function PlatformCards({ urls, onDownload }) {
+  const macSiliconEnabled = Boolean(urls.macSilicon);
+  const macIntelEnabled = Boolean(urls.macIntel);
+  const windowsEnabled = Boolean(urls.windows);
   return (
     <div style={{
       display: 'grid',
@@ -24,20 +23,24 @@ function PlatformCards({ urls, disabled = false }) {
             Pick the build that matches your chip
           </p>
           <div style={{display: 'flex', flexDirection: 'column', gap: 12}}>
-            <a
-              href={macSiliconEnabled ? urls.macSilicon : '#'}
+            <button
+              type="button"
               className="btn btn-amber"
-              style={{opacity: macSiliconEnabled ? 1 : 0.5, pointerEvents: macSiliconEnabled ? 'auto' : 'none'}}
+              disabled={!macSiliconEnabled}
+              onClick={() => onDownload(urls.macSilicon)}
+              style={{opacity: macSiliconEnabled ? 1 : 0.5, cursor: macSiliconEnabled ? 'pointer' : 'not-allowed'}}
             >
               Download for Apple Silicon
-            </a>
-            <a
-              href={macIntelEnabled ? urls.macIntel : '#'}
+            </button>
+            <button
+              type="button"
               className="btn btn-ghost"
-              style={{opacity: macIntelEnabled ? 1 : 0.5, pointerEvents: macIntelEnabled ? 'auto' : 'none'}}
+              disabled={!macIntelEnabled}
+              onClick={() => onDownload(urls.macIntel)}
+              style={{opacity: macIntelEnabled ? 1 : 0.5, cursor: macIntelEnabled ? 'pointer' : 'not-allowed'}}
             >
               Download for Intel
-            </a>
+            </button>
           </div>
         </div>
       </Reveal>
@@ -48,13 +51,15 @@ function PlatformCards({ urls, disabled = false }) {
             Windows 10 or newer · 64-bit
           </p>
           <div style={{display: 'flex', flexDirection: 'column', gap: 12}}>
-            <a
-              href={windowsEnabled ? urls.windows : '#'}
+            <button
+              type="button"
               className="btn btn-amber"
-              style={{opacity: windowsEnabled ? 1 : 0.5, pointerEvents: windowsEnabled ? 'auto' : 'none'}}
+              disabled={!windowsEnabled}
+              onClick={() => onDownload(urls.windows)}
+              style={{opacity: windowsEnabled ? 1 : 0.5, cursor: windowsEnabled ? 'pointer' : 'not-allowed'}}
             >
               Download for Windows
-            </a>
+            </button>
           </div>
         </div>
       </Reveal>
@@ -65,7 +70,13 @@ function PlatformCards({ urls, disabled = false }) {
 function CreatorDownloadPage() {
   const { latest, olderVersions, loading, error } = useDownloadUrls('qcut-creator');
   const [showOlder, setShowOlder] = useState(false);
-  const terms = useTermsAccepted();
+  const [pendingDownloadUrl, setPendingDownloadUrl] = useState(null);
+
+  const handleDownloadContinue = () => {
+    const downloadUrl = pendingDownloadUrl;
+    setPendingDownloadUrl(null);
+    window.location.href = downloadUrl;
+  };
 
   return (
     <div className="page-fade-enter">
@@ -90,11 +101,8 @@ function CreatorDownloadPage() {
         )}
         {!loading && !error && (
           <>
-            <div style={{maxWidth: 880, margin: '0 auto 24px', display: 'flex', justifyContent: 'center'}}>
-              <TermsCheckbox accepted={terms.accepted} onChange={terms.setAccepted} />
-            </div>
             {latest
-              ? <PlatformCards urls={latest} disabled={!terms.accepted} />
+              ? <PlatformCards urls={latest} onDownload={setPendingDownloadUrl} />
               : (
                 <p className="t-body" style={{textAlign: 'center', color: 'var(--text-3)'}}>
                   No downloads available yet. Check back soon.
@@ -114,7 +122,7 @@ function CreatorDownloadPage() {
                     <p className="t-label" style={{textAlign: 'center', marginBottom: 20, color: 'var(--text-3)'}}>
                       Version {version}
                     </p>
-                    <PlatformCards urls={urls} disabled={!terms.accepted} />
+                    <PlatformCards urls={urls} onDownload={setPendingDownloadUrl} />
                   </div>
                 ))}
               </div>
@@ -125,6 +133,11 @@ function CreatorDownloadPage() {
           <Link to="/creator" className="btn btn-ghost">← Back to Creator</Link>
         </div>
       </section>
+      <DownloadConsentModal
+        isOpen={Boolean(pendingDownloadUrl)}
+        onClose={() => setPendingDownloadUrl(null)}
+        onContinue={handleDownloadContinue}
+      />
     </div>
   );
 }

@@ -1,16 +1,19 @@
 import React, { useEffect, useState } from 'react';
 import { createPortal } from 'react-dom';
+import PrivacyCheckbox from './PrivacyCheckbox';
 import SubscriptionCheckbox from './SubscriptionCheckbox';
 import TermsCheckbox from './TermsCheckbox';
 
 export default function TrialConsentModal({ isOpen, onClose, onContinue }) {
   const [termsAccepted, setTermsAccepted] = useState(false);
+  const [privacyAccepted, setPrivacyAccepted] = useState(false);
   const [subscriptionAccepted, setSubscriptionAccepted] = useState(false);
-  const canContinue = termsAccepted && subscriptionAccepted;
+  const canContinue = termsAccepted && privacyAccepted && subscriptionAccepted;
 
   useEffect(() => {
     if (!isOpen) {
       setTermsAccepted(false);
+      setPrivacyAccepted(false);
       setSubscriptionAccepted(false);
       return undefined;
     }
@@ -98,12 +101,15 @@ export default function TrialConsentModal({ isOpen, onClose, onContinue }) {
           Confirm your free trial
         </h2>
         <p className="t-body" style={{ marginBottom: 24 }}>
-          Please review and accept both confirmations before continuing.
+          Please review and accept all confirmations before continuing.
         </p>
 
         <div style={{ display: 'grid', gap: 16 }}>
           <div style={{ padding: 16, border: '1px solid var(--line)', borderRadius: 8 }}>
             <TermsCheckbox accepted={termsAccepted} onChange={setTermsAccepted} />
+          </div>
+          <div style={{ padding: 16, border: '1px solid var(--line)', borderRadius: 8 }}>
+            <PrivacyCheckbox accepted={privacyAccepted} onChange={setPrivacyAccepted} />
           </div>
           <div style={{ padding: 16, border: '1px solid var(--line)', borderRadius: 8 }}>
             <SubscriptionCheckbox accepted={subscriptionAccepted} onChange={setSubscriptionAccepted} />

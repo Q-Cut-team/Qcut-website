@@ -1,20 +1,17 @@
 import React, { useEffect, useState } from 'react';
 import { createPortal } from 'react-dom';
-import OneTimeCheckbox from './OneTimeCheckbox';
 import PrivacyCheckbox from './PrivacyCheckbox';
 import TermsCheckbox from './TermsCheckbox';
 
-export default function OneTimeConsentModal({ isOpen, onClose, onContinue }) {
+export default function DownloadConsentModal({ isOpen, onClose, onContinue }) {
   const [termsAccepted, setTermsAccepted] = useState(false);
   const [privacyAccepted, setPrivacyAccepted] = useState(false);
-  const [oneTimeAccepted, setOneTimeAccepted] = useState(false);
-  const canContinue = termsAccepted && privacyAccepted && oneTimeAccepted;
+  const canContinue = termsAccepted && privacyAccepted;
 
   useEffect(() => {
     if (!isOpen) {
       setTermsAccepted(false);
       setPrivacyAccepted(false);
-      setOneTimeAccepted(false);
       return undefined;
     }
 
@@ -61,7 +58,7 @@ export default function OneTimeConsentModal({ isOpen, onClose, onContinue }) {
       <div
         role="dialog"
         aria-modal="true"
-        aria-labelledby="one-time-consent-title"
+        aria-labelledby="download-consent-title"
         style={{
           position: 'relative',
           width: 'min(620px, 100%)',
@@ -97,11 +94,11 @@ export default function OneTimeConsentModal({ isOpen, onClose, onContinue }) {
           ×
         </button>
 
-        <h2 id="one-time-consent-title" className="t-h3" style={{ paddingRight: 48, marginBottom: 8 }}>
-          Confirm your one-time purchase
+        <h2 id="download-consent-title" className="t-h3" style={{ paddingRight: 48, marginBottom: 8 }}>
+          Confirm your download
         </h2>
         <p className="t-body" style={{ marginBottom: 24 }}>
-          Please review and accept all confirmations before continuing.
+          Please review and accept both confirmations before continuing.
         </p>
 
         <div style={{ display: 'grid', gap: 16 }}>
@@ -110,9 +107,6 @@ export default function OneTimeConsentModal({ isOpen, onClose, onContinue }) {
           </div>
           <div style={{ padding: 16, border: '1px solid var(--line)', borderRadius: 8 }}>
             <PrivacyCheckbox accepted={privacyAccepted} onChange={setPrivacyAccepted} />
-          </div>
-          <div style={{ padding: 16, border: '1px solid var(--line)', borderRadius: 8 }}>
-            <OneTimeCheckbox accepted={oneTimeAccepted} onChange={setOneTimeAccepted} />
           </div>
         </div>
 
