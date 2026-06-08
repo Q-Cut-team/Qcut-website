@@ -117,6 +117,12 @@ function TermsOfUsePage() {
           <p className="t-body" style={{color: 'var(--text-2)', lineHeight: 1.7}}>
             Payments may be processed through third-party payment providers such as Stripe.
           </p>
+          <p className="t-body" style={{color: 'var(--text-2)', lineHeight: 1.7}}>
+            Free trials may be offered for certain products or plans.
+          </p>
+          <p className="t-body" style={{color: 'var(--text-2)', lineHeight: 1.7}}>
+            Unless cancelled before the end of the trial period, the subscription will automatically convert into a paid subscription at the rate displayed during the purchase process.
+          </p>
         </div>
 
         <div style={{marginBottom: 32}}>
@@ -138,7 +144,10 @@ function TermsOfUsePage() {
             For consumers located in the European Union:
           </p>
           <p className="t-body" style={{color: 'var(--text-2)', lineHeight: 1.7}}>
-            By purchasing and downloading the software, you expressly agree that the execution of the contract begins immediately and acknowledge that you lose your statutory right of withdrawal once the download or activation process has started.
+            By starting a free trial or purchasing the software, you expressly request and consent to the immediate provision of digital content and acknowledge that your statutory right of withdrawal is lost once the download, activation, or access process has started.
+          </p>
+          <p className="t-body" style={{color: 'var(--text-2)', lineHeight: 1.7}}>
+            Where a free trial converts into a paid subscription, the subscription terms and pricing are displayed during the purchase process.
           </p>
         </div>
 
