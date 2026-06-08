@@ -153,7 +153,6 @@ function PricingPage() {
             >
               One-time - €300
             </button>
-
           </div>
         </div>
       </section>
