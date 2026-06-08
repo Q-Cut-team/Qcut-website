@@ -1,17 +1,14 @@
 import React, { useEffect, useState } from 'react';
 import { createPortal } from 'react-dom';
-import PrivacyCheckbox from './PrivacyCheckbox';
 import TermsCheckbox from './TermsCheckbox';
 
 export default function DownloadConsentModal({ isOpen, onClose, onContinue }) {
   const [termsAccepted, setTermsAccepted] = useState(false);
-  const [privacyAccepted, setPrivacyAccepted] = useState(false);
-  const canContinue = termsAccepted && privacyAccepted;
+  const canContinue = termsAccepted;
 
   useEffect(() => {
     if (!isOpen) {
       setTermsAccepted(false);
-      setPrivacyAccepted(false);
       return undefined;
     }
 
@@ -104,9 +101,6 @@ export default function DownloadConsentModal({ isOpen, onClose, onContinue }) {
         <div style={{ display: 'grid', gap: 16 }}>
           <div style={{ padding: 16, border: '1px solid var(--line)', borderRadius: 8 }}>
             <TermsCheckbox accepted={termsAccepted} onChange={setTermsAccepted} />
-          </div>
-          <div style={{ padding: 16, border: '1px solid var(--line)', borderRadius: 8 }}>
-            <PrivacyCheckbox accepted={privacyAccepted} onChange={setPrivacyAccepted} />
           </div>
         </div>
 

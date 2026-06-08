@@ -14,6 +14,8 @@ import YouTubeEmbed from '../components/YouTubeEmbed';
 const PRICE_IDS = {
   EDITOR_MONTH:  'price_1TecRdPjWn7pNPmY6LDpvNMv',
   STUDIO_MONTH:  'price_1TecSzPjWn7pNPmY1OqTMEk0',
+  EDITOR_FIRST_MONTH: null,
+  STUDIO_FIRST_MONTH: null,
   EDITOR_ONETIME:'price_1TecQoPjWn7pNPmY9b0rRmXR',
   STUDIO_ONETIME:'price_1TecUiPjWn7pNPmYvOVX4aRa',
   DJ_UNLIMITED:  null, // в дуще не ебу нахуя
@@ -373,7 +375,7 @@ function CreatorPage() {
           {/* Creator Plan */}
           <div className="tier-card">
             <h3>Creator</h3>
-            <div className="price">€35<span className="unit">/month</span></div>
+            <div className="price">€35,40<span className="unit">/month</span></div>
             <span className="t-body" style={{display: 'block', fontSize: 12, color: 'var(--text-3)', marginTop: 4}}>incl. 20% VAT</span>
             {/*<p>Perfect for content creators and small studios</p>*/}
             <ul>
@@ -395,6 +397,12 @@ function CreatorPage() {
                 </svg>
                 <span>Audio and timecode synchronization</span>
               </li>
+              <li>
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3">
+                  <polyline points="20 6 9 17 4 12" />
+                </svg>
+                <span>Up to 4 cameras</span>
+              </li>
             </ul>
             <button
               type="button"
@@ -402,6 +410,15 @@ function CreatorPage() {
               onClick={() => setTrialPriceId(PRICE_IDS.EDITOR_MONTH)}
             >
               Test for Free
+            </button>
+            <button
+              type="button"
+              className="btn btn-ghost"
+              onClick={() => handleCheckout(PRICE_IDS.EDITOR_FIRST_MONTH)}
+              style={{marginTop: 8, display: 'flex', flexDirection: 'column', gap: 2}}
+            >
+              <span>First Month 35% Off</span>
+              <span style={{fontSize: 12}}>€23,01</span>
             </button>
             <button
               type="button"
@@ -417,7 +434,7 @@ function CreatorPage() {
           <div className="tier-card featured">
             <span className="badge">Studio</span>
             <h3>Studio</h3>
-            <div className="price">€65<span className="unit">/month</span></div>
+            <div className="price">€65,40<span className="unit">/month</span></div>
             <span className="t-body" style={{display: 'block', fontSize: 12, color: 'var(--text-3)', marginTop: 4}}>incl. 20% VAT</span>
             <p>Take full Control over your Cut</p>
             <ul>
@@ -451,6 +468,12 @@ function CreatorPage() {
                 </svg>
                 <span>Fusion/effect options</span>
               </li>
+              <li>
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3">
+                  <polyline points="20 6 9 17 4 12" />
+                </svg>
+                <span>Unlimited cameras</span>
+              </li>
             </ul>
             <button
               type="button"
@@ -458,6 +481,15 @@ function CreatorPage() {
               onClick={() => setTrialPriceId(PRICE_IDS.STUDIO_MONTH)}
             >
               Test for Free
+            </button>
+            <button
+              type="button"
+              className="btn btn-ghost"
+              onClick={() => handleCheckout(PRICE_IDS.STUDIO_FIRST_MONTH)}
+              style={{marginTop: 8, display: 'flex', flexDirection: 'column', gap: 2}}
+            >
+              <span>First Month 35% Off</span>
+              <span style={{fontSize: 12}}>€42,51</span>
             </button>
             <button
               type="button"

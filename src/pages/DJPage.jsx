@@ -10,6 +10,7 @@ import OneTimeConsentModal from '../components/OneTimeConsentModal';
 import TrialConsentModal from '../components/TrialConsentModal';
 
 const DJ_UNLIMITED_MONTH_PRICE_ID   = 'price_1TduQoPjWn7pNPmYW7R0cVZl';
+const DJ_UNLIMITED_FIRST_MONTH_PRICE_ID = null;
 const DJ_UNLIMITED_ONETIME_PRICE_ID = 'price_1TduW2PjWn7pNPmYigHywfuf';
 
 const DJ_COMPARISON_ROWS = [
@@ -367,6 +368,15 @@ function DJPage() {
               onClick={() => setTrialModalOpen(true)}
             >
               Test for Free
+            </button>
+            <button
+              type="button"
+              className="btn btn-ghost"
+              onClick={() => handleCheckout(DJ_UNLIMITED_FIRST_MONTH_PRICE_ID)}
+              style={{marginTop: 8, display: 'flex', flexDirection: 'column', gap: 2}}
+            >
+              <span>First Month 35% Off</span>
+              <span style={{fontSize: 12}}>€6,63</span>
             </button>
             <button
               type="button"
