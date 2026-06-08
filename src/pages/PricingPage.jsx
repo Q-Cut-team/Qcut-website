@@ -103,7 +103,13 @@ function PricingPage() {
           <div className="tier-card featured">
             <span className="badge">Unlimited</span>
             <h3>DJ Unlimited</h3>
-            <div className="price">€10<span className="unit">/month</span></div>
+            <div className="price-row">
+              <div className="price">€10,20<span className="unit">/month</span></div>
+              <span className="price-offer-badge">
+                First Month Just
+                <strong>€7,5</strong>
+              </span>
+            </div>
             <span className="t-body" style={{display: 'block', fontSize: 12, color: 'var(--text-3)', marginTop: 4}}>incl. 20% VAT</span>
             <p>For touring DJs & agencies</p>
             <ul>
@@ -167,7 +173,13 @@ function PricingPage() {
           {/* Creator Plan */}
           <div className="tier-card">
             <h3>Creator</h3>
-            <div className="price">€35<span className="unit">/month</span></div>
+            <div className="price-row">
+              <div className="price">€35,40<span className="unit">/month</span></div>
+              <span className="price-offer-badge">
+                First Month Just
+                <strong>€25</strong>
+              </span>
+            </div>
             <span className="t-body" style={{display: 'block', fontSize: 12, color: 'var(--text-3)', marginTop: 4}}>incl. 20% VAT</span>
             {/*<p>For content creators</p>*/}
             <ul>
@@ -218,7 +230,13 @@ function PricingPage() {
           <div className="tier-card featured">
             <span className="badge">Studio</span>
             <h3>Studio</h3>
-            <div className="price">€65<span className="unit">/month</span></div>
+            <div className="price-row">
+              <div className="price">€65,40<span className="unit">/month</span></div>
+              <span className="price-offer-badge">
+                First Month Just
+                <strong>€40</strong>
+              </span>
+            </div>
             <span className="t-body" style={{display: 'block', fontSize: 12, color: 'var(--text-3)', marginTop: 4}}>incl. 20% VAT</span>
             <p>Take full Control over your Cut</p>
             <ul>

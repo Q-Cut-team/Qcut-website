@@ -324,7 +324,7 @@ function DJPage() {
           <div className="tier-card featured">
             <span className="badge">Unlimited</span>
             <h3>DJ Unlimited</h3>
-            <div className="price">€10<span className="unit">/month</span></div>
+            <div className="price">€10,20<span className="unit">/month</span></div>
             <span className="t-body" style={{display: 'block', fontSize: 12, color: 'var(--text-3)', marginTop: 4}}>incl. 20% VAT</span>
             <p>For touring DJs & agencies</p>
             <ul>

@@ -98,7 +98,7 @@ export default function OneTimeConsentModal({ isOpen, onClose, onContinue }) {
           Confirm your one-time purchase
         </h2>
         <p className="t-body" style={{ marginBottom: 24 }}>
-          Please review and accept both confirmations before continuing.
+          Please review and accept all confirmations before continuing.
         </p>
 
         <div style={{ display: 'grid', gap: 16 }}>

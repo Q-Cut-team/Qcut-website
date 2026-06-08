@@ -1,17 +1,14 @@
 import React, { useEffect, useState } from 'react';
 import { createPortal } from 'react-dom';
-import SubscriptionCheckbox from './SubscriptionCheckbox';
 import TermsCheckbox from './TermsCheckbox';
 
-export default function TrialConsentModal({ isOpen, onClose, onContinue }) {
+export default function DownloadConsentModal({ isOpen, onClose, onContinue }) {
   const [termsAccepted, setTermsAccepted] = useState(false);
-  const [subscriptionAccepted, setSubscriptionAccepted] = useState(false);
-  const canContinue = termsAccepted && subscriptionAccepted;
+  const canContinue = termsAccepted;
 
   useEffect(() => {
     if (!isOpen) {
       setTermsAccepted(false);
-      setSubscriptionAccepted(false);
       return undefined;
     }
 
@@ -58,7 +55,7 @@ export default function TrialConsentModal({ isOpen, onClose, onContinue }) {
       <div
         role="dialog"
         aria-modal="true"
-        aria-labelledby="trial-consent-title"
+        aria-labelledby="download-consent-title"
         style={{
           position: 'relative',
           width: 'min(620px, 100%)',
@@ -94,19 +91,16 @@ export default function TrialConsentModal({ isOpen, onClose, onContinue }) {
           ×
         </button>
 
-        <h2 id="trial-consent-title" className="t-h3" style={{ paddingRight: 48, marginBottom: 8 }}>
-          Confirm your free trial
+        <h2 id="download-consent-title" className="t-h3" style={{ paddingRight: 48, marginBottom: 8 }}>
+          Confirm your download
         </h2>
         <p className="t-body" style={{ marginBottom: 24 }}>
-          Please review and accept all confirmations before continuing.
+          Please review and accept both confirmations before continuing.
         </p>
 
         <div style={{ display: 'grid', gap: 16 }}>
           <div style={{ padding: 16, border: '1px solid var(--line)', borderRadius: 8 }}>
             <TermsCheckbox accepted={termsAccepted} onChange={setTermsAccepted} />
-          </div>
-          <div style={{ padding: 16, border: '1px solid var(--line)', borderRadius: 8 }}>
-            <SubscriptionCheckbox accepted={subscriptionAccepted} onChange={setSubscriptionAccepted} />
           </div>
         </div>
 

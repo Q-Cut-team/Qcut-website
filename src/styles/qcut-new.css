@@ -555,6 +555,12 @@ button { font-family: inherit; }
   font-family: var(--mono);
 }
 .tier-card h3 { font-size: 20px; margin: 0; color: var(--text); }
+.tier-card .price-row {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 10px 14px;
+}
 .tier-card .price {
   font-size: 36px;
   font-weight: 700;
@@ -568,6 +574,27 @@ button { font-family: inherit; }
   color: var(--text-3);
   font-weight: 500;
   margin-left: 4px;
+}
+.tier-card .price-offer-badge {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 2px;
+  max-width: 142px;
+  padding: 6px 9px;
+  border: 1px solid rgba(255,178,56,0.45);
+  border-radius: 6px;
+  background: rgba(255,178,56,0.1);
+  color: var(--amber);
+  font-family: var(--mono);
+  font-size: 9px;
+  font-weight: 700;
+  line-height: 1.5;
+  text-transform: uppercase;
+}
+.tier-card .price-offer-badge strong {
+  color: var(--text);
+  font-size: 32px;
 }
 .tier-card p {
   font-size: 14px;

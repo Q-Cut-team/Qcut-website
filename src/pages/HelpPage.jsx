@@ -71,8 +71,11 @@ function HelpPage() {
           We'll try to respond as fast as possible!
         </p>
         <div style={{display: 'flex', gap: 16, justifyContent: 'center', flexWrap: 'wrap'}}>
-          <a href="mailto:info@qcut.at" className="btn btn-amber">
-            Email support
+          <a href="https://discord.gg/Z69HFeNWbb" className="btn btn-amber">
+            Join our Discord
+          </a>
+          <a href="mailto:info@qcut.at" className="btn btn-ghost">
+            Email us
           </a>
           <Link to="/pricing" className="btn btn-ghost">
             View pricing
