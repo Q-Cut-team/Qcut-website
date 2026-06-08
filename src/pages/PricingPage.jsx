@@ -153,6 +153,7 @@ function PricingPage() {
             >
               One-time - €300
             </button>
+
           </div>
         </div>
       </section>
@@ -188,6 +189,12 @@ function PricingPage() {
                   <polyline points="20 6 9 17 4 12" />
                 </svg>
                 <span>Audio and timecode synchronization</span>
+              </li>
+              <li>
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3">
+                  <polyline points="20 6 9 17 4 12" />
+                </svg>
+                <span>Up to 4 cameras</span>
               </li>
             </ul>
             <button
@@ -245,6 +252,12 @@ function PricingPage() {
                   <polyline points="20 6 9 17 4 12" />
                 </svg>
                 <span>Fusion/effect options</span>
+              </li>
+              <li>
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3">
+                  <polyline points="20 6 9 17 4 12" />
+                </svg>
+                <span>Unlimited cameras</span>
               </li>
             </ul>
             <button
