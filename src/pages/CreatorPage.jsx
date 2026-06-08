@@ -14,8 +14,6 @@ import YouTubeEmbed from '../components/YouTubeEmbed';
 const PRICE_IDS = {
   EDITOR_MONTH:  'price_1TecRdPjWn7pNPmY6LDpvNMv',
   STUDIO_MONTH:  'price_1TecSzPjWn7pNPmY1OqTMEk0',
-  EDITOR_FIRST_MONTH: null,
-  STUDIO_FIRST_MONTH: null,
   EDITOR_ONETIME:'price_1TecQoPjWn7pNPmY9b0rRmXR',
   STUDIO_ONETIME:'price_1TecUiPjWn7pNPmYvOVX4aRa',
   DJ_UNLIMITED:  null, // в дуще не ебу нахуя
@@ -375,7 +373,13 @@ function CreatorPage() {
           {/* Creator Plan */}
           <div className="tier-card">
             <h3>Creator</h3>
-            <div className="price">€35,40<span className="unit">/month</span></div>
+            <div className="price-row">
+              <div className="price">€35,40<span className="unit">/month</span></div>
+              <span className="price-offer-badge">
+                First Month Just
+                <strong>€25</strong>
+              </span>
+            </div>
             <span className="t-body" style={{display: 'block', fontSize: 12, color: 'var(--text-3)', marginTop: 4}}>incl. 20% VAT</span>
             {/*<p>Perfect for content creators and small studios</p>*/}
             <ul>
@@ -414,15 +418,6 @@ function CreatorPage() {
             <button
               type="button"
               className="btn btn-ghost"
-              onClick={() => handleCheckout(PRICE_IDS.EDITOR_FIRST_MONTH)}
-              style={{marginTop: 8, display: 'flex', flexDirection: 'column', gap: 2}}
-            >
-              <span>First Month 35% Off</span>
-              <span style={{fontSize: 12}}>€23,01</span>
-            </button>
-            <button
-              type="button"
-              className="btn btn-ghost"
               onClick={() => setOneTimePriceId(PRICE_IDS.EDITOR_ONETIME)}
               style={{marginTop: 8}}
             >
@@ -434,7 +429,13 @@ function CreatorPage() {
           <div className="tier-card featured">
             <span className="badge">Studio</span>
             <h3>Studio</h3>
-            <div className="price">€65,40<span className="unit">/month</span></div>
+            <div className="price-row">
+              <div className="price">€65,40<span className="unit">/month</span></div>
+              <span className="price-offer-badge">
+                First Month Just
+                <strong>€40</strong>
+              </span>
+            </div>
             <span className="t-body" style={{display: 'block', fontSize: 12, color: 'var(--text-3)', marginTop: 4}}>incl. 20% VAT</span>
             <p>Take full Control over your Cut</p>
             <ul>
@@ -481,15 +482,6 @@ function CreatorPage() {
               onClick={() => setTrialPriceId(PRICE_IDS.STUDIO_MONTH)}
             >
               Test for Free
-            </button>
-            <button
-              type="button"
-              className="btn btn-ghost"
-              onClick={() => handleCheckout(PRICE_IDS.STUDIO_FIRST_MONTH)}
-              style={{marginTop: 8, display: 'flex', flexDirection: 'column', gap: 2}}
-            >
-              <span>First Month 35% Off</span>
-              <span style={{fontSize: 12}}>€42,51</span>
             </button>
             <button
               type="button"

@@ -1,19 +1,16 @@
 import React, { useEffect, useState } from 'react';
 import { createPortal } from 'react-dom';
 import OneTimeCheckbox from './OneTimeCheckbox';
-import PrivacyCheckbox from './PrivacyCheckbox';
 import TermsCheckbox from './TermsCheckbox';
 
 export default function OneTimeConsentModal({ isOpen, onClose, onContinue }) {
   const [termsAccepted, setTermsAccepted] = useState(false);
-  const [privacyAccepted, setPrivacyAccepted] = useState(false);
   const [oneTimeAccepted, setOneTimeAccepted] = useState(false);
-  const canContinue = termsAccepted && privacyAccepted && oneTimeAccepted;
+  const canContinue = termsAccepted && oneTimeAccepted;
 
   useEffect(() => {
     if (!isOpen) {
       setTermsAccepted(false);
-      setPrivacyAccepted(false);
       setOneTimeAccepted(false);
       return undefined;
     }
@@ -107,9 +104,6 @@ export default function OneTimeConsentModal({ isOpen, onClose, onContinue }) {
         <div style={{ display: 'grid', gap: 16 }}>
           <div style={{ padding: 16, border: '1px solid var(--line)', borderRadius: 8 }}>
             <TermsCheckbox accepted={termsAccepted} onChange={setTermsAccepted} />
-          </div>
-          <div style={{ padding: 16, border: '1px solid var(--line)', borderRadius: 8 }}>
-            <PrivacyCheckbox accepted={privacyAccepted} onChange={setPrivacyAccepted} />
           </div>
           <div style={{ padding: 16, border: '1px solid var(--line)', borderRadius: 8 }}>
             <OneTimeCheckbox accepted={oneTimeAccepted} onChange={setOneTimeAccepted} />
