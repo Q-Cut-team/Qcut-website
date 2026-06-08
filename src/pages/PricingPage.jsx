@@ -1,10 +1,10 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { redirectToCheckout } from '../utils/checkout';
 import { useToast } from '../hooks/useToast';
-import { useTermsAccepted } from '../hooks/useTermsAccepted';
 import Toast from '../components/Toast';
-import TermsCheckbox from '../components/TermsCheckbox';
+import OneTimeConsentModal from '../components/OneTimeConsentModal';
+import TrialConsentModal from '../components/TrialConsentModal';
 
 // Price IDs from your requirements
 const PRICE_IDS = {
@@ -18,10 +18,8 @@ const PRICE_IDS = {
 
 function PricingPage() {
   const { isVisible, message, showToast, hideToast } = useToast();
-  const djTerms = useTermsAccepted();
-  const djUnlimitedTerms = useTermsAccepted();
-  const creatorTerms = useTermsAccepted();
-  const studioTerms = useTermsAccepted();
+  const [trialPriceId, setTrialPriceId] = useState(null);
+  const [oneTimePriceId, setOneTimePriceId] = useState(null);
 
   const handleCheckout = async (priceId) => {
     if (!priceId) {
@@ -29,6 +27,18 @@ function PricingPage() {
       return;
     }
     await redirectToCheckout(priceId);
+  };
+
+  const handleTrialContinue = async () => {
+    const priceId = trialPriceId;
+    setTrialPriceId(null);
+    await handleCheckout(priceId);
+  };
+
+  const handleOneTimeContinue = async () => {
+    const priceId = oneTimePriceId;
+    setOneTimePriceId(null);
+    await handleCheckout(priceId);
   };
 
   return (
@@ -128,18 +138,17 @@ function PricingPage() {
                 <span>No Watermark</span>
               </li>
             </ul>
-            <TermsCheckbox accepted={djUnlimitedTerms.accepted} onChange={djUnlimitedTerms.setAccepted} />
             <button
+              type="button"
               className="btn btn-amber"
-              disabled={!djUnlimitedTerms.accepted}
-              style={{opacity: djUnlimitedTerms.accepted ? 1 : 0.5, cursor: djUnlimitedTerms.accepted ? 'pointer' : 'not-allowed'}}
-              onClick={() => djUnlimitedTerms.accepted && handleCheckout(PRICE_IDS.DJ_UNLIMITED)}
+              onClick={() => setTrialPriceId(PRICE_IDS.DJ_UNLIMITED)}
             >
               Test for free
             </button>
             <button
+              type="button"
               className="btn btn-ghost"
-              onClick={() => handleCheckout(PRICE_IDS.DJ_UNLIMITED_ONETIME)}
+              onClick={() => setOneTimePriceId(PRICE_IDS.DJ_UNLIMITED_ONETIME)}
               style={{marginTop: 8}}
             >
               One-time - €300
@@ -181,19 +190,18 @@ function PricingPage() {
                 <span>Audio and timecode synchronization</span>
               </li>
             </ul>
-            <TermsCheckbox accepted={creatorTerms.accepted} onChange={creatorTerms.setAccepted} />
             <button
+              type="button"
               className="btn btn-amber"
-              disabled={!creatorTerms.accepted}
-              style={{opacity: creatorTerms.accepted ? 1 : 0.5, cursor: creatorTerms.accepted ? 'pointer' : 'not-allowed'}}
-              onClick={() => creatorTerms.accepted && handleCheckout(PRICE_IDS.EDITOR_MONTH)}
+              onClick={() => setTrialPriceId(PRICE_IDS.EDITOR_MONTH)}
             >
               Test for free
             </button>
 
             <button
+              type="button"
               className="btn btn-ghost"
-              onClick={() => handleCheckout(PRICE_IDS.EDITOR_ONETIME)}
+              onClick={() => setOneTimePriceId(PRICE_IDS.EDITOR_ONETIME)}
               style={{marginTop: 8}}
             >
               One-time - €420
@@ -239,18 +247,17 @@ function PricingPage() {
                 <span>Fusion/effect options</span>
               </li>
             </ul>
-            <TermsCheckbox accepted={studioTerms.accepted} onChange={studioTerms.setAccepted} />
             <button
+              type="button"
               className="btn btn-amber"
-              disabled={!studioTerms.accepted}
-              style={{opacity: studioTerms.accepted ? 1 : 0.5, cursor: studioTerms.accepted ? 'pointer' : 'not-allowed'}}
-              onClick={() => studioTerms.accepted && handleCheckout(PRICE_IDS.STUDIO_MONTH)}
+              onClick={() => setTrialPriceId(PRICE_IDS.STUDIO_MONTH)}
             >
               Test for free
             </button>
             <button
+              type="button"
               className="btn btn-ghost"
-              onClick={() => handleCheckout(PRICE_IDS.STUDIO_ONETIME)}
+              onClick={() => setOneTimePriceId(PRICE_IDS.STUDIO_ONETIME)}
               style={{marginTop: 8}}
             >
               One-time - €720
@@ -296,6 +303,16 @@ function PricingPage() {
         </div>
       </section>*/}
 
+      <TrialConsentModal
+        isOpen={Boolean(trialPriceId)}
+        onClose={() => setTrialPriceId(null)}
+        onContinue={handleTrialContinue}
+      />
+      <OneTimeConsentModal
+        isOpen={Boolean(oneTimePriceId)}
+        onClose={() => setOneTimePriceId(null)}
+        onContinue={handleOneTimeContinue}
+      />
       <Toast message={message} isVisible={isVisible} onClose={hideToast} />
     </div>
   );

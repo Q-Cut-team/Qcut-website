@@ -5,9 +5,9 @@ import BeatGrid from "../components/BeatGrid";
 import qcutDjImage from '../assets/images/qcut_dj.png';
 import Reveal from '../components/Reveal';
 import { useToast } from '../hooks/useToast';
-import { useTermsAccepted } from '../hooks/useTermsAccepted';
 import Toast from '../components/Toast';
-import TermsCheckbox from '../components/TermsCheckbox';
+import OneTimeConsentModal from '../components/OneTimeConsentModal';
+import TrialConsentModal from '../components/TrialConsentModal';
 
 const DJ_UNLIMITED_MONTH_PRICE_ID   = 'price_1TduQoPjWn7pNPmYW7R0cVZl';
 const DJ_UNLIMITED_ONETIME_PRICE_ID = 'price_1TduW2PjWn7pNPmYigHywfuf';
@@ -33,8 +33,9 @@ const DJ_COMPARISON_ROWS = [
 function DJPage() {
   const ctaSectionRef = useRef(null);
   const [showDetailedComparison, setShowDetailedComparison] = useState(false);
+  const [trialModalOpen, setTrialModalOpen] = useState(false);
+  const [oneTimeModalOpen, setOneTimeModalOpen] = useState(false);
   const { isVisible, message, showToast, hideToast } = useToast();
-  const djUnlimitedTerms = useTermsAccepted();
 
   const handleCheckout = async (priceId) => {
     if (!priceId) {
@@ -46,6 +47,16 @@ function DJPage() {
 
   const handleGetFree = async () => {
     await redirectToCheckout(DJ_UNLIMITED_MONTH_PRICE_ID);
+  };
+
+  const handleTrialContinue = async () => {
+    setTrialModalOpen(false);
+    await handleGetFree();
+  };
+
+  const handleOneTimeContinue = async () => {
+    setOneTimeModalOpen(false);
+    await handleCheckout(DJ_UNLIMITED_ONETIME_PRICE_ID);
   };
 
   const scrollToCtaSection = () => {
@@ -350,18 +361,17 @@ function DJPage() {
 
             </ul>
 
-            <TermsCheckbox accepted={djUnlimitedTerms.accepted} onChange={djUnlimitedTerms.setAccepted} />
             <button
+              type="button"
               className="btn btn-amber"
-              disabled={!djUnlimitedTerms.accepted}
-              style={{opacity: djUnlimitedTerms.accepted ? 1 : 0.5, cursor: djUnlimitedTerms.accepted ? 'pointer' : 'not-allowed'}}
-              onClick={() => djUnlimitedTerms.accepted && handleGetFree()}
+              onClick={() => setTrialModalOpen(true)}
             >
               Test for Free
             </button>
             <button
+              type="button"
               className="btn btn-ghost"
-              onClick={() => handleCheckout(DJ_UNLIMITED_ONETIME_PRICE_ID)}
+              onClick={() => setOneTimeModalOpen(true)}
               style={{marginTop: 8}}
             >
               One-time for €300
@@ -373,6 +383,16 @@ function DJPage() {
         </p>
       </section>
 
+      <TrialConsentModal
+        isOpen={trialModalOpen}
+        onClose={() => setTrialModalOpen(false)}
+        onContinue={handleTrialContinue}
+      />
+      <OneTimeConsentModal
+        isOpen={oneTimeModalOpen}
+        onClose={() => setOneTimeModalOpen(false)}
+        onContinue={handleOneTimeContinue}
+      />
       <Toast message={message} isVisible={isVisible} onClose={hideToast} />
     </div>
   );

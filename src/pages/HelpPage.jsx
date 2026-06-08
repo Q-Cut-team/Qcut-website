@@ -14,6 +14,25 @@ function HelpPage() {
         </p>
       </section>
 
+      {/* Subscription Management Section */}
+      <section id="check-subscription" className="container section">
+        <div className="card" style={{maxWidth: 560, margin: '0 auto', textAlign: 'center'}}>
+          <h2 className="t-h3">Check your subscription status</h2>
+          <p className="t-body" style={{fontSize: 14, marginTop: 8}}>
+            Manage your subscription, update your payment method, or cancel anytime.
+          </p>
+          <a
+            href="https://billing.stripe.com/p/login/00w6oJ9TGb1S5vV9jB4wM00"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="btn btn-amber"
+            style={{marginTop: 24, display: 'inline-block'}}
+          >
+            Manage subscription
+          </a>
+        </div>
+      </section>
+
       {/* FAQ Section */}
       <section id="faq" className="container section">
         <h2 className="t-h2" style={{textAlign: 'center', marginBottom: 48}}>
@@ -41,24 +60,7 @@ function HelpPage() {
         </div>
       </section>
 
-      {/* Subscription Management Section */}
-      <section id="check-subscription" className="container section">
-        <div className="card" style={{maxWidth: 560, margin: '0 auto', textAlign: 'center'}}>
-          <h2 className="t-h3">Check your subscription status</h2>
-          <p className="t-body" style={{fontSize: 14, marginTop: 8}}>
-            Manage your subscription, update your payment method, or cancel anytime.
-          </p>
-          <a
-            href="https://billing.stripe.com/p/login/00w6oJ9TGb1S5vV9jB4wM00"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="btn btn-amber"
-            style={{marginTop: 24, display: 'inline-block'}}
-          >
-            Manage subscription
-          </a>
-        </div>
-      </section>
+      
 
       {/* Contact Section */}
       <section id="contact" className="container section" style={{textAlign: 'center'}}>
