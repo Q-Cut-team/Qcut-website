@@ -1,4 +1,5 @@
 import React from 'react';
+import useCookiebotMarketingConsent from '../hooks/useCookiebotMarketingConsent';
 
 function getYouTubeVideoId(url) {
   if (!url) return null;
@@ -29,10 +30,7 @@ function YouTubeEmbed({
   autoPlay = false
 }) {
   const videoId = getYouTubeVideoId(url);
-  
-  // Debug logging
-  console.log('YouTube Embed - URL:', url);
-  console.log('YouTube Embed - Video ID:', videoId);
+  const { isAllowed, openPrivacySettings } = useCookiebotMarketingConsent();
 
   if (!videoId) {
     return (
@@ -65,23 +63,55 @@ function YouTubeEmbed({
     params.set("mute", "1");
   }
 
-  const embedUrl = `https://www.youtube.com/embed/${videoId}?${params.toString()}`;
-  
-  console.log('YouTube Embed - Embed URL:', embedUrl);
+  const embedUrl = `https://www.youtube-nocookie.com/embed/${videoId}?${params.toString()}`;
+
+  const containerStyle = {
+    position: 'relative',
+    width: '100%',
+    paddingBottom: '56.25%', // 16:9 aspect ratio
+    height: 0,
+    overflow: 'hidden',
+    borderRadius: '16px',
+    background: '#000',
+    border: '1px solid #333'
+  };
+
+  if (!isAllowed) {
+    return (
+      <div className={className} style={containerStyle}>
+        <div
+          style={{
+            position: 'absolute',
+            inset: 0,
+            display: 'flex',
+            flexDirection: 'column',
+            alignItems: 'center',
+            justifyContent: 'center',
+            gap: '14px',
+            padding: '24px',
+            textAlign: 'center',
+            background: 'linear-gradient(145deg, #171717, #0a0a0a)'
+          }}
+        >
+          <p className="t-body" style={{maxWidth: '520px', margin: 0, color: 'var(--text-2)'}}>
+            To view this YouTube video, please allow marketing cookies.
+          </p>
+          <button
+            type="button"
+            className="btn btn-ghost"
+            onClick={openPrivacySettings}
+          >
+            Manage privacy settings
+          </button>
+        </div>
+      </div>
+    );
+  }
 
   return (
     <div 
       className={className}
-      style={{
-        position: 'relative',
-        width: '100%',
-        paddingBottom: '56.25%', // 16:9 aspect ratio
-        height: 0,
-        overflow: 'hidden',
-        borderRadius: '16px',
-        background: '#000',
-        border: '1px solid #333'
-      }}
+      style={containerStyle}
     >
       <iframe
         src={embedUrl}

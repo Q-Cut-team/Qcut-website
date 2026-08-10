@@ -28,7 +28,7 @@ function SuccessPage() {
           </h1>
           
           <p className="t-body-lg" style={{marginBottom: 16}}>
-            Your subscription is now active. Check your email for download links and license key.
+            Your checkout was successful. Check your email for download links and your license key.
           </p>
           
           <p className="t-body" style={{marginBottom: 40, color: 'var(--text-3)'}}>

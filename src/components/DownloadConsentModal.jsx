@@ -95,7 +95,7 @@ export default function DownloadConsentModal({ isOpen, onClose, onContinue }) {
           Confirm your download
         </h2>
         <p className="t-body" style={{ marginBottom: 24 }}>
-          Please review and accept both confirmations before continuing.
+          Please review and accept the confirmation before continuing.
         </p>
 
         <div style={{ display: 'grid', gap: 16 }}>

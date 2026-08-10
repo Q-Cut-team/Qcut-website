@@ -18,7 +18,7 @@ function TermsOfUsePage() {
 
         <h1 className="t-h1" style={{marginBottom: 8}}>Mulcut Terms of Use</h1>
         <p className="t-body" style={{color: 'var(--text-2)', marginBottom: 48}}>
-          Last updated: 24.05.2026
+          Last updated: 10.08.2026
         </p>
 
         <div style={{marginBottom: 32}}>
@@ -43,7 +43,11 @@ function TermsOfUsePage() {
             <li className="t-body" style={{marginBottom: 8}}>Q-Cut Studio</li>
             <li className="t-body" style={{marginBottom: 8}}>Q-Cut Creator</li>
             <li className="t-body" style={{marginBottom: 8}}>Q-Cut DJ</li>
+            <li className="t-body" style={{marginBottom: 8}}>Q-Cut Studio plugin for Adobe Premiere Pro</li>
           </ul>
+          <p className="t-body" style={{color: 'var(--text-2)', marginTop: 12, marginBottom: 12, lineHeight: 1.7}}>
+            The Q-Cut Studio plugin for Adobe Premiere Pro is a companion component of Q-Cut Studio. It requires a compatible installation of Adobe Premiere Pro and a valid Q-Cut Studio entitlement or an expressly offered free mode.
+          </p>
           <p className="t-body" style={{color: 'var(--text-2)', marginTop: 12, marginBottom: 12, lineHeight: 1.7}}>
             Different products or subscription plans may provide different features, limitations, or usage rights.
           </p>
@@ -58,7 +62,7 @@ function TermsOfUsePage() {
             The software is licensed, not sold.
           </p>
           <p className="t-body" style={{color: 'var(--text-2)', marginBottom: 12, lineHeight: 1.7}}>
-            Subject to these Terms, Mulcut grants you a limited, non-exclusive, non-transferable, and revocable license to use the software in accordance with your selected product, plan, or license type.
+            Subject to these Terms, Mulcut grants you a limited, non-exclusive, and non-transferable license, subject to termination under Section 12, to use the software in accordance with your selected product, plan, or license type.
           </p>
           <p className="t-body" style={{color: 'var(--text-2)', marginBottom: 12, lineHeight: 1.7}}>
             You may not:
@@ -69,6 +73,9 @@ function TermsOfUsePage() {
             <li className="t-body" style={{marginBottom: 8}}>reverse engineer or modify the software except where permitted by law</li>
             <li className="t-body" style={{marginBottom: 8}}>use the software for unlawful purposes</li>
           </ul>
+          <p className="t-body" style={{color: 'var(--text-2)', marginTop: 12, lineHeight: 1.7}}>
+            The Q-Cut Studio plugin for Adobe Premiere Pro does not provide a separate Q-Cut Studio license or entitlement.
+          </p>
         </div>
 
         <div style={{marginBottom: 32}}>
@@ -82,15 +89,31 @@ function TermsOfUsePage() {
           <p className="t-body" style={{color: 'var(--text-2)', marginBottom: 12, lineHeight: 1.7}}>
             The software may need to communicate with our servers to verify license validity and prevent unauthorized use.
           </p>
-          <p className="t-body" style={{color: 'var(--text-2)', marginBottom: 12, lineHeight: 1.7}}>
-            We reserve the right to suspend or revoke licenses in cases of:
+          <p className="t-body" style={{color: 'var(--text-2)', lineHeight: 1.7}}>
+            Mulcut may suspend or terminate a license only in the circumstances described in Section 12.
           </p>
-          <ul style={{paddingLeft: 24, color: 'var(--text-2)'}}>
-            <li className="t-body" style={{marginBottom: 8}}>fraud</li>
-            <li className="t-body" style={{marginBottom: 8}}>abuse</li>
-            <li className="t-body" style={{marginBottom: 8}}>unauthorized sharing</li>
-            <li className="t-body" style={{marginBottom: 8}}>violation of these Terms</li>
-          </ul>
+        </div>
+
+        <div style={{marginBottom: 32}}>
+          <h3 className="t-h3" style={{marginBottom: 16}}>4A. Premiere Plugin and Local Bridge</h3>
+          <p className="t-body" style={{color: 'var(--text-2)', marginBottom: 12, lineHeight: 1.7}}>
+            The Q-Cut Studio plugin for Adobe Premiere Pro communicates with the Q-Cut Studio desktop application through a local per-user file bridge.
+          </p>
+          <p className="t-body" style={{color: 'var(--text-2)', marginBottom: 12, lineHeight: 1.7}}>
+            The plugin requests Adobe UXP&apos;s <code>localFileSystem: fullAccess</code> permission. This permission is required so that the plugin can access the local bridge and the OTIO, XML, media, and project-related paths that Q-Cut Studio asks Adobe Premiere Pro to import or export.
+          </p>
+          <p className="t-body" style={{color: 'var(--text-2)', marginBottom: 12, lineHeight: 1.7}}>
+            The local bridge may exchange project and sequence names, sequence and item identifiers, clip names, local media paths, timeline metadata, commands, status information, and export results between Adobe Premiere Pro and Q-Cut Studio.
+          </p>
+          <p className="t-body" style={{color: 'var(--text-2)', marginBottom: 12, lineHeight: 1.7}}>
+            When instructed through Q-Cut Studio, the plugin may read the active project and sequence, import or export timeline files, create or clone sequences, add or remove timeline items or markers, and open or activate sequences.
+          </p>
+          <p className="t-body" style={{color: 'var(--text-2)', marginBottom: 12, lineHeight: 1.7}}>
+            The production plugin does not request direct network access and does not itself upload footage or Adobe Premiere Pro project data to Mulcut. The Q-Cut Studio desktop application may separately communicate with Mulcut&apos;s licensing and update services.
+          </p>
+          <p className="t-body" style={{color: 'var(--text-2)', lineHeight: 1.7}}>
+            Users are responsible for confirming the intended project and sequence, maintaining appropriate backups, and reviewing changes made through the plugin.
+          </p>
         </div>
 
         <div style={{marginBottom: 32}}>
@@ -115,7 +138,7 @@ function TermsOfUsePage() {
             Prices, billing intervals, and included features are displayed during the purchase process.
           </p>
           <p className="t-body" style={{color: 'var(--text-2)', lineHeight: 1.7}}>
-            Payments may be processed through third-party payment providers such as Stripe.
+            Payments are processed through Stripe Managed Payments. For transactions completed through Managed Payments, Link acts as merchant of record and handles payment processing, applicable indirect taxes, receipts, transaction support, and payment-related refunds. Mulcut remains responsible for licensing the software and providing product-related support.
           </p>
           <p className="t-body" style={{color: 'var(--text-2)', lineHeight: 1.7}}>
             Free trials may be offered for certain products or plans.
@@ -133,8 +156,11 @@ function TermsOfUsePage() {
           <p className="t-body" style={{color: 'var(--text-2)', marginBottom: 12, lineHeight: 1.7}}>
             Unless explicitly stated otherwise during the purchase process, one-time purchases grant access to the purchased software version and included features at the time of purchase.
           </p>
+          <p className="t-body" style={{color: 'var(--text-2)', marginBottom: 12, lineHeight: 1.7}}>
+            Mulcut does not guarantee indefinite support, future feature upgrades, or access to future major versions. Optional feature updates and future major versions may be offered separately at Mulcut&apos;s discretion.
+          </p>
           <p className="t-body" style={{color: 'var(--text-2)', lineHeight: 1.7}}>
-            Mulcut may provide updates, bug fixes, and compatibility improvements at its discretion. However, we do not guarantee indefinite support, future feature updates, or compatibility with all future operating systems, hardware configurations, or third-party software.
+            This does not affect any security, compatibility, or conformity updates that Mulcut is required to provide under applicable law. Such required updates will be provided only for the period required by applicable law.
           </p>
         </div>
 
@@ -188,34 +214,46 @@ function TermsOfUsePage() {
           <p className="t-body" style={{color: 'var(--text-2)', marginBottom: 12, lineHeight: 1.7}}>
             DaVinci Resolve is a trademark of Blackmagic Design Pty. Ltd. Mulcut is not affiliated with, endorsed by, or sponsored by Blackmagic Design.
           </p>
+          <p className="t-body" style={{color: 'var(--text-2)', marginBottom: 12, lineHeight: 1.7}}>
+            Adobe, Adobe Premiere, Premiere Pro, and Creative Cloud are trademarks or registered trademarks of Adobe in the United States and/or other countries. Mulcut is not affiliated with, endorsed by, or sponsored by Adobe.
+          </p>
+          <p className="t-body" style={{color: 'var(--text-2)', marginBottom: 12, lineHeight: 1.7}}>
+            The Q-Cut Studio plugin for Adobe Premiere Pro requires separately licensed Adobe Premiere Pro and, where required by Adobe, Adobe Creative Cloud.
+          </p>
           <p className="t-body" style={{color: 'var(--text-2)', lineHeight: 1.7}}>
             We are not responsible for changes, incompatibilities, or issues caused by third-party software.
           </p>
         </div>
 
         <div style={{marginBottom: 32}}>
-          <h3 className="t-h3" style={{marginBottom: 16}}>11. Limitation of Liability</h3>
+          <h3 className="t-h3" style={{marginBottom: 16}}>11. Liability</h3>
           <p className="t-body" style={{color: 'var(--text-2)', marginBottom: 12, lineHeight: 1.7}}>
-            To the maximum extent permitted by law, Mulcut shall not be liable for:
+            The limitations of liability in these Terms apply only to the extent permitted by applicable law. They do not apply in cases of intent, gross negligence, personal injury, or any other liability that cannot legally be excluded or limited.
           </p>
-          <ul style={{paddingLeft: 24, color: 'var(--text-2)'}}>
-            <li className="t-body" style={{marginBottom: 8}}>indirect or consequential damages</li>
-            <li className="t-body" style={{marginBottom: 8}}>loss of profits</li>
-            <li className="t-body" style={{marginBottom: 8}}>loss of business</li>
-            <li className="t-body" style={{marginBottom: 8}}>data loss</li>
-            <li className="t-body" style={{marginBottom: 8}}>project loss</li>
-            <li className="t-body" style={{marginBottom: 8}}>editing inaccuracies</li>
-            <li className="t-body" style={{marginBottom: 8}}>interruptions caused by third-party services or software</li>
-          </ul>
-          <p className="t-body" style={{color: 'var(--text-2)', marginTop: 12, lineHeight: 1.7}}>
-            Our total liability shall not exceed the amount paid for the software during the previous 12 months.
+          <p className="t-body" style={{color: 'var(--text-2)', marginBottom: 12, lineHeight: 1.7}}>
+            For Consumers, Mulcut&apos;s liability is governed by the applicable mandatory statutory provisions.
+          </p>
+          <p className="t-body" style={{color: 'var(--text-2)', marginBottom: 12, lineHeight: 1.7}}>
+            For Business Customers, in cases of slight negligence, Mulcut shall be liable only for a breach of a material contractual obligation, meaning an obligation whose performance is essential for the proper performance of the contract and on which the customer may reasonably rely. In such cases, liability is limited to the foreseeable damage typical for this type of contract.
+          </p>
+          <p className="t-body" style={{color: 'var(--text-2)', marginBottom: 12, lineHeight: 1.7}}>
+            Subject to the exceptions above, Mulcut&apos;s aggregate liability to a Business Customer shall not exceed:
+          </p>
+          <p className="t-body" style={{color: 'var(--text-2)', marginBottom: 12, lineHeight: 1.7}}>
+            (a) for a subscription, the fees actually paid for the affected product during the twelve months preceding the event giving rise to the claim; or
+          </p>
+          <p className="t-body" style={{color: 'var(--text-2)', marginBottom: 12, lineHeight: 1.7}}>
+            (b) for a one-time purchase, the purchase price paid for the affected license.
+          </p>
+          <p className="t-body" style={{color: 'var(--text-2)', lineHeight: 1.7}}>
+            Q-Cut assists with automated audio and video editing. Users remain responsible for reviewing generated timelines, cuts, exports and project files before publishing or further processing them, and for maintaining appropriate backups. Any failure to review results or maintain backups shall be taken into account only to the extent permitted by applicable law and to the extent that it contributed to the damage.
           </p>
         </div>
 
         <div style={{marginBottom: 32}}>
           <h3 className="t-h3" style={{marginBottom: 16}}>12. Termination</h3>
           <p className="t-body" style={{color: 'var(--text-2)', marginBottom: 12, lineHeight: 1.7}}>
-            We may suspend or terminate access to the software if you violate these Terms.
+            Mulcut may suspend or terminate a license in cases of non-payment, fraud, unauthorized credential or license sharing, security abuse, unlawful use, or a material breach of these Terms. If a material breach can reasonably be remedied, Mulcut will provide notice and a reasonable opportunity to remedy the breach before termination. No prior remedy period is required where the breach cannot be remedied or immediate suspension is reasonably necessary to protect the software, its users, Mulcut&apos;s rights, or comply with applicable law.
           </p>
           <p className="t-body" style={{color: 'var(--text-2)', lineHeight: 1.7}}>
             Upon termination, your license to use the software ends immediately.
@@ -225,13 +263,13 @@ function TermsOfUsePage() {
         <div style={{marginBottom: 32}}>
           <h3 className="t-h3" style={{marginBottom: 16}}>13. Changes to the Terms</h3>
           <p className="t-body" style={{color: 'var(--text-2)', marginBottom: 12, lineHeight: 1.7}}>
-            We reserve the right to modify these Terms at any time.
+            We may update these Terms for future contracts by publishing a new version.
           </p>
           <p className="t-body" style={{color: 'var(--text-2)', marginBottom: 12, lineHeight: 1.7}}>
-            Updated versions will be published on our website.
+            Changes to an existing contract take effect only where permitted by applicable law and after appropriate notice. Where express consent is required, we will request that consent separately.
           </p>
           <p className="t-body" style={{color: 'var(--text-2)', lineHeight: 1.7}}>
-            Continued use of the software after changes become effective constitutes acceptance of the updated Terms.
+            Continued use alone does not constitute acceptance where applicable law requires an express declaration.
           </p>
         </div>
 
