@@ -34,7 +34,7 @@ function BetaBar() {
   return (
     <div className="beta-bar">
       <span className="pulse" />
-      <span>7-day free trial for new subscribers — cancel anytime</span>
+      <span>Open Beta for QCut Version 2 now available!</span>
       <span className="pulse" />
     </div>
   );

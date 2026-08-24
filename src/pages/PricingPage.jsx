@@ -16,6 +16,17 @@ const PRICE_IDS = {
   STUDIO_ONETIME:      'price_1TecUiPjWn7pNPmYvOVX4aRa',
 };
 
+function PricingPlanSections({ children }) {
+  const sections = React.Children.toArray(children);
+
+  return (
+    <>
+      {sections.find((section) => section.props.id === 'creator')}
+      {sections.find((section) => section.props.id === 'dj')}
+    </>
+  );
+}
+
 function PricingPage() {
   const { isVisible, message, showToast, hideToast } = useToast();
   const [trialPriceId, setTrialPriceId] = useState(null);
@@ -53,8 +64,9 @@ function PricingPage() {
         </p>
       </section>
 
-      {/* DJ Plans Section */}
-      <section id="dj" className="container section">
+      <PricingPlanSections>
+        {/* DJ Plans Section */}
+        <section id="dj" className="container section">
         <div style={{textAlign: 'center', marginBottom: 48}}>
           <span className="t-label">For DJs</span>
           <h2 className="t-h2" style={{marginTop: 12}}>Fast & Easy Clips</h2>
@@ -161,10 +173,10 @@ function PricingPage() {
             </button>
           </div>
         </div>
-      </section>
+        </section>
 
-      {/* Creator Plans Section */}
-      <section id="creator" className="container section">
+        {/* Creator Plans Section */}
+        <section id="creator" className="container section">
         <div style={{textAlign: 'center', marginBottom: 48}}>
           <span className="t-label">For Creators</span>
           <h2 className="t-h2" style={{marginTop: 12}}>Professional multicam</h2>
@@ -228,7 +240,7 @@ function PricingPage() {
 
           {/* Studio Plan */}
           <div className="tier-card featured">
-            <span className="badge">Studio</span>
+            <span className="badge release-badge">Version 2 open Beta released!</span>
             <h3>Studio</h3>
             <div className="price-row">
               <div className="price">€65,40<span className="unit">/month</span></div>
@@ -297,7 +309,8 @@ function PricingPage() {
         <p className="t-body" style={{textAlign: 'center', fontSize: 13, color: 'var(--text-3)', marginTop: 24}}>
           All prices include 20% VAT (Austria) and can differ slightly depending on your location. Final price is shown at checkout.
         </p>
-      </section>
+        </section>
+      </PricingPlanSections>
 
       {/* FAQ Section */}
       <section className="container section" style={{maxWidth: 720}}>
