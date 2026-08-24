@@ -51,7 +51,7 @@ function AboutUsPage() {
           
           <div>
             <p className="t-body" style={{color: 'var(--text-2)', lineHeight: 1.7, marginBottom: 16}}>
-              We are against the mindset of throwing AI at every problem, wrapping it in vague promises, and calling it a product.
+              We are against the mindset of throwing AI at every problem, wrapping it in vague promises, and presenting it as a product.
             </p>
             <p className="t-body" style={{color: 'var(--text-2)', lineHeight: 1.7, marginBottom: 16}}>
               Good software should be clear about what it does.
@@ -60,22 +60,16 @@ function AboutUsPage() {
               It should solve a real problem.
             </p>
             <p className="t-body" style={{color: 'var(--text-2)', lineHeight: 1.7, marginBottom: 16}}>
-              It should behave reliably.
-            </p>
-            <p className="t-body" style={{color: 'var(--text-2)', lineHeight: 1.7, marginBottom: 32}}>
-              It should not make users guess what is happening behind the scenes.
+              It should behave reliably and should not make users guess what is happening behind the scenes.
             </p>
             <p className="t-body" style={{color: 'var(--text-2)', lineHeight: 1.7, marginBottom: 16}}>
-              For us, AI is something to evaluate, not something to worship.
+              For us, AI is something to be evaluated, not worshipped.
             </p>
             <p className="t-body" style={{color: 'var(--text-2)', lineHeight: 1.7, marginBottom: 32}}>
-              Sometimes it helps.
-            </p>
-            <p className="t-body" style={{color: 'var(--text-2)', lineHeight: 1.7, marginBottom: 32}}>
-              Sometimes it does not.
+              Sometimes it helps. Sometimes it does not.
             </p>
             <p className="t-body" style={{color: 'var(--text-2)', lineHeight: 1.7, margin: 0}}>
-              We also use AI as a tool, honestly we probably wouldn’t be this far without. but It’s important to distinguish it as a helper in cases where it shines and keep it away from cases where it tries to replace people with creativity and thinking skills.
+              We also use AI as a tool — honestly, we probably wouldn’t have got this far without it — but it's important to recognise its limitations and not allow it to replace people's creativity and thinking skills.
             </p>
           </div>
         </section>
