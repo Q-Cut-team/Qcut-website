@@ -4,7 +4,7 @@ import Reveal from '../components/Reveal';
 import { useDownloadUrls } from '../hooks/useDownloadUrls';
 import DownloadConsentModal from '../components/DownloadConsentModal';
 
-function PlatformCards({ urls, onDownload }) {
+function PlatformCards({ urls, onDownload, showBetaBadge = false }) {
   const macSiliconEnabled = Boolean(urls.macSilicon);
   const macIntelEnabled = Boolean(urls.macIntel);
   const windowsEnabled = Boolean(urls.windows);
@@ -17,7 +17,10 @@ function PlatformCards({ urls, onDownload }) {
       margin: '0 auto',
     }}>
       <Reveal delay={0}>
-        <div className="card" style={{textAlign: 'center'}}>
+        <div className="card studio-download-card" style={{textAlign: 'center'}}>
+          {showBetaBadge && (
+            <span className="download-release-badge">Version 2 open Beta</span>
+          )}
           <h3 className="t-h3" style={{marginBottom: 12}}>macOS</h3>
           <p className="t-body" style={{marginBottom: 24}}>
             Pick the build that matches your chip
@@ -45,7 +48,10 @@ function PlatformCards({ urls, onDownload }) {
         </div>
       </Reveal>
       <Reveal delay={120}>
-        <div className="card" style={{textAlign: 'center'}}>
+        <div className="card studio-download-card" style={{textAlign: 'center'}}>
+          {showBetaBadge && (
+            <span className="download-release-badge">Version 2 open Beta</span>
+          )}
           <h3 className="t-h3" style={{marginBottom: 12}}>Windows</h3>
           <p className="t-body" style={{marginBottom: 24}}>
             Windows 10 or newer · 64-bit
@@ -102,7 +108,7 @@ function StudioDownloadPage() {
         {!loading && !error && (
           <>
             {latest
-              ? <PlatformCards urls={latest} onDownload={setPendingDownloadUrl} />
+              ? <PlatformCards urls={latest} onDownload={setPendingDownloadUrl} showBetaBadge />
               : (
                 <p className="t-body" style={{textAlign: 'center', color: 'var(--text-3)'}}>
                   No downloads available yet. Check back soon.
