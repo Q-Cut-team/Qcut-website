@@ -1,6 +1,6 @@
 import React from 'react';
 
-export default function SubscriptionCheckbox({ accepted, onChange }) {
+export default function SubscriptionCheckbox({ accepted, onChange, isTrial = true }) {
   return (
     <label style={{
       display: 'flex',
@@ -27,7 +27,9 @@ export default function SubscriptionCheckbox({ accepted, onChange }) {
       />
       <span>
         <span style={{display: 'block'}}>
-          I understand that my 7-day free trial will automatically convert into a paid subscription unless cancelled before the end of the trial period.
+          {isTrial
+            ? 'I understand that my 7-day free trial will automatically convert into a paid subscription unless cancelled before the end of the trial period.'
+            : 'I understand that I am starting a paid subscription that renews automatically unless cancelled.'}
         </span>
         <span style={{display: 'block', marginTop: 12}}>
           I expressly agree that the execution of the contract begins immediately and acknowledge that I lose my statutory right of withdrawal once the download or activation process has started.

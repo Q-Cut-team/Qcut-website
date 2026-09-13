@@ -1,4 +1,4 @@
-/* ---------- Q·Cut · Refined ---------- */
+/* ---------- Q-Cut · Refined ---------- */
 :root {
   --bg: #0a0a0a;
   --bg-2: #0e0e0e;
@@ -112,7 +112,7 @@ button { font-family: inherit; }
   font-size: 11px;
   font-weight: 500;
   letter-spacing: 0.12em;
-  text-transform: uppercase;
+  text-transform: none;
   padding: 9px 16px;
   text-align: center;
   display: flex;
@@ -581,6 +581,29 @@ button { font-family: inherit; }
   white-space: nowrap;
 }
 .tier-card h3 { font-size: 20px; margin: 0; color: var(--text); }
+.qcut-plan-summary {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+.qcut-plan-price-space {
+  min-height: 62px;
+  display: flex;
+  align-items: center;
+}
+.qcut-plan-price-space .price-row {
+  width: 100%;
+}
+.qcut-plan-tax-line {
+  display: block;
+  min-height: 18px;
+  color: var(--text-3);
+  font-size: 12px;
+  line-height: 1.5;
+}
+.qcut-plan-tax-placeholder {
+  visibility: hidden;
+}
 .tier-card .price-row {
   display: flex;
   align-items: center;
@@ -654,6 +677,15 @@ button { font-family: inherit; }
 .tier-card button {
   margin-top: auto;
   width: 100%;
+}
+.tier-card .qcut-free-button {
+  margin-top: auto;
+  width: 100%;
+}
+@media (min-width: 769px) {
+  .tier-card .qcut-free-button {
+    margin-bottom: 80px;
+  }
 }
 
 /* ---------- Pricing page ---------- */

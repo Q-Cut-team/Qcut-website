@@ -41,7 +41,6 @@ function TermsOfUsePage() {
           </p>
           <ul style={{paddingLeft: 24, color: 'var(--text-2)'}}>
             <li className="t-body" style={{marginBottom: 8}}>Q-Cut Studio</li>
-            <li className="t-body" style={{marginBottom: 8}}>Q-Cut Creator</li>
             <li className="t-body" style={{marginBottom: 8}}>Q-Cut DJ</li>
             <li className="t-body" style={{marginBottom: 8}}>Q-Cut Studio plugin for Adobe Premiere Pro</li>
           </ul>

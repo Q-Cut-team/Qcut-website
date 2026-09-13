@@ -1,9 +1,8 @@
 import React, { useState, useEffect } from 'react';
-import { BrowserRouter, Routes, Route, Link, useLocation, useNavigate } from 'react-router-dom';
+import { BrowserRouter, Routes, Route, Link, useLocation, useNavigate, Navigate } from 'react-router-dom';
 import HomePage from './pages/HomePage';
 import DJPage from './pages/DJPage';
 import CreatorPage from './pages/CreatorPage';
-import CreatorTutorialPage from './pages/CreatorTutorialPage';
 import StudioTutorialPage from './pages/StudioTutorialPage';
 import PricingPage from './pages/PricingPage';
 import HelpPage from './pages/HelpPage';
@@ -20,11 +19,15 @@ import TermsOfUsePage from './pages/TermsOfUsePage';
 
 // ScrollToTop Component
 function ScrollToTop() {
-  const { pathname } = useLocation();
+  const { pathname, hash } = useLocation();
 
   useEffect(() => {
-    window.scrollTo(0, 0);
-  }, [pathname]);
+    if (hash) {
+      document.getElementById(hash.slice(1))?.scrollIntoView();
+    } else {
+      window.scrollTo(0, 0);
+    }
+  }, [pathname, hash]);
 
   return null;
 }
@@ -34,7 +37,7 @@ function BetaBar() {
   return (
     <div className="beta-bar">
       <span className="pulse" />
-      <span>Open Beta for QCut Version 2 now available!</span>
+      <span>Get a discount on Q-Cut Studio with code XXX</span>
       <span className="pulse" />
     </div>
   );
@@ -45,8 +48,8 @@ function Brand() {
   const navigate = useNavigate();
   return (
     <span className="brand" onClick={() => navigate('/')} style={{display: 'flex', alignItems: 'center', gap: '8px', cursor: 'pointer'}}>
-      <img src="/qcut_logo.png" alt="Q" style={{height: '28px', width: 'auto'}} />
-      <span style={{fontSize: '16px', fontWeight: 600, letterSpacing: '0.05em'}}>CUT</span>
+      <img src="/qcut_logo.png" alt="" style={{height: '28px', width: 'auto'}} />
+      <span style={{fontSize: '16px', fontWeight: 600, letterSpacing: '0.05em'}}>Q-Cut</span>
     </span>
   );
 }
@@ -59,7 +62,7 @@ function Nav() {
   const links = [
     { path: '/', label: 'Home' },
     { path: '/dj', label: 'DJ' },
-    { path: '/creator', label: 'Creator' },
+    { path: '/studio', label: 'Studio' },
     { path: '/pricing', label: 'Pricing' },
     { path: '/help', label: 'Help' },
     { path: '/about', label: 'About us' },
@@ -115,18 +118,18 @@ function Footer() {
           <div className="footer-col">
             <h4>Product</h4>
             <ul>
-              <li><Link to="/dj">DJ Version</Link></li>
-              <li><Link to="/creator">Creator Version</Link></li>
+              <li><Link to="/dj">Q-Cut DJ</Link></li>
+              <li><Link to="/studio">Q-Cut Studio</Link></li>
               <li><Link to="/pricing">Pricing</Link></li>
             </ul>
           </div>
           <div className="footer-col">
             <h4>Support</h4>
             <ul>
-              <li><Link to="/help">Help Center</Link></li>
+              <li><Link to="/help">Help center</Link></li>
               <li><Link to="/about">About us</Link></li>
               <li><a href="mailto:info@qcut.at">Contact</a></li>
-              <li><Link to="/help#contact">Subscription Status</Link></li>
+              <li><Link to="/help#contact">Subscription status</Link></li>
             </ul>
           </div>
           <div className="footer-col">
@@ -154,10 +157,12 @@ function App() {
         <Route path="/" element={<HomePage />} />
         <Route path="/dj" element={<DJPage />} />
         <Route path="/dj/download" element={<DJDownloadPage />} />
-        <Route path="/creator" element={<CreatorPage />} />
-        <Route path="/creator/tutorial" element={<CreatorTutorialPage />} />
+        <Route path="/studio" element={<CreatorPage />} />
+        <Route path="/creator" element={<Navigate to="/studio" replace />} />
+        <Route path="/creator/tutorial" element={<Navigate to="/studio/tutorial" replace />} />
         <Route path="/studio/tutorial" element={<StudioTutorialPage />} />
-        <Route path="/creator/download" element={<CreatorDownloadPage />} />
+        <Route path="/qcut/download" element={<CreatorDownloadPage />} />
+        <Route path="/creator/download" element={<Navigate to="/qcut/download" replace />} />
         <Route path="/studio/download" element={<StudioDownloadPage />} />
         <Route path="/pricing" element={<PricingPage />} />
         <Route path="/help" element={<HelpPage />} />

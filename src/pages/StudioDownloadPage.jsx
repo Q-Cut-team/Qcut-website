@@ -4,7 +4,7 @@ import Reveal from '../components/Reveal';
 import { useDownloadUrls } from '../hooks/useDownloadUrls';
 import DownloadConsentModal from '../components/DownloadConsentModal';
 
-function PlatformCards({ urls, onDownload, showBetaBadge = false }) {
+function PlatformCards({ urls, onDownload, showReleaseBadge = false }) {
   const macSiliconEnabled = Boolean(urls.macSilicon);
   const macIntelEnabled = Boolean(urls.macIntel);
   const windowsEnabled = Boolean(urls.windows);
@@ -18,8 +18,8 @@ function PlatformCards({ urls, onDownload, showBetaBadge = false }) {
     }}>
       <Reveal delay={0}>
         <div className="card studio-download-card" style={{textAlign: 'center'}}>
-          {showBetaBadge && (
-            <span className="download-release-badge">Version 2 open Beta</span>
+          {showReleaseBadge && (
+            <span className="download-release-badge">Version 2 released!</span>
           )}
           <h3 className="t-h3" style={{marginBottom: 12}}>macOS</h3>
           <p className="t-body" style={{marginBottom: 24}}>
@@ -49,8 +49,8 @@ function PlatformCards({ urls, onDownload, showBetaBadge = false }) {
       </Reveal>
       <Reveal delay={120}>
         <div className="card studio-download-card" style={{textAlign: 'center'}}>
-          {showBetaBadge && (
-            <span className="download-release-badge">Version 2 open Beta</span>
+          {showReleaseBadge && (
+            <span className="download-release-badge">Version 2 released!</span>
           )}
           <h3 className="t-h3" style={{marginBottom: 12}}>Windows</h3>
           <p className="t-body" style={{marginBottom: 24}}>
@@ -89,7 +89,7 @@ function StudioDownloadPage() {
       <section className="container hero-page">
         <h1 className="t-display">
           Download<br/>
-          <span style={{color: 'var(--amber)'}}>Q·Cut Studio</span>
+          <span style={{color: 'var(--amber)'}}>Q-Cut Studio</span>
         </h1>
         <p className="t-body-lg" style={{maxWidth: 560, marginTop: 16}}>
           Pick your platform. Install. Run the full Studio pipeline.
@@ -108,7 +108,7 @@ function StudioDownloadPage() {
         {!loading && !error && (
           <>
             {latest
-              ? <PlatformCards urls={latest} onDownload={setPendingDownloadUrl} showBetaBadge />
+              ? <PlatformCards urls={latest} onDownload={setPendingDownloadUrl} showReleaseBadge />
               : (
                 <p className="t-body" style={{textAlign: 'center', color: 'var(--text-3)'}}>
                   No downloads available yet. Check back soon.
@@ -136,7 +136,7 @@ function StudioDownloadPage() {
           </>
         )}
         <div style={{textAlign: 'center', marginTop: 40}}>
-          <Link to="/creator" className="btn btn-ghost">← Back to Creator</Link>
+          <Link to="/studio" className="btn btn-ghost">← Back to Q-Cut Studio</Link>
         </div>
       </section>
       <DownloadConsentModal

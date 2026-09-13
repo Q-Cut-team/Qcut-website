@@ -18,8 +18,8 @@ const DJ_COMPARISON_ROWS = [
   { feature: 'Watermark', free: 'Yes', unlimited: 'No' },
   { feature: 'Input length', free: 'Up to 20 minutes', unlimited: 'Unlimited' },
   { feature: 'Clips export', free: 'Yes', unlimited: 'Yes' },
-  { feature: 'Miniset export', free: 'No', unlimited: 'Yes, up to 60min' },
-  { feature: 'Clip count', free: 'Up to 3 clips', unlimited: 'As many Drops as we can find' },
+  { feature: 'Mini-set export', free: 'No', unlimited: 'Yes, up to 60 minutes' },
+  { feature: 'Clip count', free: 'Up to 3 clips', unlimited: 'As many drops as detected' },
   { feature: 'Dynamic zoom', free: 'Included, locked on', unlimited: 'Editable' },
   { feature: 'Drop camera shake', free: 'No', unlimited: 'Editable' },
   { feature: 'Export window', free: 'Up to 20 minutes for clips', unlimited: 'Unlimited' },
@@ -101,7 +101,7 @@ function DJPage() {
       <Reveal as="section" className="container section">
         <div className="product-grid dj-product-grid" style={{display:"grid", gridTemplateColumns:"1fr 1.4fr", gap: 32, alignItems:"center"}}>
           <div>
-            <h2 className="t-h2">Two clicks<br/>One button</h2>
+            <h2 className="t-h2">Two clicks.<br/>One button.</h2>
             <p className="t-body-lg" style={{marginTop: 16, maxWidth: 440}}>
               Drop video. Drop audio. Pick a format. Export.
             </p>
@@ -122,7 +122,7 @@ function DJPage() {
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--amber)" strokeWidth="3">
                   <polyline points="20 6 9 17 4 12" />
                 </svg>
-                <span className="t-body">9:16 and 16:9 social presets</span>
+                <span className="t-body">9:16 and 16:9 presets</span>
               </div>
               <div style={{display: 'flex', alignItems: 'center', gap: 10}}>
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--amber)" strokeWidth="3">
@@ -140,7 +140,7 @@ function DJPage() {
                 border: '1px solid var(--line)',
                 boxShadow: '0 20px 60px -20px rgba(255,178,56,0.15)'
               }}>
-                <img src={qcutDjImage} alt="Q·Cut DJ" style={{width: '100%', display: 'block'}} />
+                <img src={qcutDjImage} alt="Q-Cut DJ" style={{width: '100%', display: 'block'}} />
               </div>
             </div>
           </Reveal>
@@ -150,7 +150,7 @@ function DJPage() {
       {/* Stats Section 
       <Reveal as="section" className="container section">
         <h2 className="t-h2" style={{marginBottom: 32, maxWidth: 720}}>
-          Fast Social Media Clips. Every Time.
+          Fast social media clips. Every time.
         </h2>
         <div className="scoreboard-row">
           <div className="scoreboard">
@@ -165,7 +165,7 @@ function DJPage() {
           </div>
           <div className="scoreboard">
             <div className="corner" />
-            <div className="num"><span className="unit">3 cams</span></div>
+            <div className="num"><span className="unit">3 cameras</span></div>
             <div className="lbl">Total effort</div>
           </div>
         </div>
@@ -192,7 +192,7 @@ function DJPage() {
           </Reveal>
           <Reveal delay={160}>
             <div className="card">
-              <h3 className="t-h3" style={{marginBottom: 12}}>Vertical & Horizontal</h3>
+              <h3 className="t-h3" style={{marginBottom: 12}}>Vertical and horizontal</h3>
             </div>
           </Reveal>
           <Reveal delay={0}>
@@ -202,7 +202,7 @@ function DJPage() {
           </Reveal>
           <Reveal delay={80}>
             <div className="card">
-              <h3 className="t-h3" style={{marginBottom: 12}}>Up to 3 cams</h3>
+              <h3 className="t-h3" style={{marginBottom: 12}}>Up to 3 cameras</h3>
             </div>
           </Reveal>
           <Reveal delay={160}>
@@ -281,7 +281,7 @@ function DJPage() {
         </div>
         <div className="tier-grid pricing-plan-grid">
           <div className="tier-card">
-            <h3>DJ</h3>
+            <h3>Q-Cut DJ</h3>
             <div className="price">Free</div>
             <p>Perfect for regular gigs</p>
             <ul>
@@ -289,7 +289,7 @@ function DJPage() {
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3">
                   <polyline points="20 6 9 17 4 12" />
                 </svg>
-                <span>Up to 20 minutes </span>
+                <span>Up to 20 minutes</span>
               </li>
               <li>
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3">
@@ -311,7 +311,7 @@ function DJPage() {
               </li>
             </ul>
             <Link to="/dj/download" className="btn btn-ghost">
-              Download Q·Cut DJ
+              Download Q-Cut DJ
             </Link>
             {/*<button*/}
             {/*  className="btn btn-amber"*/}
@@ -323,7 +323,7 @@ function DJPage() {
 
           <div className="tier-card featured">
             <span className="badge">Unlimited</span>
-            <h3>DJ Unlimited</h3>
+            <h3>Q-Cut DJ Unlimited</h3>
             <div className="price">€10,20<span className="unit">/month</span></div>
             <span className="t-body" style={{display: 'block', fontSize: 12, color: 'var(--text-3)', marginTop: 4}}>incl. 20% VAT</span>
             <p>For touring DJs & agencies</p>
@@ -350,13 +350,13 @@ function DJPage() {
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3">
                   <polyline points="20 6 9 17 4 12" />
                 </svg>
-                <span>Miniset export</span>
+                <span>Mini-set export</span>
               </li>
               <li>
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3">
                   <polyline points="20 6 9 17 4 12" />
                 </svg>
-                <span>No Watermark</span>
+                <span>No watermark</span>
               </li>
 
             </ul>
@@ -366,7 +366,7 @@ function DJPage() {
               className="btn btn-amber"
               onClick={() => setTrialModalOpen(true)}
             >
-              Test for Free
+              Try for free
             </button>
             <button
               type="button"
@@ -374,7 +374,7 @@ function DJPage() {
               onClick={() => setOneTimeModalOpen(true)}
               style={{marginTop: 8}}
             >
-              One-time for €300
+              One-time - €300
             </button>
           </div>
         </div>

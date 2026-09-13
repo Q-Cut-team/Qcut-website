@@ -5,15 +5,12 @@ import { useToast } from '../hooks/useToast';
 import Toast from '../components/Toast';
 import OneTimeConsentModal from '../components/OneTimeConsentModal';
 import TrialConsentModal from '../components/TrialConsentModal';
+import StudioPurchaseButtons from '../components/StudioPurchaseButtons';
 
 // Price IDs from your requirements
 const PRICE_IDS = {
   DJ_UNLIMITED:        'price_1TduQoPjWn7pNPmYW7R0cVZl',
-  EDITOR_MONTH:        'price_1TecRdPjWn7pNPmY6LDpvNMv',
-  STUDIO_MONTH:        'price_1TecSzPjWn7pNPmY1OqTMEk0',
   DJ_UNLIMITED_ONETIME:'price_1TduW2PjWn7pNPmYigHywfuf',
-  EDITOR_ONETIME:      'price_1TecQoPjWn7pNPmY9b0rRmXR',
-  STUDIO_ONETIME:      'price_1TecUiPjWn7pNPmYvOVX4aRa',
 };
 
 function PricingPlanSections({ children }) {
@@ -21,7 +18,7 @@ function PricingPlanSections({ children }) {
 
   return (
     <>
-      {sections.find((section) => section.props.id === 'creator')}
+      {sections.find((section) => section.props.id === 'qcut')}
       {sections.find((section) => section.props.id === 'dj')}
     </>
   );
@@ -69,12 +66,12 @@ function PricingPage() {
         <section id="dj" className="container section">
         <div style={{textAlign: 'center', marginBottom: 48}}>
           <span className="t-label">For DJs</span>
-          <h2 className="t-h2" style={{marginTop: 12}}>Fast & Easy Clips</h2>
+          <h2 className="t-h2" style={{marginTop: 12}}>Fast and easy clips</h2>
         </div>
         <div className="tier-grid pricing-plan-grid">
           {/* DJ Plan */}
           <div className="tier-card">
-            <h3>DJ</h3>
+            <h3>Q-Cut DJ</h3>
             <div className="price">Free</div>
             <p>Perfect for regular gigs</p>
             <ul>
@@ -106,7 +103,7 @@ function PricingPage() {
             {/* Download button — links to installer page */}
 
               <Link to="/dj/download" className="btn btn-ghost">
-                Download Q·Cut DJ
+                Download Q-Cut DJ
               </Link>
 
           </div>
@@ -114,12 +111,12 @@ function PricingPage() {
           {/* DJ Unlimited Plan */}
           <div className="tier-card featured">
             <span className="badge">Unlimited</span>
-            <h3>DJ Unlimited</h3>
+            <h3>Q-Cut DJ Unlimited</h3>
             <div className="price-row">
               <div className="price">€10,20<span className="unit">/month</span></div>
               <span className="price-offer-badge">
-                First Month Just
-                <strong>€7,5</strong>
+                First month only
+                <strong>€7,50</strong>
               </span>
             </div>
             <span className="t-body" style={{display: 'block', fontSize: 12, color: 'var(--text-3)', marginTop: 4}}>incl. 20% VAT</span>
@@ -147,13 +144,13 @@ function PricingPage() {
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3">
                   <polyline points="20 6 9 17 4 12" />
                 </svg>
-                <span>Miniset export</span>
+                <span>Mini-set export</span>
               </li>
               <li>
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3">
                   <polyline points="20 6 9 17 4 12" />
                 </svg>
-                <span>No Watermark</span>
+                <span>No watermark</span>
               </li>
             </ul>
             <button
@@ -161,7 +158,7 @@ function PricingPage() {
               className="btn btn-amber"
               onClick={() => setTrialPriceId(PRICE_IDS.DJ_UNLIMITED)}
             >
-              Test for free
+              Try for free
             </button>
             <button
               type="button"
@@ -175,88 +172,76 @@ function PricingPage() {
         </div>
         </section>
 
-        {/* Creator Plans Section */}
-        <section id="creator" className="container section">
+        {/* Q-Cut Plans Section */}
+        <section id="qcut" className="container section">
         <div style={{textAlign: 'center', marginBottom: 48}}>
-          <span className="t-label">For Creators</span>
+          <span className="t-label">For editors</span>
           <h2 className="t-h2" style={{marginTop: 12}}>Professional multicam</h2>
         </div>
         <div className="tier-grid pricing-plan-grid">
-          {/* Creator Plan */}
+          {/* Q-Cut Plan */}
           <div className="tier-card">
-            <h3>Creator</h3>
-            <div className="price-row">
-              <div className="price">€35,40<span className="unit">/month</span></div>
-              <span className="price-offer-badge">
-                First Month Just
-                <strong>€25</strong>
-              </span>
+            <span className="badge">NEW</span>
+            <div className="qcut-plan-summary">
+              <h3>Q-Cut Free</h3>
+              <div className="qcut-plan-price-space">
+                <div className="price">Free</div>
+              </div>
+              <span className="qcut-plan-tax-line qcut-plan-tax-placeholder" aria-hidden="true">incl. 20% VAT</span>
+              <p>Try Q-Cut Free and see what it can do.</p>
             </div>
-            <span className="t-body" style={{display: 'block', fontSize: 12, color: 'var(--text-3)', marginTop: 4}}>incl. 20% VAT</span>
-            {/*<p>For content creators</p>*/}
             <ul>
               <li>
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3">
                   <polyline points="20 6 9 17 4 12" />
                 </svg>
-                <span>XML workflow</span>
+                <span>Same engine and results as Q-Cut Studio</span>
               </li>
               <li>
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3">
                   <polyline points="20 6 9 17 4 12" />
                 </svg>
-                <span>Set the vibe of your Cut</span>
+                <span>Simplified settings</span>
               </li>
               <li>
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3">
                   <polyline points="20 6 9 17 4 12" />
                 </svg>
-                <span>Audio and timecode synchronization</span>
+                <span>Up to 3 cameras</span>
               </li>
               <li>
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3">
                   <polyline points="20 6 9 17 4 12" />
                 </svg>
-                <span>Up to 4 cameras</span>
+                <span>Up to 30 minutes</span>
               </li>
             </ul>
-            <button
-              type="button"
-              className="btn btn-amber"
-              onClick={() => setTrialPriceId(PRICE_IDS.EDITOR_MONTH)}
-            >
-              Test for free
-            </button>
-
-            <button
-              type="button"
-              className="btn btn-ghost"
-              onClick={() => setOneTimePriceId(PRICE_IDS.EDITOR_ONETIME)}
-              style={{marginTop: 8}}
-            >
-              One-time - €420
-            </button>
+            <Link to="/qcut/download" className="btn btn-amber qcut-free-button">Download</Link>
           </div>
 
           {/* Studio Plan */}
-          <div className="tier-card featured">
-            <span className="badge release-badge">Version 2 open Beta released!</span>
-            <h3>Studio</h3>
-            <div className="price-row">
-              <div className="price">€65,40<span className="unit">/month</span></div>
-              <span className="price-offer-badge">
-                First Month Just
-                <strong>€40</strong>
-              </span>
+          <div id="studio" className="tier-card featured" style={{scrollMarginTop: 100}}>
+            <span className="badge release-badge">Version 2 released!</span>
+            <div className="qcut-plan-summary">
+              <h3>Q-Cut Studio</h3>
+              <div className="qcut-plan-price-space">
+                <div className="price-row">
+                  <div className="price">€65,40<span className="unit">/month</span></div>
+                  <span className="price-offer-badge">
+                    First month only
+                    <strong>€40</strong>
+                  </span>
+                </div>
+              </div>
+              <span className="t-body qcut-plan-tax-line">incl. 20% VAT</span>
+              <p>Take full control over your cut.</p>
             </div>
-            <span className="t-body" style={{display: 'block', fontSize: 12, color: 'var(--text-3)', marginTop: 4}}>incl. 20% VAT</span>
-            <p>Take full Control over your Cut</p>
             <ul>
               <li>
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3">
                   <polyline points="20 6 9 17 4 12" />
                 </svg>
-                <span>DaVinci Resolve Studio & XML Workflow</span>
+                <span>DaVinci Resolve, Adobe Premiere Pro and XML workflows</span>
               </li>
               <li>
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3">
@@ -268,19 +253,19 @@ function PricingPage() {
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3">
                   <polyline points="20 6 9 17 4 12" />
                 </svg>
-                <span>Full Control over how the cut looks</span>
+                <span>Full control over how the cut looks</span>
               </li>
               <li>
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3">
                   <polyline points="20 6 9 17 4 12" />
                 </svg>
-                <span>Social Media Clips</span>
+                <span>Social media clips</span>
               </li>
               <li>
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3">
                   <polyline points="20 6 9 17 4 12" />
                 </svg>
-                <span>Fusion/effect options</span>
+                <span>Fusion and effect options</span>
               </li>
               <li>
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3">
@@ -289,21 +274,7 @@ function PricingPage() {
                 <span>Unlimited cameras</span>
               </li>
             </ul>
-            <button
-              type="button"
-              className="btn btn-amber"
-              onClick={() => setTrialPriceId(PRICE_IDS.STUDIO_MONTH)}
-            >
-              Test for free
-            </button>
-            <button
-              type="button"
-              className="btn btn-ghost"
-              onClick={() => setOneTimePriceId(PRICE_IDS.STUDIO_ONETIME)}
-              style={{marginTop: 8}}
-            >
-              One-time - €720
-            </button>
+            <StudioPurchaseButtons />
           </div>
         </div>
         <p className="t-body" style={{textAlign: 'center', fontSize: 13, color: 'var(--text-3)', marginTop: 24}}>
@@ -311,40 +282,6 @@ function PricingPage() {
         </p>
         </section>
       </PricingPlanSections>
-
-      {/* FAQ Section */}
-      <section className="container section" style={{maxWidth: 720}}>
-        <div style={{textAlign: 'center', marginBottom: 48}}>
-          <h2 className="t-h2">Questions?</h2>
-        </div>
-        <div className="card" style={{marginBottom: 16}}>
-          <h3 className="t-h3" style={{marginBottom: 12}}>What's the difference between DJ and Creator?</h3>
-          <p className="t-body">
-            DJ is optimized to quickly get highlights out of your Dj Set. Creator works with any footage and exports to professional NLE timelines.
-          </p>
-        </div>
-        <div className="card" style={{marginBottom: 16}}>
-          <h3 className="t-h3" style={{marginBottom: 12}}>Do I need to upload my footage?</h3>
-          <p className="t-body">
-            No. Q·Cut runs locally on your machine. Your footage never leaves your computer.
-          </p>
-        </div>
-      </section>
-
-      {/* CTA Section 
-      <section className="container section pricing-cta-section" style={{textAlign: 'center'}}>
-        <h2 className="t-display">
-          Ready to start?
-        </h2>
-        <p className="t-body-lg" style={{maxWidth: 560, margin: '24px auto 40px'}}>
-          30-day money back guarantee. Cancel anytime.
-        </p>
-        <div style={{display: 'flex', gap: 16, justifyContent: 'center', flexWrap: 'wrap'}}>
-          <Link to="/help" className="btn btn-ghost">
-            Contact sales
-          </Link>
-        </div>
-      </section>*/}
 
       <TrialConsentModal
         isOpen={Boolean(trialPriceId)}

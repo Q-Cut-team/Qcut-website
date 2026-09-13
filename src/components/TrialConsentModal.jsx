@@ -3,7 +3,7 @@ import { createPortal } from 'react-dom';
 import SubscriptionCheckbox from './SubscriptionCheckbox';
 import TermsCheckbox from './TermsCheckbox';
 
-export default function TrialConsentModal({ isOpen, onClose, onContinue }) {
+export default function TrialConsentModal({ isOpen, onClose, onContinue, isTrial = true }) {
   const [termsAccepted, setTermsAccepted] = useState(false);
   const [subscriptionAccepted, setSubscriptionAccepted] = useState(false);
   const canContinue = termsAccepted && subscriptionAccepted;
@@ -95,7 +95,7 @@ export default function TrialConsentModal({ isOpen, onClose, onContinue }) {
         </button>
 
         <h2 id="trial-consent-title" className="t-h3" style={{ paddingRight: 48, marginBottom: 8 }}>
-          Confirm your free trial
+          {isTrial ? 'Confirm your free trial' : 'Confirm your subscription'}
         </h2>
         <p className="t-body" style={{ marginBottom: 24 }}>
           Please review and accept all confirmations before continuing.
@@ -106,7 +106,7 @@ export default function TrialConsentModal({ isOpen, onClose, onContinue }) {
             <TermsCheckbox accepted={termsAccepted} onChange={setTermsAccepted} />
           </div>
           <div style={{ padding: 16, border: '1px solid var(--line)', borderRadius: 8 }}>
-            <SubscriptionCheckbox accepted={subscriptionAccepted} onChange={setSubscriptionAccepted} />
+            <SubscriptionCheckbox accepted={subscriptionAccepted} onChange={setSubscriptionAccepted} isTrial={isTrial} />
           </div>
         </div>
 

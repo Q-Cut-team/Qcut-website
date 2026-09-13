@@ -7,7 +7,7 @@ function SiteFooter() {
         <div className="flex flex-col md:flex-row justify-between items-center gap-6">
           <div className="flex items-center gap-3">
             <span className="brand-mark"></span>
-            <span className="t-label">© 2026 Q·Cut. Built for fast multicam workflows.</span>
+            <span className="t-label">© 2026 Q-Cut. Built for fast multicam workflows.</span>
           </div>
           <div className="flex items-center gap-6">
             <Link className="t-label" style={{transition: "color .2s ease"}} 

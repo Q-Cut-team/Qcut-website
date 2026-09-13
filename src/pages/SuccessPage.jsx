@@ -24,7 +24,7 @@ function SuccessPage() {
           </div>
 
           <h1 className="t-display" style={{marginBottom: 24}}>
-            Welcome to Q·Cut!
+            Welcome to Q-Cut!
           </h1>
           
           <p className="t-body-lg" style={{marginBottom: 16}}>
@@ -57,7 +57,7 @@ function SuccessPage() {
               </div>
               <div style={{display: 'flex', gap: 12}}>
                 <span style={{color: 'var(--amber)', fontWeight: 600}}>2.</span>
-                <span className="t-body">Install Q·Cut and activate with your license key</span>
+                <span className="t-body">Install Q-Cut and activate with your license key</span>
               </div>
               <div style={{display: 'flex', gap: 12}}>
                 <span style={{color: 'var(--amber)', fontWeight: 600}}>3.</span>
