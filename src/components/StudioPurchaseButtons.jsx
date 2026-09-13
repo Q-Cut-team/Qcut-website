@@ -26,7 +26,7 @@ export default function StudioPurchaseButtons() {
         onClick={() => setPurchaseType('one-time')}
         style={{ marginTop: 8 }}
       >
-        One-time - €720
+        One-time - €480
       </button>
       <TrialConsentModal
         isOpen={purchaseType === 'subscription'}

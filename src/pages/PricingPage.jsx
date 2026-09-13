@@ -216,7 +216,7 @@ function PricingPage() {
                 <span>Up to 30 minutes</span>
               </li>
             </ul>
-            <Link to="/qcut/download" className="btn btn-amber qcut-free-button">Download</Link>
+            <Link to="/qcut/download" className="btn btn-amber qcut-free-button">Go to download</Link>
           </div>
 
           {/* Studio Plan */}
@@ -226,11 +226,7 @@ function PricingPage() {
               <h3>Q-Cut Studio</h3>
               <div className="qcut-plan-price-space">
                 <div className="price-row">
-                  <div className="price">€65,40<span className="unit">/month</span></div>
-                  <span className="price-offer-badge">
-                    First month only
-                    <strong>€40</strong>
-                  </span>
+                  <div className="price">€45<span className="unit">/month</span></div>
                 </div>
               </div>
               <span className="t-body qcut-plan-tax-line">incl. 20% VAT</span>
