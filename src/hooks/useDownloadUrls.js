@@ -5,6 +5,7 @@ const DOWNLOAD_BASE = 'https://qcut-updates-production.up.railway.app/download';
 
 const PRODUCT_MAP = {
   'qcut-dj':      'qcut-dj',
+  'qcut-free':    'qcut-free',
   'qcut-creator': 'qcut-creator',
   'qcut-studio':  'qcut-studio',
 };
@@ -33,7 +34,13 @@ export function useDownloadUrls(product) {
       .then(data => {
         const productData = data[PRODUCT_MAP[product]];
         if (!productData) {
-          setState(s => ({ ...s, loading: false, error: 'Product not found' }));
+          setState({
+            latest: null,
+            latestVersion: null,
+            olderVersions: [],
+            loading: false,
+            error: null,
+          });
           return;
         }
 

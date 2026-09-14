@@ -45,7 +45,7 @@ function YouTubeEmbed({
         }}
       >
         <p style={{color: '#fca5a5', fontSize: '14px'}}>
-          Invalid YouTube URL. Please pass a valid youtu.be link.
+          Invalid YouTube URL. Please provide a valid YouTube link.
         </p>
       </div>
     );

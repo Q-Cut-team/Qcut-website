@@ -67,8 +67,8 @@ function PlatformCards({ urls, onDownload }) {
   );
 }
 
-function CreatorDownloadPage() {
-  const { latest, olderVersions, loading, error } = useDownloadUrls('qcut-creator');
+function FreeDownloadPage() {
+  const { latest, olderVersions, loading, error } = useDownloadUrls('qcut-free');
   const [showOlder, setShowOlder] = useState(false);
   const [pendingDownloadUrl, setPendingDownloadUrl] = useState(null);
 
@@ -83,7 +83,7 @@ function CreatorDownloadPage() {
       <section className="container hero-page">
         <h1 className="t-display">
           Download<br/>
-          <span style={{color: 'var(--amber)'}}>Q·Cut Creator</span>
+          <span style={{color: 'var(--amber)'}}>Q-Cut Free</span>
         </h1>
         <p className="t-body-lg" style={{maxWidth: 560, marginTop: 16}}>
           Pick your platform. Install. Take control of your cut.
@@ -130,7 +130,7 @@ function CreatorDownloadPage() {
           </>
         )}
         <div style={{textAlign: 'center', marginTop: 40}}>
-          <Link to="/creator" className="btn btn-ghost">← Back to Creator</Link>
+          <Link to="/studio" className="btn btn-ghost">← Back to Q-Cut Studio</Link>
         </div>
       </section>
       <DownloadConsentModal
@@ -142,4 +142,4 @@ function CreatorDownloadPage() {
   );
 }
 
-export default CreatorDownloadPage;
+export default FreeDownloadPage;

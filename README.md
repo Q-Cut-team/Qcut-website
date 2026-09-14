@@ -1,6 +1,6 @@
-# Qcut Website
+# Q-Cut Website
 
-The official landing page and web application for **Qcut** — the modern solution for multicam set cutting.
+The official landing page and web application for **Q-Cut** — the modern solution for multicam set cutting.
 
 ## 🛠 Tech Stack
 

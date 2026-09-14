@@ -12,11 +12,11 @@ function StudioTutorialPage() {
           <span style={{ color: 'var(--amber)' }}>Tutorial</span>
         </h1>
         <p className="t-body-lg" style={{ maxWidth: 640, marginTop: 16 }}>
-          Full step-by-step guide for Q-Cut Studio from timeline prep to final export settings.
+          A full step-by-step guide to Q-Cut Studio, from timeline preparation to final export.
         </p>
         <div style={{ marginTop: 24, display: 'flex', gap: 12, flexWrap: 'wrap' }}>
-          <Link to="/creator" className="btn btn-ghost">
-            Back to Overview
+          <Link to="/studio" className="btn btn-ghost">
+            Back to overview
           </Link>
         </div>
       </section>

@@ -23,12 +23,12 @@ function PrivacyNoticePage() {
   return (
     <div className="page-fade-enter">
       <div className="container-narrow" style={{paddingTop: 80, paddingBottom: 80}}>
-        <h1 className="t-h1" style={{marginBottom: 8}}>Q-CUT Privacy Notice</h1>
+        <h1 className="t-h1" style={{marginBottom: 8}}>Q-Cut Privacy Notice</h1>
         <p className="t-body" style={{color: 'var(--text-2)', marginBottom: 24}}>
           Effective date: 10 August 2026
         </p>
         <p className="t-body" style={{...bodyStyle, marginBottom: 48}}>
-          This Privacy Notice applies to the Q-CUT website, checkout, desktop applications, licensing and update services, and the Q-CUT Studio plugin for Adobe Premiere Pro.
+          This Privacy Notice applies to the Q-Cut website, checkout, desktop applications, licensing and update services, and the Q-Cut Studio plugin for Adobe Premiere Pro.
         </p>
 
         <div style={{marginBottom: 32}}>
@@ -67,7 +67,7 @@ function PrivacyNoticePage() {
         <div style={{marginBottom: 32}}>
           <h2 className="t-h3" style={{marginBottom: 16}}>3. Checkout and Payments</h2>
           <p className="t-body" style={bodyStyle}>
-            When you start a trial or purchase a Q-CUT product, Stripe collects the information required for checkout and payment. Depending on the transaction, this may include your name, email address, billing address, country, tax information, payment information, and fraud-prevention signals. Stripe provides us with the product and plan, payment and subscription status, and related Stripe customer, checkout, payment, invoice, charge, or subscription identifiers. We do not receive or store your complete payment-card number.
+            When you purchase a Q-Cut product, Stripe collects the information required for checkout and payment. Depending on the transaction, this may include your name, email address, billing address, country, tax information, payment information, and fraud-prevention signals. Stripe provides us with the product and plan, payment and subscription status, and related Stripe customer, checkout, payment, invoice, charge, or subscription identifiers. We do not receive or store your complete payment-card number.
           </p>
           <p className="t-body" style={bodyStyle}>
             For purchases completed through Stripe Managed Payments, Link acts as merchant of record and processes transaction data under its own terms and privacy notice. Mulcut receives the transaction and subscription information required to issue and administer the software licence.
@@ -80,13 +80,13 @@ function PrivacyNoticePage() {
         <div style={{marginBottom: 32}}>
           <h2 className="t-h3" style={{marginBottom: 16}}>4. Licensing, Usage Limits, and Updates</h2>
           <p className="t-body" style={bodyStyle}>
-            When you activate or verify a Q-CUT licence, the application sends the licensing service the application identifier, licence key, a random installation identifier, a public cryptographic device key, and, if supplied, an optional device label. The service stores activation and validation times, licence status, seat and validity information, and the associated internal licence and Stripe identifiers. The licensing database does not store the customer&apos;s name or email address.
+            When you activate or verify a Q-Cut licence, the application sends the licensing service the application identifier, licence key, a random installation identifier, a public cryptographic device key, and, if supplied, an optional device label. The service stores activation and validation times, licence status, seat and validity information, and the associated internal licence and Stripe identifiers. The licensing database does not store the customer&apos;s name or email address.
           </p>
           <p className="t-body" style={bodyStyle}>
             For plans with usage limits and for limited free versions, the service also processes an export counter, event time, quantity, a unique event identifier, and the requested action. For a limited free version, the installation identifier is stored as a hash. We use these data to activate and recover licences, verify validity, apply seat and usage limits, prevent unauthorised sharing, and investigate licensing errors. The legal bases are performance of the licence contract and our legitimate interest in protecting paid and limited free offers (Article 6(1)(b) and (f) GDPR).
           </p>
           <p className="t-body" style={bodyStyle}>
-            When Q-CUT checks for updates or startup information, it sends the product or variant, installed version, release channel, and operating-system platform to the update service. The service stores aggregate daily counts by product, version, and platform. Hosting logs may additionally contain the technical connection data described in section 2. We use these data to provide compatible and secure updates and to operate the download service. The legal bases are Article 6(1)(b) and (f) GDPR.
+            When Q-Cut checks for updates or startup information, it sends the product or variant, installed version, release channel, and operating-system platform to the update service. The service stores aggregate daily counts by product, version, and platform. Hosting logs may additionally contain the technical connection data described in section 2. We use these data to provide compatible and secure updates and to operate the download service. The legal bases are Article 6(1)(b) and (f) GDPR.
           </p>
           <p className="t-body" style={bodyStyle}>
             Automated licence checks apply the payment, licence status, seat, expiry, and usage rules of the selected plan. They are not used to profile you. If you believe that access was restricted incorrectly, contact us and we will review the licence status.
@@ -96,7 +96,7 @@ function PrivacyNoticePage() {
         <div style={{marginBottom: 32}}>
           <h2 className="t-h3" style={{marginBottom: 16}}>5. Local Media Processing and the Premiere Plugin</h2>
           <p className="t-body" style={bodyStyle}>
-            Q-CUT processes media and editing projects locally unless a feature expressly states otherwise. The Q-CUT Studio plugin for Adobe Premiere Pro has local file-system access so that it can exchange bridge files with the Q-CUT Studio desktop application. These local files may contain project and sequence names, item identifiers, media paths, timeline data, session tokens, commands, and results.
+            Q-Cut processes media and editing projects locally unless a feature expressly states otherwise. The Q-Cut Studio plugin for Adobe Premiere Pro has local file-system access so that it can exchange bridge files with the Q-Cut Studio desktop application. These local files may contain project and sequence names, item identifiers, media paths, timeline data, session tokens, commands, and results.
           </p>
           <p className="t-body" style={bodyStyle}>
             The plugin has no direct network permission, and these bridge data are not sent to Mulcut by the plugin. The desktop application separately contacts the licensing and update services as described in section 4.
@@ -112,7 +112,7 @@ function PrivacyNoticePage() {
             We disclose personal data only where needed for the purposes described above. Recipient categories and the principal services currently used are:
           </p>
           <ul style={listStyle}>
-            <li className="t-body" style={{marginBottom: 8}}>hosting, database, storage, security, email, and download providers, including Railway Corporation for Q-CUT backend services;</li>
+            <li className="t-body" style={{marginBottom: 8}}>hosting, database, storage, security, email, and download providers, including Railway Corporation for Q-Cut backend services;</li>
             <li className="t-body" style={{marginBottom: 8}}>Stripe group companies for checkout, payment, subscription, invoicing, and fraud prevention;</li>
             <li className="t-body" style={{marginBottom: 8}}>Usercentrics and Cookiebot for consent management;</li>
             <li className="t-body" style={{marginBottom: 8}}>Google services, including Google Tag Manager, Google Fonts, and YouTube; and</li>
@@ -181,7 +181,7 @@ function PrivacyNoticePage() {
         <div style={{marginBottom: 32}}>
           <h2 className="t-h3" style={{marginBottom: 16}}>10. Changes</h2>
           <p className="t-body" style={bodyStyle}>
-            We may update this Privacy Notice when our products, providers, or legal requirements change. The current version and effective date will be available on the Q-CUT website and with the software.
+            We may update this Privacy Notice when our products, providers, or legal requirements change. The current version and effective date will be available on the Q-Cut website and with the software.
           </p>
         </div>
 

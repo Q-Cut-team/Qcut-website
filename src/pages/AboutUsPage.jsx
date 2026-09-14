@@ -5,49 +5,49 @@ function AboutUsPage() {
     <div className="page-fade-enter">
       <div className="container-narrow" style={{paddingTop: 80, paddingBottom: 80}}>
         <section style={{marginBottom: 64}}>
-          <h1 className="t-h1" style={{marginBottom: 24}}>Who we are:</h1>
+          <h1 className="t-h1" style={{marginBottom: 24}}>Who we are</h1>
           
           <div style={{marginBottom: 32}}>
             <p className="t-body-lg" style={{color: 'var(--text-2)', lineHeight: 1.7, marginBottom: 32}}>
               Mulcut Schwarzer & Antropow GesbR<br />
-              Software in Audio/Video-Analysis and video editing.
+              Software for audio and video analysis and editing.
             </p>
             
             <div style={{display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(220px, 1fr))', gap: 32, marginBottom: 32}}>
               <div>
                 <h3 className="t-h3" style={{marginBottom: 12}}>Nils Antropow</h3>
                 <p className="t-body" style={{color: 'var(--text-2)', lineHeight: 1.6}}>
-                  Videographer, CS Student at univie
+                  Videographer and computer science student at the University of Vienna
                 </p>
               </div>
               <div>
                 <h3 className="t-h3" style={{marginBottom: 12}}>Oskar Schwarzer</h3>
                 <p className="t-body" style={{color: 'var(--text-2)', lineHeight: 1.6}}>
-                  Hobby DJ, CS Student at univie
+                  Hobby DJ and computer science student at the University of Vienna
                 </p>
               </div>
             </div>
 
             <p className="t-body" style={{color: 'var(--text-2)', lineHeight: 1.7, margin: 0}}>
-              We are a CS student Duo fully into music, videography and starting projects to either bring cool things to life or build tools for efficiency.
+              We are two computer science students who love music, videography, and building projects that bring ideas to life or make creative work more efficient.
             </p>
           </div>
         </section>
 
         <section style={{marginBottom: 64}}>
-          <h2 className="t-h2" style={{marginBottom: 32}}>Our Goals:</h2>
+          <h2 className="t-h2" style={{marginBottom: 32}}>Our goals</h2>
           
           <p className="t-body" style={{color: 'var(--text-2)', lineHeight: 1.7, marginBottom: 24}}>
-            We launched in 2026 with our first Software Q-Cut, Q-Cut is a MultiCam Editing Automation software for DJ sets, it stands for fast reliable results without ai-guessing.
+            We launched Q-Cut in 2026. It automates multicam editing for DJ sets and delivers fast, reliable results without AI guesswork.
           </p>
           
           <p className="t-body" style={{color: 'var(--text-2)', lineHeight: 1.7, margin: 0}}>
-            Our Goal is to Improve Q-Cut, extend its usability and functionality but also dive deeper into audio analysis to tip our toe into other cool areas and noncommercial ideas.
+            Our goal is to keep improving Q-Cut, expand what it can do, and explore new uses for audio analysis through commercial and non-commercial projects.
           </p>
         </section>
 
         <section style={{marginBottom: 64}}>
-          <h2 className="t-h2" style={{marginBottom: 32}}>What we stand for:</h2>
+          <h2 className="t-h2" style={{marginBottom: 32}}>What we stand for</h2>
           
           <div>
             <p className="t-body" style={{color: 'var(--text-2)', lineHeight: 1.7, marginBottom: 16}}>
@@ -69,19 +69,19 @@ function AboutUsPage() {
               Sometimes it helps. Sometimes it does not.
             </p>
             <p className="t-body" style={{color: 'var(--text-2)', lineHeight: 1.7, margin: 0}}>
-              We also use AI as a tool — honestly, we probably wouldn’t have got this far without it — but it's important to recognise its limitations and not allow it to replace people's creativity and thinking skills.
+              We also use AI as a tool. We probably would not have come this far without it, but we recognise its limitations and do not let it replace human creativity and critical thinking.
             </p>
           </div>
         </section>
 
         <section style={{marginBottom: 0}}>
           <div className="card" style={{padding: 48, textAlign: 'center', background: 'linear-gradient(135deg, rgba(31,194,167,0.1) 0%, rgba(120,81,169,0.1) 100%)', borderTop: '2px solid var(--teal)', borderBottom: '2px solid var(--teal)'}}>
-            <h2 className="t-h2" style={{marginBottom: 24}}>Our Slogan for Q-Cut:</h2>
+            <h2 className="t-h2" style={{marginBottom: 24}}>Our Q-Cut slogan</h2>
             <p className="t-display" style={{marginBottom: 32, fontSize: 'clamp(28px, 6vw, 42px)'}}>
               Skip the monotonous editing and get back to creative work.
             </p>
             <p className="t-body" style={{color: 'var(--text-2)', lineHeight: 1.7, maxWidth: '600px', margin: '0 auto'}}>
-              That is what we want Mulcut GesbR to stand for, for efficient and reliant products that takes away work that feels like Labor to give more place for creativity.
+              That is what we want Mulcut GesbR to stand for: efficient, reliable products that remove monotonous work and create more space for creativity.
             </p>
           </div>
         </section>

@@ -10,7 +10,7 @@ function HelpPage() {
           We're here to help
         </h1>
         <p className="t-body-lg" style={{maxWidth: 560, marginTop: 16}}>
-          Find answers, contact support, or learn how to get the most out of Q·Cut.
+          Find answers, contact support, or learn how to get the most out of Q-Cut.
         </p>
       </section>
 
@@ -40,21 +40,21 @@ function HelpPage() {
         </h2>
         <div style={{maxWidth: 720, margin: '0 auto'}}>
           <div className="card" style={{marginBottom: 16}}>
-            <h3 className="t-h3" style={{marginBottom: 12}}>How does Q·Cut work?</h3>
+            <h3 className="t-h3" style={{marginBottom: 12}}>How does Q-Cut work?</h3>
             <p className="t-body">
-              Q·Cut analyzes your audio to detect beats, drops, and transitions. It then automatically switches between camera angles on these musical cues, creating dynamic multicam edits that sync perfectly with your music.
+              Q-Cut analyzes your audio to detect beats, drops, and transitions. It then automatically switches between camera angles on these musical cues, creating dynamic multicam edits that sync perfectly with your music.
             </p>
           </div>
           <div className="card" style={{marginBottom: 16}}>
             <h3 className="t-h3" style={{marginBottom: 12}}>Do I need to upload my footage?</h3>
             <p className="t-body">
-              No. Q·Cut runs entirely on your local machine. Your footage never leaves your computer, ensuring complete privacy and security of your content.
+              No. Q-Cut runs entirely on your local machine. Your footage never leaves your computer, ensuring complete privacy and security of your content.
             </p>
           </div>
           <div className="card" style={{marginBottom: 16}}>
-            <h3 className="t-h3" style={{marginBottom: 12}}>Can I use Q·Cut with my existing creator?</h3>
+            <h3 className="t-h3" style={{marginBottom: 12}}>Can I use Q-Cut with my existing editing software?</h3>
             <p className="t-body">
-              Yes! Creator & Studio versions can exports XML timelines that work with DaVinci Resolve and Adobe Premiere. Studio can also directly connect with Resolve to optimize the workflow
+              Yes! With Q-Cut Studio, you can export XML timelines that work with Da Vinci Resolve Studio and Adobe Premiere Pro. You can also connect directly to Da Vinci Resolve Studio or Adobe Premiere Pro to optimize your workflow.
             </p>
           </div>
         </div>
@@ -68,7 +68,7 @@ function HelpPage() {
           Still need help?
         </h2>
         <p className="t-body-lg" style={{maxWidth: 560, margin: '0 auto 32px'}}>
-          We'll try to respond as fast as possible!
+          We will respond as soon as possible.
         </p>
         <div style={{display: 'flex', gap: 16, justifyContent: 'center', flexWrap: 'wrap'}}>
           <a href="https://discord.gg/Z69HFeNWbb" className="btn btn-amber">

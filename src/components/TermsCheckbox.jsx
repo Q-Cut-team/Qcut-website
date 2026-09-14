@@ -33,7 +33,7 @@ export default function TermsCheckbox({ accepted, onChange }) {
           style={{color: '#3b82f6', textDecoration: 'underline'}}
           onClick={e => e.stopPropagation()}
         >
-          Terms of Use 
+          Terms of Use
         </Link>
         {' '}and acknowledge the{' '}
         <Link
@@ -41,8 +41,9 @@ export default function TermsCheckbox({ accepted, onChange }) {
           style={{color: '#3b82f6', textDecoration: 'underline'}}
           onClick={e => e.stopPropagation()}
         >
-          privacy notice
+          Privacy Notice
         </Link>
+        .
       </span>
     </label>
   );

@@ -17,7 +17,7 @@ function SiteHeader() {
         <div className="nav-inner">
           <Link to="/" className="brand">
             <span className="brand-mark"></span>
-            <span>Q·CUT</span>
+            <span>Q-Cut</span>
           </Link>
 
           <div className="nav-links">
@@ -41,7 +41,7 @@ function SiteHeader() {
               Help
             </NavLink>
             <button onClick={handleComingSoon} className="btn btn-amber">
-              Get Q·Cut
+              Get Q-Cut Free
             </button>
           </div>
 
@@ -84,7 +84,7 @@ function SiteHeader() {
           className="btn btn-amber w-full"
           onClick={() => { setMobileMenuOpen(false); handleComingSoon(); }}
         >
-          Get Q·Cut
+          Get Q-Cut Free
         </button>
       </div>
       <Toast message={message} isVisible={isVisible} onClose={hideToast} />

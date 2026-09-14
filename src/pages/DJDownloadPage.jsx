@@ -83,7 +83,7 @@ function DJDownloadPage() {
       <section className="container hero-page">
         <h1 className="t-display">
           Download<br/>
-          <span style={{color: 'var(--amber)'}}>Q·Cut DJ</span>
+          <span style={{color: 'var(--amber)'}}>Q-Cut DJ</span>
         </h1>
         <p className="t-body-lg" style={{maxWidth: 560, marginTop: 16}}>
           Pick your platform. Install. Start cutting.
@@ -130,7 +130,7 @@ function DJDownloadPage() {
           </>
         )}
         <div style={{textAlign: 'center', marginTop: 40}}>
-          <Link to="/dj" className="btn btn-ghost">← Back to Q·Cut DJ</Link>
+          <Link to="/dj" className="btn btn-ghost">← Back to Q-Cut DJ</Link>
         </div>
       </section>
       <DownloadConsentModal
