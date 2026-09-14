@@ -53,10 +53,7 @@ function PricingPage() {
     <div className="page-fade-enter pricing-page">
       {/* Hero Section */}
       <section className="hero-page container" style={{textAlign:"center"}}>
-        <h1 className="t-display" style={{maxWidth: 880, margin:"0 auto"}}>
-          One engine.<br/>Four plans.
-        </h1>
-        <p className="t-body-lg" style={{maxWidth: 640, margin:"20px auto 0"}}>
+        <p className="t-body-lg" style={{maxWidth: 640, margin:"0 auto"}}>
           Choose based on your workflow. Upgrade anytime. Cancel anytime.
         </p>
       </section>
@@ -216,7 +213,7 @@ function PricingPage() {
                 <span>Up to 30 minutes</span>
               </li>
             </ul>
-            <Link to="/qcut/download" className="btn btn-amber qcut-free-button">Go to download</Link>
+            <Link to="/free/download" className="btn btn-amber qcut-free-button">Go to download</Link>
           </div>
 
           {/* Studio Plan */}
@@ -237,7 +234,7 @@ function PricingPage() {
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3">
                   <polyline points="20 6 9 17 4 12" />
                 </svg>
-                <span>DaVinci Resolve, Adobe Premiere Pro and XML workflows</span>
+                <span>Da Vinci Resolve Studio, Adobe Premiere Pro and XML workflows</span>
               </li>
               <li>
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3">

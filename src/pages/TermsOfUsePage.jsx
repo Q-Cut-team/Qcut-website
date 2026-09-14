@@ -41,6 +41,7 @@ function TermsOfUsePage() {
           </p>
           <ul style={{paddingLeft: 24, color: 'var(--text-2)'}}>
             <li className="t-body" style={{marginBottom: 8}}>Q-Cut Studio</li>
+            <li className="t-body" style={{marginBottom: 8}}>Q-Cut Creator</li>
             <li className="t-body" style={{marginBottom: 8}}>Q-Cut DJ</li>
             <li className="t-body" style={{marginBottom: 8}}>Q-Cut Studio plugin for Adobe Premiere Pro</li>
           </ul>
@@ -211,7 +212,7 @@ function TermsOfUsePage() {
             Some Mulcut products may interact with or support third-party software and services.
           </p>
           <p className="t-body" style={{color: 'var(--text-2)', marginBottom: 12, lineHeight: 1.7}}>
-            DaVinci Resolve is a trademark of Blackmagic Design Pty. Ltd. Mulcut is not affiliated with, endorsed by, or sponsored by Blackmagic Design.
+            Da Vinci Resolve Studio is a trademark of Blackmagic Design Pty. Ltd. Mulcut is not affiliated with, endorsed by, or sponsored by Blackmagic Design.
           </p>
           <p className="t-body" style={{color: 'var(--text-2)', marginBottom: 12, lineHeight: 1.7}}>
             Adobe, Adobe Premiere, Premiere Pro, and Creative Cloud are trademarks or registered trademarks of Adobe in the United States and/or other countries. Mulcut is not affiliated with, endorsed by, or sponsored by Adobe.

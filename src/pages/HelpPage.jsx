@@ -54,7 +54,7 @@ function HelpPage() {
           <div className="card" style={{marginBottom: 16}}>
             <h3 className="t-h3" style={{marginBottom: 12}}>Can I use Q-Cut with my existing editing software?</h3>
             <p className="t-body">
-              Yes! With Q-Cut Studio, you can export XML timelines that work with DaVinci Resolve and Adobe Premiere Pro. You can also connect directly to DaVinci Resolve or Adobe Premiere Pro to optimize your workflow.
+              Yes! With Q-Cut Studio, you can export XML timelines that work with Da Vinci Resolve Studio and Adobe Premiere Pro. You can also connect directly to Da Vinci Resolve Studio or Adobe Premiere Pro to optimize your workflow.
             </p>
           </div>
         </div>

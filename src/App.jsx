@@ -13,7 +13,7 @@ import AboutUsPage from './pages/AboutUsPage';
 import TestPage from './pages/TestPage';
 import SimpleVideoTest from './pages/SimpleVideoTest';
 import DJDownloadPage from './pages/DJDownloadPage';
-import CreatorDownloadPage from './pages/CreatorDownloadPage';
+import FreeDownloadPage from './pages/FreeDownloadPage';
 import StudioDownloadPage from './pages/StudioDownloadPage';
 import TermsOfUsePage from './pages/TermsOfUsePage';
 
@@ -161,8 +161,9 @@ function App() {
         <Route path="/creator" element={<Navigate to="/studio" replace />} />
         <Route path="/creator/tutorial" element={<Navigate to="/studio/tutorial" replace />} />
         <Route path="/studio/tutorial" element={<StudioTutorialPage />} />
-        <Route path="/qcut/download" element={<CreatorDownloadPage />} />
-        <Route path="/creator/download" element={<Navigate to="/qcut/download" replace />} />
+        <Route path="/free/download" element={<FreeDownloadPage />} />
+        <Route path="/qcut/download" element={<Navigate to="/free/download" replace />} />
+        <Route path="/creator/download" element={<Navigate to="/free/download" replace />} />
         <Route path="/studio/download" element={<StudioDownloadPage />} />
         <Route path="/pricing" element={<PricingPage />} />
         <Route path="/help" element={<HelpPage />} />

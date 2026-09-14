@@ -42,17 +42,17 @@ function HomePage() {
       {/* Tutorial Video Section */}
       <Reveal as="section" className="container" style={{ paddingTop: 16, paddingBottom: 40}}>
         <div style={{textAlign: 'center', marginBottom: 32}}>
-          <h2 className="t-h2">See how it performs</h2>
+          <h2 className="t-h2">Version 2 released!</h2>
           <p className="t-body-lg" style={{maxWidth: 640, margin: '20px auto 0'}}>
-            Watch how Q-Cut DJ transforms hours of footage into ready-to-post clips.
+            Check out the workflow.
           </p>
         </div>
         <div style={{maxWidth: 960, margin: '0 auto'}}>
           <YouTubeEmbed
-            url="https://youtu.be/lgJy2JXM8jY?is=F9xpB80_X3YiURKG"
+            url="https://www.youtube.com/watch?v=5mILZI3xo-o"
             showControls={true}
             autoPlay={false}
-            title="Q-Cut DJ Tutorial"
+            title="Q-Cut Studio Tutorial"
           />
         </div>
       </Reveal>
@@ -61,10 +61,10 @@ function HomePage() {
       <section className="container section" style={{textAlign: 'center'}}>
         <Reveal>
           <h2 className="t-h2" style={{maxWidth: 800, margin: '0 auto'}}>
-            Optimize your workflow for XML, DaVinci Resolve, or Adobe Premiere Pro
+            Optimize your workflow for XML, Da Vinci Resolve Studio, or Adobe Premiere Pro
           </h2>
           <div style={{display: 'flex', gap: 16, justifyContent: 'center', flexWrap: 'wrap', marginTop: 32}}>
-            <Link to="/pricing" className="btn btn-amber btn-amber-lg">Try Q-Cut Free</Link>
+            <Link to="/free/download" className="btn btn-amber btn-amber-lg">Try Q-Cut Free</Link>
             <Link to="/studio" className="btn btn-ghost">Learn more</Link>
           </div>
         </Reveal>

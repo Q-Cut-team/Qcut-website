@@ -67,8 +67,8 @@ function PlatformCards({ urls, onDownload }) {
   );
 }
 
-function CreatorDownloadPage() {
-  const { latest, olderVersions, loading, error } = useDownloadUrls('qcut-creator');
+function FreeDownloadPage() {
+  const { latest, olderVersions, loading, error } = useDownloadUrls('qcut-free');
   const [showOlder, setShowOlder] = useState(false);
   const [pendingDownloadUrl, setPendingDownloadUrl] = useState(null);
 
@@ -142,4 +142,4 @@ function CreatorDownloadPage() {
   );
 }
 
-export default CreatorDownloadPage;
+export default FreeDownloadPage;

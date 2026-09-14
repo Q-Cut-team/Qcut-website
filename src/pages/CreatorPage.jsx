@@ -46,7 +46,7 @@ function CreatorPage() {
                   <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--amber)" strokeWidth="3">
                     <polyline points="20 6 9 17 4 12" />
                   </svg>
-                  <span className="t-body">DaVinci Resolve Studio integration</span>
+                  <span className="t-body">Da Vinci Resolve Studio integration</span>
                 </div>
                 <div style={{display: 'flex', alignItems: 'center', gap: 10}}>
                   <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--amber)" strokeWidth="3">
@@ -58,7 +58,7 @@ function CreatorPage() {
                   <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--amber)" strokeWidth="3">
                     <polyline points="20 6 9 17 4 12" />
                   </svg>
-                  <span className="t-body">XML</span>
+                  <span className="t-body">Genre-open audio engine</span>
                 </div>
                 <div style={{display: 'flex', alignItems: 'center', gap: 10}}>
                   <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--amber)" strokeWidth="3">
@@ -103,7 +103,7 @@ function CreatorPage() {
           <div className="card" style={{marginBottom: 24}}>
             <h3 className="t-h3" style={{marginBottom: 12}}>The fast answer</h3>
             <p className="t-body" style={{marginBottom: 10}}>
-              <strong>Q-Cut Free</strong> is ideal for smaller projects. Use it with simplified settings for up to three cameras and 30-minute timelines.
+              <strong>Q-Cut Free</strong> is ideal for smaller projects, or if you just want to test it yourself. Use it with simplified settings for up to three cameras and 30-minute timelines.
             </p>
             <p className="t-body">
               It uses the same cutting engine and delivers the same results as Q-Cut Studio, so you can try the Q-Cut Free workflow at no cost. When you are ready for larger projects, upgrade to <strong>Q-Cut Studio</strong> for unlimited cameras, advanced controls, effects and social media clips.
@@ -162,7 +162,7 @@ function CreatorPage() {
                 <span>Up to 30 minutes</span>
               </li>
             </ul>
-            <Link to="/qcut/download" className="btn btn-amber qcut-free-button">Go to download</Link>
+            <Link to="/free/download" className="btn btn-amber qcut-free-button">Go to download</Link>
           </div>
 
           {/* Studio Plan */}
@@ -183,7 +183,7 @@ function CreatorPage() {
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3">
                   <polyline points="20 6 9 17 4 12" />
                 </svg>
-                <span>DaVinci Resolve, Adobe Premiere Pro and XML workflows</span>
+                <span>Da Vinci Resolve Studio, Adobe Premiere Pro and XML workflows</span>
               </li>
               <li>
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3">

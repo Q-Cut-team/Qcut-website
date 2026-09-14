@@ -22,7 +22,7 @@ const TUTORIAL_STEPS = [
       'Choose how Q-Cut Studio should read your project, then load the active timeline.',
     ],
     settings: [
-      ['Resolve', 'Connect to the active DaVinci Resolve timeline.'],
+      ['Resolve', 'Connect to the active Da Vinci Resolve Studio timeline.'],
       ['Premiere', 'Connect through the Q-Cut Studio plugin for Adobe Premiere Pro.'],
       ['XML', 'Choose or drop an XML timeline file.'],
       ['Refresh', 'Reload the active timeline after changes in your editor.'],
