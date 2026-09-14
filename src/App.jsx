@@ -61,8 +61,8 @@ function Nav() {
   
   const links = [
     { path: '/', label: 'Home' },
-    { path: '/dj', label: 'DJ' },
     { path: '/studio', label: 'Studio' },
+    { path: '/dj', label: 'DJ' },
     { path: '/pricing', label: 'Pricing' },
     { path: '/help', label: 'Help' },
     { path: '/about', label: 'About us' },
