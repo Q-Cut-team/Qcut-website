@@ -3,7 +3,7 @@ import { createPortal } from 'react-dom';
 import SubscriptionCheckbox from './SubscriptionCheckbox';
 import TermsCheckbox from './TermsCheckbox';
 
-export default function TrialConsentModal({ isOpen, onClose, onContinue, isTrial = true }) {
+export default function TrialConsentModal({ isOpen, onClose, onContinue, isTrial = false }) {
   const [termsAccepted, setTermsAccepted] = useState(false);
   const [subscriptionAccepted, setSubscriptionAccepted] = useState(false);
   const canContinue = termsAccepted && subscriptionAccepted;

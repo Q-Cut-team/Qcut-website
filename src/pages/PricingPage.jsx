@@ -26,7 +26,7 @@ function PricingPlanSections({ children }) {
 
 function PricingPage() {
   const { isVisible, message, showToast, hideToast } = useToast();
-  const [trialPriceId, setTrialPriceId] = useState(null);
+  const [subscriptionPriceId, setSubscriptionPriceId] = useState(null);
   const [oneTimePriceId, setOneTimePriceId] = useState(null);
 
   const handleCheckout = async (priceId) => {
@@ -37,9 +37,9 @@ function PricingPage() {
     await redirectToCheckout(priceId);
   };
 
-  const handleTrialContinue = async () => {
-    const priceId = trialPriceId;
-    setTrialPriceId(null);
+  const handleSubscriptionContinue = async () => {
+    const priceId = subscriptionPriceId;
+    setSubscriptionPriceId(null);
     await handleCheckout(priceId);
   };
 
@@ -111,10 +111,6 @@ function PricingPage() {
             <h3>Q-Cut DJ Unlimited</h3>
             <div className="price-row">
               <div className="price">€10,20<span className="unit">/month</span></div>
-              <span className="price-offer-badge">
-                First month only
-                <strong>€7,50</strong>
-              </span>
             </div>
             <span className="t-body" style={{display: 'block', fontSize: 12, color: 'var(--text-3)', marginTop: 4}}>incl. 20% VAT</span>
             <p>For touring DJs & agencies</p>
@@ -153,9 +149,9 @@ function PricingPage() {
             <button
               type="button"
               className="btn btn-amber"
-              onClick={() => setTrialPriceId(PRICE_IDS.DJ_UNLIMITED)}
+              onClick={() => setSubscriptionPriceId(PRICE_IDS.DJ_UNLIMITED)}
             >
-              Try for free
+              Subscribe
             </button>
             <button
               type="button"
@@ -277,9 +273,10 @@ function PricingPage() {
       </PricingPlanSections>
 
       <TrialConsentModal
-        isOpen={Boolean(trialPriceId)}
-        onClose={() => setTrialPriceId(null)}
-        onContinue={handleTrialContinue}
+        isOpen={Boolean(subscriptionPriceId)}
+        isTrial={false}
+        onClose={() => setSubscriptionPriceId(null)}
+        onContinue={handleSubscriptionContinue}
       />
       <OneTimeConsentModal
         isOpen={Boolean(oneTimePriceId)}

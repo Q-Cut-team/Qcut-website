@@ -1,6 +1,6 @@
 import React from 'react';
 
-export default function SubscriptionCheckbox({ accepted, onChange, isTrial = true }) {
+export default function SubscriptionCheckbox({ accepted, onChange, isTrial = false }) {
   return (
     <label style={{
       display: 'flex',

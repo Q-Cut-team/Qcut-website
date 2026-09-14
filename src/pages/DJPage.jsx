@@ -33,7 +33,7 @@ const DJ_COMPARISON_ROWS = [
 function DJPage() {
   const ctaSectionRef = useRef(null);
   const [showDetailedComparison, setShowDetailedComparison] = useState(false);
-  const [trialModalOpen, setTrialModalOpen] = useState(false);
+  const [subscriptionModalOpen, setSubscriptionModalOpen] = useState(false);
   const [oneTimeModalOpen, setOneTimeModalOpen] = useState(false);
   const { isVisible, message, showToast, hideToast } = useToast();
 
@@ -45,13 +45,13 @@ function DJPage() {
     await redirectToCheckout(priceId);
   };
 
-  const handleGetFree = async () => {
+  const handleSubscribe = async () => {
     await redirectToCheckout(DJ_UNLIMITED_MONTH_PRICE_ID);
   };
 
-  const handleTrialContinue = async () => {
-    setTrialModalOpen(false);
-    await handleGetFree();
+  const handleSubscriptionContinue = async () => {
+    setSubscriptionModalOpen(false);
+    await handleSubscribe();
   };
 
   const handleOneTimeContinue = async () => {
@@ -315,7 +315,6 @@ function DJPage() {
             </Link>
             {/*<button*/}
             {/*  className="btn btn-amber"*/}
-            {/*  onClick={handleGetFree}*/}
             {/*>*/}
             {/*  Download for free*/}
             {/*</button>*/}
@@ -364,9 +363,9 @@ function DJPage() {
             <button
               type="button"
               className="btn btn-amber"
-              onClick={() => setTrialModalOpen(true)}
+              onClick={() => setSubscriptionModalOpen(true)}
             >
-              Try for free
+              Subscribe
             </button>
             <button
               type="button"
@@ -384,9 +383,10 @@ function DJPage() {
       </section>
 
       <TrialConsentModal
-        isOpen={trialModalOpen}
-        onClose={() => setTrialModalOpen(false)}
-        onContinue={handleTrialContinue}
+        isOpen={subscriptionModalOpen}
+        isTrial={false}
+        onClose={() => setSubscriptionModalOpen(false)}
+        onContinue={handleSubscriptionContinue}
       />
       <OneTimeConsentModal
         isOpen={oneTimeModalOpen}

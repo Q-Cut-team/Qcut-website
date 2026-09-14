@@ -37,7 +37,7 @@ function BetaBar() {
   return (
     <div className="beta-bar">
       <span className="pulse" />
-      <span>Get a discount on Q-Cut Studio with code XXX</span>
+      <span>Get a discount on Q-Cut Studio with code V2LAUNCH</span>
       <span className="pulse" />
     </div>
   );

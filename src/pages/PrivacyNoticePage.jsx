@@ -67,7 +67,7 @@ function PrivacyNoticePage() {
         <div style={{marginBottom: 32}}>
           <h2 className="t-h3" style={{marginBottom: 16}}>3. Checkout and Payments</h2>
           <p className="t-body" style={bodyStyle}>
-            When you start a trial or purchase a Q-Cut product, Stripe collects the information required for checkout and payment. Depending on the transaction, this may include your name, email address, billing address, country, tax information, payment information, and fraud-prevention signals. Stripe provides us with the product and plan, payment and subscription status, and related Stripe customer, checkout, payment, invoice, charge, or subscription identifiers. We do not receive or store your complete payment-card number.
+            When you purchase a Q-Cut product, Stripe collects the information required for checkout and payment. Depending on the transaction, this may include your name, email address, billing address, country, tax information, payment information, and fraud-prevention signals. Stripe provides us with the product and plan, payment and subscription status, and related Stripe customer, checkout, payment, invoice, charge, or subscription identifiers. We do not receive or store your complete payment-card number.
           </p>
           <p className="t-body" style={bodyStyle}>
             For purchases completed through Stripe Managed Payments, Link acts as merchant of record and processes transaction data under its own terms and privacy notice. Mulcut receives the transaction and subscription information required to issue and administer the software licence.

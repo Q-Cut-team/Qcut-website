@@ -140,12 +140,6 @@ function TermsOfUsePage() {
           <p className="t-body" style={{color: 'var(--text-2)', lineHeight: 1.7}}>
             Payments are processed through Stripe Managed Payments. For transactions completed through Managed Payments, Link acts as merchant of record and handles payment processing, applicable indirect taxes, receipts, transaction support, and payment-related refunds. Mulcut remains responsible for licensing the software and providing product-related support.
           </p>
-          <p className="t-body" style={{color: 'var(--text-2)', lineHeight: 1.7}}>
-            Free trials may be offered for certain products or plans.
-          </p>
-          <p className="t-body" style={{color: 'var(--text-2)', lineHeight: 1.7}}>
-            Unless cancelled before the end of the trial period, the subscription will automatically convert into a paid subscription at the rate displayed during the purchase process.
-          </p>
         </div>
 
         <div style={{marginBottom: 32}}>
@@ -170,10 +164,7 @@ function TermsOfUsePage() {
             For consumers located in the European Union:
           </p>
           <p className="t-body" style={{color: 'var(--text-2)', lineHeight: 1.7}}>
-            By starting a free trial or purchasing the software, you expressly request and consent to the immediate provision of digital content and acknowledge that your statutory right of withdrawal is lost once the download, activation, or access process has started.
-          </p>
-          <p className="t-body" style={{color: 'var(--text-2)', lineHeight: 1.7}}>
-            Where a free trial converts into a paid subscription, the subscription terms and pricing are displayed during the purchase process.
+            By purchasing the software, you expressly request and consent to the immediate provision of digital content and acknowledge that your statutory right of withdrawal is lost once the download, activation, or access process has started.
           </p>
         </div>
 

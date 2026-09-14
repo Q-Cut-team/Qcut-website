@@ -3,8 +3,8 @@ import { redirectToCheckout } from '../utils/checkout';
 import TrialConsentModal from './TrialConsentModal';
 import OneTimeConsentModal from './OneTimeConsentModal';
 
-const STUDIO_MONTH = 'price_1TecSzPjWn7pNPmY1OqTMEk0';
-const STUDIO_ONETIME = 'price_1TecUiPjWn7pNPmYvOVX4aRa';
+const STUDIO_MONTH = 'price_1UFaEpPjWn7pNPmYKgvp4VFC';
+const STUDIO_ONETIME = 'price_1UFaNtPjWn7pNPmY3It5h7VK';
 
 export default function StudioPurchaseButtons() {
   const [purchaseType, setPurchaseType] = useState(null);
