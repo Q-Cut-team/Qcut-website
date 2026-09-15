@@ -16,6 +16,7 @@ import DJDownloadPage from './pages/DJDownloadPage';
 import FreeDownloadPage from './pages/FreeDownloadPage';
 import StudioDownloadPage from './pages/StudioDownloadPage';
 import TermsOfUsePage from './pages/TermsOfUsePage';
+import Seo from './components/Seo';
 
 // ScrollToTop Component
 function ScrollToTop() {
@@ -150,6 +151,7 @@ function Footer() {
 function App() {
   return (
     <BrowserRouter>
+      <Seo />
       <ScrollToTop />
       <BetaBar />
       <Nav />
